@@ -359,168 +359,457 @@ background: linear-gradient(90deg, #3B82F6 0%, #06B6D4 100%);
 <img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/%E6%9C%80%E5%BC%B7%E5%91%BC%E5%90%B8.png" alt="最強呼吸">
 </div>
 </div>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>帳號系統與訂閱中心</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome 圖示庫 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Supabase JS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    .btn-gradient-primary {
+      background: linear-[#EAB308], #D97706);
+      background-image: linear-gradient(to right, #EAB308, #D97706);
+    }
+    .btn-gradient-secondary {
+      background-image: linear-gradient(to right, #3B82F6, #1D4ED8);
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-white min-h-screen flex items-center justify-center">
+
+<section id="auth-section" class="py-16 px-6 max-w-6xl mx-auto flex flex-col items-center relative w-full">
+  <div class="absolute w-[400px] h-[400px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+  
+  <h2 class="text-3xl font-bold text-center mb-2 text-[#EAB308] tracking-widest lang-txt" data-zh="任何信箱都可註冊" data-en="Registration is possible with any email address.">任何信箱都可註冊</h2>
+  <div class="w-20 h-1 bg-gradient-to-r from-[#EAB308] to-amber-500 mb-12 rounded-full"></div>
+
+  <div id="auth-panel" class="w-full max-w-md bg-[#111827]/90 backdrop-blur-2xl rounded-[40px] border border-gray-800/60 p-8 relative shadow-2xl overflow-hidden min-h-[940px] flex flex-col justify-between text-white">
+    
+    <!-- 頂部控制欄 -->
+    <div class="flex items-center justify-between w-full mb-4 relative z-10">
+      <button onclick="toggleLang()" id="lang-btn" class="text-xs text-gray-400 bg-gray-900/60 px-3 py-1.5 rounded-full border border-gray-800 hover:bg-gray-700 transition font-medium cursor-pointer">
+        <i class="fa-solid fa-globe mr-1"></i>EN
+      </button>
+      <div id="top-right-area" class="flex justify-end items-center max-w-[180px]">
+        <button id="close-btn" onclick="hideAuthPanel()" class="text-gray-300 text-xs bg-gray-800/80 px-4 py-1.5 rounded-full border border-gray-700/50 hover:bg-gray-700 transition font-medium cursor-pointer">關閉</button>
+      </div>
+    </div>
+
+    <!-- 標題區 -->
+    <div class="flex flex-col items-center justify-center mb-6">
+      <div class="relative text-[#EAB308] text-5xl mb-2 opacity-90">
+        <i class="fa-solid fa-circle-user"></i>
+        <div class="absolute bottom-0 left-0 text-lg bg-[#111827] rounded-full p-0.5">
+          <i class="fa-solid fa-circle-check text-[#EAB308]"></i>
+        </div>
+      </div>
+      <p id="sub-title-label" class="text-xs text-gray-400 tracking-wider font-light">帳號系統登入</p>
+      <h1 id="main-title-label" class="text-2xl font-bold text-[#EAB308] tracking-widest mt-1">建立新帳號</h1>
+    </div>
+
+    <!-- 1. 註冊面板 -->
+    <div id="register-panel" class="space-y-4 flex-grow flex flex-col justify-start">
+      <div class="space-y-3.5">
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-user"></i></span>
+          <input type="text" id="reg-name" placeholder="姓名或暱稱" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+        </div>
+        
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-calendar-days"></i></span>
+          <select id="reg-age" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-10 py-3.5 rounded-xl font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none cursor-pointer">
+            <option value="">選擇年齡</option>
+          </select>
+          <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500 pointer-events-none"><i class="fa-solid fa-chevron-down text-sm"></i></span>
+        </div>
+
+        <button onclick="handleAppleLogin()" class="w-full bg-black hover:bg-gray-900 text-white py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 border border-gray-800 transition active:scale-[0.99] cursor-pointer">
+          <i class="fa-brands fa-apple text-xl"></i> <span id="text-apple-login">使用 Apple 登入</span>
+        </button>
+
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-envelope"></i></span>
+          <input type="email" id="reg-email" placeholder="電子郵件" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+        </div>
+
+        <div class="space-y-2.5">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-lock"></i></span>
+            <input type="password" id="reg-password" placeholder="密碼" oninput="validatePasswordLive('reg')" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-12 py-3.5 rounded-xl font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all tracking-widest">
+            <button onclick="togglePasswordVisibility('reg-password')" class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-gray-600 transition-colors z-10 cursor-pointer">
+              <i class="fa-solid fa-eye text-lg" id="eye-reg-password"></i>
+            </button>
+          </div>
+
+          <div class="space-y-1.5 pt-1">
+            <div class="flex justify-between items-center text-xs text-gray-300 px-0.5">
+              <span>密碼強度</span>
+              <span id="reg-strength-label" class="font-bold tracking-wide transition-colors duration-200"></span>
+            </div>
+            <div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+              <div id="reg-strength-bar" class="h-full w-0 bg-red-500 transition-all duration-300"></div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2 text-xs text-gray-500 pt-1.5 pl-0.5">
+            <div id="reg-req-len" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-len">至少8碼</span></div>
+            <div id="reg-req-up" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-up">至少包含一個大寫英文字母 (A-Z)</span></div>
+            <div id="reg-req-low" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-low">至少包含一個小寫英文字母 (a-z)</span></div>
+            <div id="reg-req-num" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-num">至少包含一個數字(0-9)</span></div>
+            <div id="reg-req-spec" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-spec">至少包含一個特殊符號(如@、#、$、%、^、&、*)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-4">
+        <button onclick="handleEmailRegister()" id="btn-register-now" class="w-full btn-gradient-primary hover:opacity-95 text-white font-bold py-4 rounded-xl shadow-lg transition active:scale-[0.99] tracking-wide cursor-pointer">立即註冊</button>
+        <button onclick="switchPanel('login-panel')" id="btn-back-to-login" class="w-full btn-gradient-secondary hover:opacity-95 text-white py-4 rounded-xl font-bold transition active:scale-[0.99] tracking-wide cursor-pointer">已有帳號?返回登入</button>
+      </div>
+
+      <div class="flex justify-between items-center pt-4 mt-auto">
+        <span id="footer-or-label" class="text-base font-medium text-white tracking-wider">或者</span>
+        <button onclick="switchPanel('forgot-panel')" id="footer-forgot-btn" class="bg-gray-800/80 border border-gray-700/60 text-gray-300 px-5 py-2.5 rounded-xl text-sm font-medium hover:text-white hover:bg-gray-700 transition shadow-sm cursor-pointer">忘記密碼?</button>
+      </div>
+    </div>
+
+    <!-- 2. 登入面板 -->
+    <div id="login-panel" class="space-y-5 flex-grow flex flex-col justify-start hidden">
+      <div class="space-y-4">
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-envelope"></i></span>
+          <input type="email" id="login-email" placeholder="電子郵件" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl font-medium focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" id="login-password" placeholder="密碼" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-12 py-3.5 rounded-xl font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 tracking-widest">
+          <button onclick="togglePasswordVisibility('login-password')" class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-gray-600 z-10 cursor-pointer">
+            <i class="fa-solid fa-eye text-lg" id="eye-login-password"></i>
+          </button>
+        </div>
+      </div>
+      <button onclick="handleEmailLogin()" id="btn-login" class="w-full btn-gradient-primary hover:opacity-95 text-white font-bold py-4 rounded-xl shadow-lg transition tracking-wide mt-2 cursor-pointer">登入</button>
+      <button onclick="switchPanel('register-panel')" id="btn-goto-register" class="w-full btn-gradient-secondary text-white py-4 rounded-xl font-bold transition tracking-wide cursor-pointer">沒有帳號?前往註冊</button>
+    </div>
+
+    <!-- 3. 忘記密碼面板 -->
+    <div id="forgot-panel" class="space-y-5 flex-grow flex flex-col justify-start hidden">
+      <div id="otp-step-1" class="space-y-5">
+        <p id="text-otp-step1-hint" class="text-sm text-gray-400 text-center leading-relaxed">請輸入您的電子郵件,我們將發送驗證重設連結至您的信箱。</p>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-envelope"></i></span>
+          <input type="email" id="forgot-email" placeholder="電子郵件" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl font-medium focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <button onclick="sendResetOTP()" id="btn-send-otp" class="w-full btn-gradient-primary hover:opacity-95 text-white font-bold py-4 rounded-xl transition tracking-wide cursor-pointer">發送驗證碼</button>
+      </div>
+
+      <div id="otp-step-2" class="space-y-4 hidden">
+        <p id="text-otp-step2-hint" class="text-sm text-gray-400 text-center leading-relaxed">驗證碼已發送!請輸入 6~8 位數驗證碼與高強度新密碼。</p>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-key"></i></span>
+          <input type="text" id="otp-code" maxlength="8" placeholder="6~8 位數驗證碼 (OTP)" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl tracking-[0.2em] text-center font-bold text-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div class="space-y-2.5">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-lock"></i></span>
+            <input type="password" id="otp-password" placeholder="新密碼" oninput="validatePasswordLive('otp')" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-12 py-3.5 rounded-xl font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 tracking-widest">
+            <button onclick="togglePasswordVisibility('otp-password')" class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-gray-600 z-10 cursor-pointer">
+              <i class="fa-solid fa-eye text-lg" id="eye-otp-password"></i>
+            </button>
+          </div>
+          <div class="space-y-1.5 pt-1">
+            <div class="flex justify-between items-center text-xs text-gray-300 px-0.5">
+              <span>密碼強度</span>
+              <span id="otp-strength-label" class="font-bold tracking-wide transition-colors duration-200"></span>
+            </div>
+            <div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+              <div id="otp-strength-bar" class="h-full w-0 bg-red-500 transition-all duration-300"></div>
+            </div>
+          </div>
+        </div>
+        <button onclick="verifyOTPAndReset()" id="btn-confirm-reset" class="w-full btn-gradient-primary hover:opacity-95 text-white font-bold py-4 rounded-xl transition tracking-wide mt-2 cursor-pointer">確認重設密碼</button>
+      </div>
+      <button onclick="switchPanel('register-panel')" id="btn-link-back-login" class="text-gray-400 text-sm hover:text-white transition block text-center mt-4 cursor-pointer"><i class="fa-solid fa-arrow-left mr-2"></i>返回註冊面板</button>
+    </div>
+
+    <!-- 4. 會員中心與 5 種訂閱方案面板 -->
+    <div id="dashboard-panel" class="space-y-5 flex-grow flex flex-col justify-start hidden">
+      <h1 id="text-member-center" class="text-2xl font-bold text-center text-[#EAB308] tracking-wide mb-2">會員與訂閱中心</h1>
+      <div class="bg-gray-900/80 p-5 rounded-2xl border border-gray-800 space-y-2">
+        <p id="text-curr-account" class="text-gray-400 text-sm">目前登入帳號:</p>
+        <p id="user-display-email" class="font-mono text-blue-400 break-all"></p>
+        <p id="text-profile" class="text-gray-400 text-sm pt-2">基本資料:</p>
+        <p id="user-display-meta" class="text-sm text-gray-200"></p>
+      </div>
+
+      <!-- Stripe 5 種方案選擇 -->
+      <div class="space-y-2 pt-2">
+        <p class="text-xs text-gray-400">選擇訂閱方案 (自動綁定當前帳號):</p>
+        <div class="grid grid-cols-1 gap-2">
+          <button onclick="handleSubscribe('plan1')" class="w-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 text-amber-300 py-2.5 rounded-xl text-xs font-bold transition flex justify-between px-4 items-center">
+            <span>方案 1 (年訂閱)</span><i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button onclick="handleSubscribe('plan2')" class="w-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 text-amber-300 py-2.5 rounded-xl text-xs font-bold transition flex justify-between px-4 items-center">
+            <span>方案 2</span><i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button onclick="handleSubscribe('plan3')" class="w-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 text-amber-300 py-2.5 rounded-xl text-xs font-bold transition flex justify-between px-4 items-center">
+            <span>方案 3</span><i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button onclick="handleSubscribe('plan4')" class="w-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 text-amber-300 py-2.5 rounded-xl text-xs font-bold transition flex justify-between px-4 items-center">
+            <span>方案 4</span><i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button onclick="handleSubscribe('plan5')" class="w-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 text-amber-300 py-2.5 rounded-xl text-xs font-bold transition flex justify-between px-4 items-center">
+            <span>方案 5</span><i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <button onclick="handleLogout()" id="btn-logout" class="w-full bg-gray-800 hover:bg-gray-700 text-white font-medium py-3.5 rounded-xl transition cursor-pointer mt-auto">登出帳號</button>
+    </div>
+
+    <!-- 頁尾條款區 -->
+    <div class="mt-6 space-y-4 w-full">
+      <p id="terms-box" class="text-center text-[11px] text-gray-500 leading-relaxed px-4">
+        <span id="text-terms-prefix">註冊即代表您同意我們的 </span>
+        <a href="https://paul-750-k.github.io/Account-System-Terms-of-Service/#zh-tw" target="_blank" class="text-[#EAB308] underline hover:text-yellow-500 font-medium">服務條款</a>
+        <span id="text-and">與</span>
+        <a href="https://paul-750-k.github.io/-Privacy-Policy/#zh-tw" target="_blank" class="text-[#EAB308] underline hover:text-yellow-500 font-medium">隱私政策</a>
+      </p>
+      <div id="danger-zone" class="border-t border-red-900/30 pt-4 hidden">
+        <button onclick="handleDeleteAccount()" id="btn-delete-acc" class="w-full text-red-500 bg-red-950/20 hover:bg-red-950/40 border border-red-900/40 py-2.5 rounded-xl text-xs font-semibold tracking-wide transition active:scale-[0.99] cursor-pointer">
+          <i class="fa-solid fa-trash-can mr-1.5"></i> 永久刪除帳號(Delete Account)
+        </button>
+      </div>
+    </div>
+
+  </div>
 </section>
-<section id="auth-section" class="py-16 px-6 max-w-6xl mx-auto flex flex-col items-center relative">
-<div class="absolute w-[400px] h-[400px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none"></div>
-<h2 class="text-3xl font-bold text-center mb-2 text-[#EAB308] tracking-widest lang-txt" data-zh="任何信箱都可註冊" data-en="Registration is possible with any email address.">任何信箱都可註冊</h2>
-<div class="w-20 h-1 bg-gradient-to-r from-[#EAB308] to-amber-500 mb-12 rounded-full"></div>
-<div id="auth-panel" class="w-full max-w-md bg-[#111827]/90 backdrop-blur-2xl rounded-[40px] border border-gray-800/60 p-8 relative shadow-2xl overflow-hidden min-h-[940px] flex flex-col justify-between text-white">
-<div class="flex items-center justify-between w-full mb-4 relative z-10">
-<button onclick="toggleLang()" id="lang-btn" class="text-xs text-gray-400 bg-gray-900/60 px-3 py-1.5 rounded-full border border-gray-800 hover:bg-gray-700 transition font-medium cursor-pointer">
-<i class="fa-solid fa-globe mr-1"></i>EN
-</button>
-<div id="top-right-area" class="flex justify-end items-center max-w-[180px]">
-<button id="close-btn" onclick="hideAuthPanel()" class="text-gray-300 text-xs bg-gray-800/80 px-4 py-1.5 rounded-full border border-gray-700/50 hover:bg-gray-700 transition font-medium cursor-pointer">關閉</button>
-</div>
-</div>
-<div class="flex flex-col items-center justify-center mb-6">
-<div class="relative text-[#EAB308] text-5xl mb-2 opacity-90">
-<i class="fa-solid fa-circle-user"></i>
-<div class="absolute bottom-0 left-0 text-lg bg-[#111827] rounded-full p-0.5">
-<i class="fa-solid fa-circle-check text-[#EAB308]"></i>
-</div>
-</div>
-<p id="sub-title-label" class="text-xs text-gray-400 tracking-wider font-light">帳號系統登入</p>
-<h1 id="main-title-label" class="text-2xl font-bold text-[#EAB308] tracking-widest mt-1">建立新帳號</h1>
-</div>
-<div id="register-panel" class="space-y-4 flex-grow flex flex-col justify-start">
-<div class="space-y-3.5">
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-user"></i></span>
-<input type="text" id="reg-name" placeholder="姓名或暱稱" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
-</div>
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-calendar-days"></i></span>
-<select id="reg-age" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-10 py-3.5 rounded-xl font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none cursor-pointer"></select>
-<span class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500 pointer-events-none"><i class="fa-solid fa-chevron-down text-sm"></i></span>
-</div>
-<button onclick="handleAppleLogin()" class="w-full bg-black hover:bg-gray-900 text-white py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 border border-gray-800 transition active:scale-[0.99] cursor-pointer">
-<i class="fa-brands fa-apple text-xl"></i> <span id="text-apple-login">使用 Apple 登入</span>
-</button>
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-envelope"></i></span>
-<input type="email" id="reg-email" placeholder="電子郵件" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
-</div>
-<div class="space-y-2.5">
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-lock"></i></span>
-<input type="password" id="reg-password" placeholder="密碼" oninput="validatePasswordLive('reg')" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-12 py-3.5 rounded-xl font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all tracking-widest">
-<button onclick="togglePasswordVisibility('reg-password')" class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-gray-600 transition-colors z-10 cursor-pointer">
-<i class="fa-solid fa-eye text-lg" id="eye-reg-password"></i>
-</button>
-</div>
-<div class="space-y-1.5 pt-1">
-<div class="flex justify-between items-center text-xs text-gray-300 px-0.5">
-<span>密碼強度</span>
-<span id="reg-strength-label" class="font-bold tracking-wide transition-colors duration-200"></span>
-</div>
-<div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
-<div id="reg-strength-bar" class="h-full w-0 bg-red-500 transition-all duration-300"></div>
-</div>
-</div>
-<div class="flex flex-col gap-2 text-xs text-gray-500 pt-1.5 pl-0.5">
-<div id="reg-req-len" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-len">至少8碼</span></div>
-<div id="reg-req-up" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-up">至少包含一個大寫英文字母 (A-Z)</span></div>
-<div id="reg-req-low" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-low">至少包含一個小寫英文字母 (a-z)</span></div>
-<div id="reg-req-num" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-num">至少包含一個數字(0-9)</span></div>
-<div id="reg-req-spec" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-spec">至少包含一個特殊符號(如@、#、$、%、^、&、*)</span></div>
-</div>
-</div>
-</div>
-<div class="space-y-3 pt-4">
-<button onclick="handleEmailRegister()" id="btn-register-now" class="w-full btn-gradient-primary hover:opacity-95 text-white font-bold py-4 rounded-xl shadow-lg transition active:scale-[0.99] tracking-wide cursor-pointer">立即註冊</button>
-<button onclick="switchPanel('login-panel')" id="btn-back-to-login" class="w-full btn-gradient-secondary hover:opacity-95 text-white py-4 rounded-xl font-bold transition active:scale-[0.99] tracking-wide cursor-pointer">已有帳號?返回登入</button>
-</div>
-<div class="flex justify-between items-center pt-4 mt-auto">
-<span id="footer-or-label" class="text-base font-medium text-white tracking-wider">或者</span>
-<button onclick="switchPanel('forgot-panel')" id="footer-forgot-btn" class="bg-gray-800/80 border border-gray-700/60 text-gray-300 px-5 py-2.5 rounded-xl text-sm font-medium hover:text-white hover:bg-gray-700 transition shadow-sm cursor-pointer">忘記密碼?</button>
-</div>
-</div>
-<div id="login-panel" class="space-y-5 flex-grow flex flex-col justify-start hidden">
-<div class="space-y-4">
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-envelope"></i></span>
-<input type="email" id="login-email" placeholder="電子郵件" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl font-medium focus:outline-none focus:ring-2 focus:ring-blue-500">
-</div>
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-lock"></i></span>
-<input type="password" id="login-password" placeholder="密碼" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-12 py-3.5 rounded-xl font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 tracking-widest">
-<button onclick="togglePasswordVisibility('login-password')" class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-gray-600 z-10 cursor-pointer">
-<i class="fa-solid fa-eye text-lg" id="eye-login-password"></i>
-</button>
-</div>
-</div>
-<button onclick="handleEmailLogin()" id="btn-login" class="w-full btn-gradient-primary hover:opacity-95 text-white font-bold py-4 rounded-xl shadow-lg transition tracking-wide mt-2 cursor-pointer">登入</button>
-<button onclick="switchPanel('register-panel')" id="btn-goto-register" class="w-full btn-gradient-secondary text-white py-4 rounded-xl font-bold transition tracking-wide cursor-pointer">沒有帳號?前往註冊</button>
-</div>
-<div id="forgot-panel" class="space-y-5 flex-grow flex flex-col justify-start hidden">
-<div id="otp-step-1" class="space-y-5">
-<p id="text-otp-step1-hint" class="text-sm text-gray-400 text-center leading-relaxed">請輸入您的電子郵件,我們將發送6~8位數驗證碼至您的信箱。</p>
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-envelope"></i></span>
-<input type="email" id="forgot-email" placeholder="電子郵件" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl font-medium focus:outline-none focus:ring-2 focus:ring-blue-500">
-</div>
-<button onclick="sendResetOTP()" id="btn-send-otp" class="w-full btn-gradient-primary hover:opacity-95 text-white font-bold py-4 rounded-xl transition tracking-wide cursor-pointer">發送驗證碼</button>
-</div>
-<div id="otp-step-2" class="space-y-4 hidden">
-<p id="text-otp-step2-hint" class="text-sm text-gray-400 text-center leading-relaxed">驗證碼已發送!請輸入6~8位數驗證碼與高強度新密碼。</p>
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-key"></i></span>
-<input type="text" id="otp-code" maxlength="8" placeholder="6~8 位數驗證碼 (OTP)" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl tracking-[0.2em] text-center font-bold text-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-</div>
-<div class="space-y-2.5">
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-lock"></i></span>
-<input type="password" id="otp-password" placeholder="密碼" oninput="validatePasswordLive('otp')" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-12 py-3.5 rounded-xl font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 tracking-widest">
-<button onclick="togglePasswordVisibility('otp-password')" class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-gray-600 z-10 cursor-pointer">
-<i class="fa-solid fa-eye text-lg" id="eye-otp-password"></i>
-</button>
-</div>
-<div class="space-y-1.5 pt-1">
-<div class="flex justify-between items-center text-xs text-gray-300 px-0.5">
-<span>密碼強度</span>
-<span id="otp-strength-label" class="font-bold tracking-wide transition-colors duration-200"></span>
-</div>
-<div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
-<div id="otp-strength-bar" class="h-full w-0 bg-red-500 transition-all duration-300"></div>
-</div>
-</div>
-<div class="flex flex-col gap-2 text-xs text-gray-500 pt-1.5 pl-0.5">
-<div id="otp-req-len" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-otp-len">至少8碼</span></div>
-<div id="otp-req-up" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-otp-up">至少包含一個大寫英文字母 (A-Z)</span></div>
-<div id="otp-req-low" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-otp-low">至少包含一個小寫英文字母 (a-z)</span></div>
-<div id="otp-req-num" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-otp-num">至少包含一個數字(0-9)</span></div>
-<div id="otp-req-spec" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-otp-spec">至少包含一個特殊符號(如@、#、$、%、^、&、*)</span></div>
-</div>
-</div>
-<button onclick="verifyOTPAndReset()" id="btn-confirm-reset" class="w-full btn-gradient-primary hover:opacity-95 text-white font-bold py-4 rounded-xl transition tracking-wide mt-2 cursor-pointer">確認重設密碼</button>
-</div>
-<button onclick="switchPanel('register-panel')" id="btn-link-back-login" class="text-gray-400 text-sm hover:text-white transition block text-center mt-4 cursor-pointer"><i class="fa-solid fa-arrow-left mr-2"></i>返回註冊面板</button>
-</div>
-<div id="dashboard-panel" class="space-y-5 flex-grow flex flex-col justify-start hidden">
-<h1 id="text-member-center" class="text-2xl font-bold text-center text-[#EAB308] tracking-wide mb-2">會員中心</h1>
-<div class="bg-gray-900/80 p-5 rounded-2xl border border-gray-800 space-y-2">
-<p id="text-curr-account" class="text-gray-400 text-sm">目前登入帳號:</p>
-<p id="user-display-email" class="font-mono text-blue-400 break-all"></p>
-<p id="text-profile" class="text-gray-400 text-sm pt-2">基本資料:</p>
-<p id="user-display-meta" class="text-sm text-gray-200"></p>
-</div>
-<button onclick="handleLogout()" id="btn-logout" class="w-full bg-gray-800 hover:bg-gray-700 text-white font-medium py-3.5 rounded-xl transition cursor-pointer">登出帳號</button>
-</div>
-<div class="mt-6 space-y-4 w-full">
-<p id="terms-box" class="text-center text-[11px] text-gray-500 leading-relaxed px-4">
-<span id="text-terms-prefix">註冊即代表您同意我們的 </span>
-<a href="https://paul-750-k.github.io/Account-System-Terms-of-Service/#zh-tw" target="_blank" class="text-[#EAB308] underline hover:text-yellow-500 font-medium">服務條款</a>
-<span id="text-and">與</span>
-<a href="https://paul-750-k.github.io/-Privacy-Policy/#zh-tw"_blank" class="text-[#EAB308] underline hover:text-yellow-500 font-medium">隱私政策</a>
-</p>
-<div id="danger-zone" class="border-t border-red-900/30 pt-4 hidden">
-<button onclick="handleDeleteAccount()" id="btn-delete-acc" class="w-full text-red-500 bg-red-950/20 hover:bg-red-950/40 border border-red-900/40 py-2.5 rounded-xl text-xs font-semibold tracking-wide transition active:scale-[0.99] cursor-pointer">
-<i class="fa-solid fa-trash-can mr-1.5"></i> 永久刪除帳號(Delete Account)
-</button>
-</div>
-</div>
-</div>
+
+<!-- 整合腳本 -->
+<script>
+  // 1. 初始化 Supabase (替換為你的 Supabase URL 與 Anon Key)
+  const SUPABASE_URL = "https://jyghcpwnrsisdqjoxvfu.supabase.co";
+  const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY"; 
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // 2. 5 種 Stripe 訂閱方案連結 Mapping
+  const STRIPE_PLANS = {
+    plan1: 'https://buy.stripe.com/dRm4gBckj94j5FtgaP7ss00',
+    plan2: 'https://buy.stripe.com/dRm8wRckj5S7fg37Ej7ss01',
+    plan3: 'https://buy.stripe.com/00w9AVacb1BR3xl7Ej7ss02',
+    plan4: 'https://buy.stripe.com/4gMdRb5VVcgvfg32jZ7ss03',
+    plan5: 'https://buy.stripe.com/9B600lacb80f4Bp3o37ss04',
+  };
+
+  // 頁面初始化
+  document.addEventListener("DOMContentLoaded", async () => {
+    initAgeDropdown();
+    checkUserSession();
+  });
+
+  // 動態生成 10 ~ 100 歲選單
+  function initAgeDropdown() {
+    const ageSelect = document.getElementById("reg-age");
+    for (let i = 12; i <= 90; i++) {
+      const opt = document.createElement("option");
+      opt.value = i;
+      opt.textContent = `${i} 歲`;
+      ageSelect.appendChild(opt);
+    }
+  }
+
+  // 檢查登入狀態並更新 UI
+  async function checkUserSession() {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (user) {
+      document.getElementById("user-display-email").textContent = user.email;
+      document.getElementById("user-display-meta").textContent = `暱稱: ${user.user_metadata?.display_name || '未設定'} | 年齡: ${user.user_metadata?.age || '未設定'}`;
+      switchPanel("dashboard-panel");
+      document.getElementById("danger-zone").classList.remove("hidden");
+    } else {
+      switchPanel("register-panel");
+      document.getElementById("danger-zone").classList.add("hidden");
+    }
+  }
+
+  // 面板切換邏輯
+  function switchPanel(panelId) {
+    const panels = ["register-panel", "login-panel", "forgot-panel", "dashboard-panel"];
+    panels.forEach(id => {
+      document.getElementById(id).classList.add("hidden");
+    });
+    document.getElementById(panelId).classList.remove("hidden");
+  }
+
+  // 密碼可見性切換
+  function togglePasswordVisibility(inputId) {
+    const input = document.getElementById(inputId);
+    const icon = document.getElementById(`eye-${inputId}`);
+    if (input.type === "password") {
+      input.type = "text";
+      icon.classList.replace("fa-eye", "fa-eye-slash");
+    } else {
+      input.type = "password";
+      icon.classList.replace("fa-eye-slash", "fa-eye");
+    }
+  }
+
+  // 密碼強度與規則驗證
+  function validatePasswordLive(prefix) {
+    const pwd = document.getElementById(`${prefix}-password`).value;
+    const reqs = {
+      len: pwd.length >= 8,
+      up: /[A-Z]/.test(pwd),
+      low: /[a-z]/.test(pwd),
+      num: /[0-9]/.test(pwd),
+      spec: /[@#$%^&*!]/.test(pwd)
+    };
+
+    let score = 0;
+    Object.keys(reqs).forEach(k => {
+      const el = document.getElementById(`${prefix}-req-${k}`);
+      if (el) {
+        if (reqs[k]) {
+          el.className = "flex items-center gap-2 text-green-400 transition-colors duration-200";
+          el.querySelector("i").className = "fa-solid fa-circle-check text-sm";
+          score++;
+        } else {
+          el.className = "flex items-center gap-2 text-gray-500 transition-colors duration-200";
+          el.querySelector("i").className = "fa-regular fa-circle text-sm";
+        }
+      }
+    });
+
+    const bar = document.getElementById(`${prefix}-strength-bar`);
+    const label = document.getElementById(`${prefix}-strength-label`);
+    const pct = (score / 5) * 100;
+    
+    if (bar) bar.style.width = `${pct}%`;
+    if (label) {
+      if (score <= 2) { label.textContent = "弱"; label.className = "font-bold text-red-500"; if(bar) bar.className = "h-full bg-red-500 transition-all duration-300"; }
+      else if (score <= 4) { label.textContent = "中等"; label.className = "font-bold text-yellow-500"; if(bar) bar.className = "h-full bg-yellow-500 transition-all duration-300"; }
+      else { label.textContent = "高強度"; label.className = "font-bold text-green-500"; if(bar) bar.className = "h-full bg-green-500 transition-all duration-300"; }
+    }
+  }
+
+  // Supabase 註冊流程
+  async function handleEmailRegister() {
+    const email = document.getElementById("reg-email").value;
+    const password = document.getElementById("reg-password").value;
+    const name = document.getElementById("reg-name").value;
+    const age = document.getElementById("reg-age").value;
+
+    if (!email || !password) return alert("請填寫 Email 與密碼");
+
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: { data: { display_name: name, age: age } }
+    });
+
+    if (error) alert(`註冊失敗: ${error.message}`);
+    else {
+      alert("註冊成功！請檢查信箱完成驗證或直接登入。");
+      checkUserSession();
+    }
+  }
+
+  // Supabase 登入流程
+  async function handleEmailLogin() {
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) alert(`登入失敗: ${error.message}`);
+    else checkUserSession();
+  }
+
+  // Apple 第三方登入
+  async function handleAppleLogin() {
+    const { error } = await supabase.auth.signInWithOAuth({ provider: 'apple' });
+    if (error) alert(`Apple 登入失敗: ${error.message}`);
+  }
+
+  // 發送忘記密碼驗證
+  async function sendResetOTP() {
+    const email = document.getElementById("forgot-email").value;
+    if (!email) return alert("請輸入電子郵件");
+
+    const { error } = await supabase.auth.resetPasswordForEmail(email);
+    if (error) alert(`發送失敗: ${error.message}`);
+    else {
+      alert("驗證信已發送，請檢查信箱。");
+      document.getElementById("otp-step-1").classList.add("hidden");
+      document.getElementById("otp-step-2").classList.remove("hidden");
+    }
+  }
+
+  // 確認 OTP 並重設密碼
+  async function verifyOTPAndReset() {
+    const token = document.getElementById("otp-code").value;
+    const email = document.getElementById("forgot-email").value;
+    const new_password = document.getElementById("otp-password").value;
+
+    const { error: verifyErr } = await supabase.auth.verifyOtp({ email, token, type: 'recovery' });
+    if (verifyErr) return alert(`驗證碼錯誤: ${verifyErr.message}`);
+
+    const { error: updateErr } = await supabase.auth.updateUser({ password: new_password });
+    if (updateErr) alert(`重設密碼失敗: ${updateErr.message}`);
+    else {
+      alert("密碼重設成功，請重新登入！");
+      switchPanel("login-panel");
+    }
+  }
+
+  // Stripe 訂閱跳轉（方案 B：帶入 UID 與 Email 參數）
+  async function handleSubscribe(planKey) {
+    const baseUrl = STRIPE_PLANS[planKey];
+    if (!baseUrl) return alert("未知的訂閱方案");
+
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+      alert("請先登入帳號再進行訂閱");
+      switchPanel("login-panel");
+      return;
+    }
+
+    // 動態拼接帶入 client_reference_id (Supabase UID) 與預填 Email
+    const checkoutUrl = `${baseUrl}?client_reference_id=${user.id}&prefilled_email=${encodeURIComponent(user.email)}`;
+    window.location.href = checkoutUrl;
+  }
+
+  // 登出
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    checkUserSession();
+  }
+
+  // 刪除帳號 (需要後端 RPC / Edge Function 權限支援)
+  async function handleDeleteAccount() {
+    if (confirm("確定要永久刪除帳號嗎？此動作無法復原！")) {
+      alert("請聯絡客服或透過 Supabase Admin API 執行帳號刪除。");
+    }
+  }
+
+  // 語系切換 toggle
+  function toggleLang() {
+    const btn = document.getElementById("lang-btn");
+    btn.innerHTML = btn.innerHTML.includes("EN") ? '<i class="fa-solid fa-globe mr-1"></i>中' : '<i class="fa-solid fa-globe mr-1"></i>EN';
+  }
+
+  function hideAuthPanel() {
+    document.getElementById("auth-section").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
+
 </section>
 <section id="pricing" class="bg-gradient-to-b from-[#020612] to-[#071226] py-20 px-6 relative border-t border-white/5">
 <div class="max-w-[90rem] mx-auto">
