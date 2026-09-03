@@ -167,20 +167,9 @@ background: linear-gradient(90deg, #3B82F6 0%, #06B6D4 100%);
 </p>
 <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
 <button onclick="window.open('https://apps.apple.com/tw/app/zenith-magic/id6758757008', '_blank')" id="btn-download" class="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold px-8 py-4 rounded-2xl shadow-lg shadow-blue-500/20 transition transform hover:-translate-y-1 cursor-pointer">立即下載 iOS 版</button>
-<a href="https://paul-750-k.github.io/Terms-of-Use/#section-6" target="_blank" id="btn-terms" 
-   class="lang-txt w-full sm:w-auto bg-white/5 hover:bg-white/10 text-blue-300 font-semibold px-8 py-4 rounded-2xl border border-blue-500/30 transition shadow-sm text-center"
-   data-zh="服務條款" 
-   data-en="Terms of Service">
-   服務條款
-</a>
-
-<a href="https://paul-750-k.github.io/Facial-Technology-User-Guide/#en" target="_blank" id="btn-bio" 
-   class="lang-txt w-full sm:w-auto bg-white/5 hover:bg-white/10 text-blue-300 font-semibold px-8 py-4 rounded-2xl border border-blue-500/30 transition shadow-sm text-center"
-   data-zh="臉部技術與生物特徵聲明" 
-   data-en="Facial Technology & Biometrics Statement">
-   臉部技術與生物特徵聲明
-</a>
-
+<a href="https://paul-750-k.github.io/Terms-of-Use/#section-6" target="_blank" id="btn-terms" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-blue-300 font-semibold px-8 py-4 rounded-2xl border border-blue-500/30 transition shadow-sm text-center">服務條款</a>
+<a href="https://paul-750-k.github.io/Facial-Technology-User-Guide/#en"_blank" id="btn-bio" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-blue-300 font-semibold px-8 py-4 rounded-2xl border border-blue-500/30 transition shadow-sm text-center">臉部技術與生物特徵聲明</a>
+</div>
 </section>
 <section class="py-6 px-4 max-w-7xl mx-auto">
 <div id="gallery-title" class="text-center text-2xl font-bold mb-8 text-blue-400">App 實機介面展示 | Interface Gallery</div>
@@ -906,7 +895,6 @@ const i18n = {
         ageSuffix: "歲",
         registerNow: "立即註冊",
         backToLogin: "已有帳號?返回登入",
-        forgotBtn: "忘記密碼?", 
         otpStep1Hint: "請輸入您的電子郵件,我們將發送6~8位數驗證碼至您的信箱。",
         sendOtp: "發送驗證碼",
         otpStep2Hint: "驗證碼已發送!請輸入6~8位數驗證碼與高強度新密碼。",
@@ -931,7 +919,6 @@ const i18n = {
         ageSuffix: "years old",
         registerNow: "Register Now",
         backToLogin: "Already have an account? Log In",
-        forgotBtn: "Forgot Password?",
         otpStep1Hint: "Please enter your email, we will send a 6-8 digit verification code.",
         sendOtp: "Send Verification Code",
         otpStep2Hint: "Verification code sent! Please enter the code and a strong password.",
@@ -1039,8 +1026,6 @@ function applyAllTranslations() {
     if (i) {
         if (document.getElementById('lang-btn')) document.getElementById('lang-btn').innerHTML = i.langBtn;
         if (document.getElementById('close-btn')) document.getElementById('close-btn').innerText = i.closeBtn;
-//                                                                                       if (document.getElementById('footer-forgot-btn')) {document.getElementById('footer-forgot-btn').innerText = i.forgotBtn;
-} 
         if (document.getElementById('sub-title-label')) document.getElementById('sub-title-label').innerText = i.titleLogin;
         if (document.getElementById('text-apple-login')) document.getElementById('text-apple-login').innerText = i.appleLogin;
         if (document.getElementById('btn-register-now')) document.getElementById('btn-register-now').innerText = i.registerNow;
