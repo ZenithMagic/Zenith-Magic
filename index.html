@@ -2,27 +2,19 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,
-initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zenith Magic - 官方網站 | Official Website</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<script
-src="https://cdn.jsdelivr.net/npm/@supabase/supabase-j
-s@2"></script>
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesom
-e/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 /* 主頁背景:全沉浸式深色氛圍感*/
 .gradient-bg {
-background: linear-gradient(135deg, #020205 0%,
-#0a0a16 50%, #120924 100%);
+background: linear-gradient(135deg, #020205 0%, #0a0a16 50%, #120924 100%);
 }
-/* 創作理念專屬色調(根據上傳圖片調整的深邃極致氛圍)
-*/
+/* 創作理念專屬色調(根據上傳圖片調整的深邃極致氛圍)*/
 .philosophy-bg {
-background: linear-gradient(180deg, #05050d 0%,
-#0e071e 100%);
+background: linear-gradient(180deg, #05050d 0%, #0e071e 100%);
 }
 .glass-card {
 background: rgba(15, 12, 30, 0.65);
@@ -44,8 +36,7 @@ border-radius: 1.5rem;
 }
 /* 頂級霓虹光暈與置中主標題 */
 .neon-glow {
-text-shadow: 0 0 20px rgba(168, 85, 247, 0.65), 0 0
-40px rgba(99, 102, 241, 0.45);
+text-shadow: 0 0 20px rgba(168, 85, 247, 0.65), 0 0 40px rgba(99, 102, 241, 0.45);
 }
 /* 藍紫霓虹實體自訂捲軸 */
 .custom-scrollbar::-webkit-scrollbar { height: 10px; }
@@ -63,2248 +54,1211 @@ background: linear-gradient(to right, #9333ea, #4f46e5);
 }
 /* 帳號系統專屬按鈕漸層*/
 .btn-gradient-primary {
-background: linear-gradient(90deg, #D946EF 0%,
-#3B82F6 100%);
+background: linear-gradient(90deg, #D946EF 0%, #3B82F6 100%);
 }
 .btn-gradient-secondary {
-background: linear-gradient(90deg, #3B82F6 0%,
-#06B6D4 100%);
+background: linear-gradient(90deg, #3B82F6 0%, #06B6D4 100%);
 }
 </style>
 </head>
-<body class="gradient-bg text-slate-200 font-sans
-antialiased">
-<header class="max-w-7xl mx-auto px-6 py-4 flex
-justify-between items-center border-b
-border-blue-900/40 sticky top-0 z-50 backdrop-blur-md
-bg-black/40">
-<div class="text-2xl font-bold text-transparent
-bg-clip-text bg-gradient-to-r from-blue-400
-to-cyan-400">Zenith Magic</div>
+<body class="gradient-bg text-slate-200 font-sans antialiased">
+<header class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center border-b border-blue-900/40 sticky top-0 z-50 backdrop-blur-md bg-black/40">
+<div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zenith Magic</div>
 <nav class="flex items-center space-x-6">
-<button onclick="toggleLang()" id="langBtn"
-class="border border-blue-500 text-blue-400 px-4 py-1.5
-rounded-full text-sm font-semibold hover:bg-blue-600
-hover:text-white transition
-cursor-pointer">English</button>
-<button
-onclick="window.open('https://apps.apple.com/tw/app/ze
-nith-magic/id6758757008', '_blank')" class="hidden
-md:block bg-gradient-to-r from-blue-500 to-indigo-600
-hover:from-blue-600 hover:to-indigo-700 text-white px-6
-py-2.5 rounded-full text-sm font-semibold transition
-shadow-md cursor-pointer">App Store</button>
+<button onclick="toggleLang()" id="langBtn" class="border border-blue-500 text-blue-400 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-blue-600 hover:text-white transition cursor-pointer">English</button>
+<button onclick="window.open('https://apps.apple.com/tw/app/zenith-magic/id6758757008', '_blank')" class="hidden md:block bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition shadow-md cursor-pointer">App Store</button>
 </nav>
 </header>
-<section class="max-w-5xl mx-auto text-center px-6
-py-24 relative">
-<div class="absolute top-1/3 left-1/2 -translate-x-1/2
--translate-y-1/2 w-[450px] h-[450px] bg-blue-600/15
-blur-[140px] rounded-full pointer-events-none"></div>
+<section class="max-w-5xl mx-auto text-center px-6 py-24 relative">
+<div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-blue-600/15 blur-[140px] rounded-full pointer-events-none"></div>
+
 <div class="w-full flex justify-start mb-8 -mt-20">
-<div class="w-full md:w-[70%] h-[480px]
-overflow-hidden">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/Breath.jpeg"
-alt="Zenith Magic Breath"
-class="w-full h-full object-cover object-right">
+    
+    <div class="w-full md:w-[70%] h-[480px] overflow-hidden">
+        
+        <img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/Breath.jpeg" 
+             alt="Zenith Magic Breath" 
+             class="w-full h-full object-cover object-right">
+    </div>
 </div>
-</div>
-<div class="max-w-4xl mx-auto px-6 mb-16
-space-y-10">
-<div class="text-center">
-<!-- 標題區塊 -->
-<h3 class="lang-txt text-2xl md:text-3xl font-black
-tracking-widest text-transparent bg-clip-text
-bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500
-mb-2"
-style="text-shadow: 0 0 12px rgba(34, 211, 238, 0.4),
-0 0 25px rgba(14, 165, 233, 0.2);"
-data-zh="【城市夜雨微觀】"
-data-en="Microscopic Urban Night Rain">
-【城市夜雨微觀】
+<div class="max-w-4xl mx-auto px-6 mb-16 space-y-10">
+    
+    <div class="text-center">
+        <!-- 標題區塊 -->
+<h3 class="lang-txt text-2xl md:text-3xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 mb-2"
+    style="text-shadow: 0 0 12px rgba(34, 211, 238, 0.4), 0 0 25px rgba(14, 165, 233, 0.2);"
+    data-zh="【城市夜雨微觀】"
+    data-en="Microscopic Urban Night Rain">
+    【城市夜雨微觀】
 </h3>
+
 <!-- 內文段落區塊 -->
-<div class="max-w-2xl mx-auto text-justify
-md:text-center">
-<div class="text-slate-200 text-base md:text-lg
-leading-loose font-normal space-y-4">
-<p class="lang-txt"
-data-zh="「聽見窗外細密的雨聲，那是世界在為你
-降噪。現在，將注意力收束到呼吸的微觀摩擦。"
-data-en="&quot;Listen to the fine sound of rain
-outside the window; it is the world reducing its noise for
-you. Now, pull your focus back to the microscopic friction
-of your breath.">
-「聽見窗外細密的雨聲，那是世界在為你降噪。現
-在，將注意力收束到呼吸的微觀摩擦。
-</p>
-<p class="lang-txt"
-data-zh="輕緩吸氣，覺察空氣在鼻腔深處帶來的微
-細溫度變化——那是略帶涼意、帶著微小波動的粒子，正
-溫柔地錨定你游離的神經。"
-data-en="Inhale gently, sensing the subtle
-temperature shift deep within your nasal cavity—cool,
-undulating particles gently anchoring your wandering
-nerves.">
-輕緩吸氣，覺察空氣在鼻腔深處帶來的微細溫度變
-化——那是略帶涼意、帶著微小波動的粒子，正溫柔地錨
-定你游離的神經。
-</p>
-<p class="lang-txt"
-data-zh="吐氣時，主動放鬆眉心與下顎。隨著氣流
-綿延地釋出，大腦釋放副交感訊號，刺激迷走神經。"
-data-en="As you exhale, consciously release
-your brow and jaw. With the continuous release of
-airflow, the brain signals the parasympathetic nervous
-system, stimulating the vagus nerve.">
-吐氣時，主動放鬆眉心與下顎。隨著氣流綿延地釋
-出，大腦釋放副交感訊號，刺激迷走神經。
-</p>
-<p class="lang-txt"
-data-zh="窗外的城市霓虹在退後、在模糊，而你在
-這個由氣息築起的微觀結界裡，徹底歸位。」"
-data-en="The city neons fade and blur into the
-background, while you return entirely to yourself within
-this microscopic sanctuary built by your own
-breath.&quot;">
-窗外的城市霓虹在退後、在模糊，而你在這個由氣
-息築起的微觀結界裡，徹底歸位。」
-</p>
+<div class="max-w-2xl mx-auto text-justify md:text-center">
+    <div class="text-slate-200 text-base md:text-lg leading-loose font-normal space-y-4">
+        <p class="lang-txt"
+           data-zh="「聽見窗外細密的雨聲，那是世界在為你降噪。現在，將注意力收束到呼吸的微觀摩擦。"
+           data-en="&quot;Listen to the fine sound of rain outside the window; it is the world reducing its noise for you. Now, pull your focus back to the microscopic friction of your breath.">
+            「聽見窗外細密的雨聲，那是世界在為你降噪。現在，將注意力收束到呼吸的微觀摩擦。
+        </p>
+
+        <p class="lang-txt"
+           data-zh="輕緩吸氣，覺察空氣在鼻腔深處帶來的微細溫度變化——那是略帶涼意、帶著微小波動的粒子，正溫柔地錨定你游離的神經。"
+           data-en="Inhale gently, sensing the subtle temperature shift deep within your nasal cavity—cool, undulating particles gently anchoring your wandering nerves.">
+            輕緩吸氣，覺察空氣在鼻腔深處帶來的微細溫度變化——那是略帶涼意、帶著微小波動的粒子，正溫柔地錨定你游離的神經。
+        </p>
+
+        <p class="lang-txt"
+           data-zh="吐氣時，主動放鬆眉心與下顎。隨著氣流綿延地釋出，大腦釋放副交感訊號，刺激迷走神經。"
+           data-en="As you exhale, consciously release your brow and jaw. With the continuous release of airflow, the brain signals the parasympathetic nervous system, stimulating the vagus nerve.">
+            吐氣時，主動放鬆眉心與下顎。隨著氣流綿延地釋出，大腦釋放副交感訊號，刺激迷走神經。
+        </p>
+
+        <p class="lang-txt"
+           data-zh="窗外的城市霓虹在退後、在模糊，而你在這個由氣息築起的微觀結界裡，徹底歸位。」"
+           data-en="The city neons fade and blur into the background, while you return entirely to yourself within this microscopic sanctuary built by your own breath.&quot;">
+            窗外的城市霓虹在退後、在模糊，而你在這個由氣息築起的微觀結界裡，徹底歸位。」
+        </p>
+    </div>
 </div>
-</div>
+
 <!-- 底部知識提示塊 -->
 <div class="text-center mt-10 mb-12 md:mb-16">
-<div class="text-xs md:text-sm font-medium
-bg-cyan-950/20 border border-cyan-900/40 rounded-xl
-py-3 px-5 inline-block text-left max-w-2xl
-backdrop-blur-sm shadow-inner">
-<p class="lang-txt text-slate-200"
-data-zh="💡 呼吸練習完促使大腦釋放多巴胺與內
-啡肽，帶給人亢奮與成就感。多巴胺受體運作效率提升。"
-data-en="💡 Breathing exercises prompt the
-brain to release dopamine and endorphins, fostering a
-sense of invigoration and achievement, thereby
-enhancing receptor efficiency.">
-💡 呼吸練習完促使大腦釋放多巴胺與內啡肽，帶
-給人亢奮與成就感。多巴胺受體運作效率提升。
-</p>
+    <div class="text-xs md:text-sm font-medium bg-cyan-950/20 border border-cyan-900/40 rounded-xl py-3 px-5 inline-block text-left max-w-2xl backdrop-blur-sm shadow-inner">
+        <p class="lang-txt text-slate-200"
+           data-zh="💡 呼吸練習完促使大腦釋放多巴胺與內啡肽，帶給人亢奮與成就感。多巴胺受體運作效率提升。"
+           data-en="💡 Breathing exercises prompt the brain to release dopamine and endorphins, fostering a sense of invigoration and achievement, thereby enhancing receptor efficiency.">
+            💡 呼吸練習完促使大腦釋放多巴胺與內啡肽，帶給人亢奮與成就感。多巴胺受體運作效率提升。
+        </p>
+    </div>
 </div>
-</div>
-<div class="glass-card rounded-3xl overflow-hidden
-relative flex items-center justify-center p-8 transition-all
-duration-500 hover:scale-[1.02]"
-style="
-background-image:
-url('https://raw.githubusercontent.com/Paul-750-k/Websit
-e_Picture/refs/heads/main/Lake%20Tekapo.jpeg');
-background-size: cover;
-background-position: center;
-min-height: 500px; /* 這裡你可以自由調整想拉多高
-，例如 550px 或 600px */
-">
-<div class="absolute inset-0 bg-black/40 z-0"></div>
-<div class="relative z-10 text-center w-full max-w-md
-mx-auto">
-<h3 class="text-2xl md:text-3xl font-bold text-white mb-4
-drop-shadow-lg lang-txt"
-data-zh="沉浸式體驗"
-data-en="Immersive Experience">
+ 
+<div class="glass-card rounded-3xl overflow-hidden relative flex items-center justify-center p-8 transition-all duration-500 hover:scale-[1.02]"
+     style="
+        background-image: url('https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/Lake%20Tekapo.jpeg');
+        background-size: cover;
+        background-position: center;
+        min-height: 500px; /* 這裡你可以自由調整想拉多高，例如 550px 或 600px */
+     ">
+
+    <div class="absolute inset-0 bg-black/40 z-0"></div>
+
+    <div class="relative z-10 text-center w-full max-w-md mx-auto">
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-4 drop-shadow-lg lang-txt"
+    data-zh="沉浸式體驗"
+    data-en="Immersive Experience">
 沉浸式體驗
 </h3>
-<p class="text-sm md:text-base text-gray-200
-leading-relaxed drop-shadow lang-txt"
-data-zh="將寧靜帶入你的呼吸中,<br>在純淨的星空與
-湖畔間,找回內心的平靜。"
-data-en="Bring tranquility into your breath,<br>and
-find inner peace between pure starlight and
-lakeshores.">
+<p class="text-sm md:text-base text-gray-200 leading-relaxed drop-shadow lang-txt"
+   data-zh="將寧靜帶入你的呼吸中,<br>在純淨的星空與湖畔間,找回內心的平靜。"
+   data-en="Bring tranquility into your breath,<br>and find inner peace between pure starlight and lakeshores.">
 將寧靜帶入你的呼吸中,<br>
 在純淨的星空與湖畔間,找回內心的平靜。
 </p>
 </div>
+
 </div>
 <div class="my-8 flex justify-center items-center px-4">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/Apple%20Watch.jpeg"
-alt="Apple Watch" class="max-w-md w-full h-auto
-rounded-xl shadow-2xl object-cover"></div>
+    <img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/Apple%20Watch.jpeg" alt="Apple Watch" class="max-w-md w-full h-auto rounded-xl shadow-2xl object-cover"></div>
+        
 <div class="mt-8 text-center">
-<h1 id="hero-title" class="text-5xl md:text-7xl
-font-extrabold tracking-tight mb-8 text-white leading-tight
-neon-glow">強大源於呼吸</h1>
-<p id="hero-desc" class="text-lg md:text-xl
-text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed
-font-medium">
-結合極致工藝與動態美學,開啟身心強化的「感官聖殿」。呼
-吸練習能在幾秒鐘內「暴力」中斷負面情緒、壓力與疲勞的
-連鎖反應,讓腦袋完全清空。
+<h1 id="hero-title" class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 text-white leading-tight neon-glow">強大源於呼吸</h1>
+<p id="hero-desc" class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
+結合極致工藝與動態美學,開啟身心強化的「感官聖殿」。呼吸練習能在幾秒鐘內「暴力」中斷負面情緒、壓力與疲勞的連鎖反應,讓腦袋完全清空。
 </p>
-<div class="flex flex-col sm:flex-row justify-center
-items-center gap-4 mb-12">
-<button
-onclick="window.open('https://apps.apple.com/tw/app/ze
-nith-magic/id6758757008', '_blank')" id="btn-download"
-class="w-full sm:w-auto bg-gradient-to-r from-blue-500
-to-indigo-600 hover:from-blue-600 hover:to-indigo-700
-text-white font-bold px-8 py-4 rounded-2xl shadow-lg
-shadow-blue-500/20 transition transform
-hover:-translate-y-1 cursor-pointer">立即下載 iOS 版
-</button>
-<a
-href="https://paul-750-k.github.io/Terms-of-Use/#section-
-6" target="_blank" id="btn-terms" class="w-full
-sm:w-auto bg-white/5 hover:bg-white/10 text-blue-300
-font-semibold px-8 py-4 rounded-2xl border
-border-blue-500/30 transition shadow-sm text-center">
-服務條款</a>
-<a
-href="https://paul-750-k.github.io/Facial-Technology-Use
-r-Guide/#en"_blank" id="btn-bio" class="w-full sm:w-auto
-bg-white/5 hover:bg-white/10 text-blue-300
-font-semibold px-8 py-4 rounded-2xl border
-border-blue-500/30 transition shadow-sm text-center">
-臉部技術與生物特徵聲明</a>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
+<button onclick="window.open('https://apps.apple.com/tw/app/zenith-magic/id6758757008', '_blank')" id="btn-download" class="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold px-8 py-4 rounded-2xl shadow-lg shadow-blue-500/20 transition transform hover:-translate-y-1 cursor-pointer">立即下載 iOS 版</button>
+<a href="https://paul-750-k.github.io/Terms-of-Use/#section-6" target="_blank" id="btn-terms" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-blue-300 font-semibold px-8 py-4 rounded-2xl border border-blue-500/30 transition shadow-sm text-center">服務條款</a>
+<a href="https://paul-750-k.github.io/Facial-Technology-User-Guide/#en"_blank" id="btn-bio" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-blue-300 font-semibold px-8 py-4 rounded-2xl border border-blue-500/30 transition shadow-sm text-center">臉部技術與生物特徵聲明</a>
 </div>
 </section>
 <section class="py-6 px-4 max-w-7xl mx-auto">
-<div id="gallery-title" class="text-center text-2xl font-bold
-mb-8 text-blue-400">App 實機介面展示 | Interface
-Gallery</div>
-<div class="flex overflow-x-auto gap-6 pb-6 px-4
-custom-scrollbar">
+<div id="gallery-title" class="text-center text-2xl font-bold mb-8 text-blue-400">App 實機介面展示 | Interface Gallery</div>
+<div class="flex overflow-x-auto gap-6 pb-6 px-4 custom-scrollbar">
 <div class="flex-none text-center mb-4">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/%E5%AF%9F%E8%A6%B
-A%E7%B3%BB%E7%B5%B1.png"
-class="screenshot-img shadow-xl border
-border-blue-900/40" alt="察覺系統">
-<p class="mt-4 font-semibold text-slate-300
-gallery-label" data-zh="察覺系統:判斷疲勞的程度，捕捉
-臉部瞬間的表情。" data-en="Perception system: It
-judges the degree of fatigue and captures fleeting facial
-expressions.">察覺系統:判斷疲勞的程度，捕捉臉部瞬間
-的表情。</p>
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/%E5%AF%9F%E8%A6%BA%E7%B3%BB%E7%B5%B1.png" class="screenshot-img shadow-xl border border-blue-900/40" alt="察覺系統">
+<p class="mt-4 font-semibold text-slate-300 gallery-label" data-zh="察覺系統:判斷疲勞的程度，捕捉臉部瞬間的表情。" data-en="Perception system: It judges the degree of fatigue and captures fleeting facial expressions.">察覺系統:判斷疲勞的程度，捕捉臉部瞬間的表情。</p>
 </div>
 <div class="flex-none text-center mb-4">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/Zenith%20Magic%20%E6
-%A0%B8%E5%BF%83%E4%BB%8B%E9%9D%A2.pn
-g" class="screenshot-img shadow-xl border
-border-blue-900/40" alt="Zenith">
-<p class="mt-4 font-semibold text-slate-300
-gallery-label" data-zh="Zenith Magic 核心介面"
-data-en="Zenith Magic Core Interface">Zenith Magic 核
-心介面</p>
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/Zenith%20Magic%20%E6%A0%B8%E5%BF%83%E4%BB%8B%E9%9D%A2.png" class="screenshot-img shadow-xl border border-blue-900/40" alt="Zenith">
+<p class="mt-4 font-semibold text-slate-300 gallery-label" data-zh="Zenith Magic 核心介面" data-en="Zenith Magic Core Interface">Zenith Magic 核心介面</p>
 </div>
 <div class="flex-none text-center mb-4">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/%E5%81%A5%E8%BA%A
-B%E8%A8%88%E6%99%82%E5%99%A8.png"
-class="screenshot-img shadow-xl border
-border-blue-900/40" alt="Screenshot">
-<p class="mt-4 font-semibold text-slate-300
-gallery-label" data-zh="健身計時器" data-en="Fitness
-Timer">健身計時器</p>
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/%E5%81%A5%E8%BA%AB%E8%A8%88%E6%99%82%E5%99%A8.png" class="screenshot-img shadow-xl border border-blue-900/40" alt="Screenshot">
+<p class="mt-4 font-semibold text-slate-300 gallery-label" data-zh="健身計時器" data-en="Fitness Timer">健身計時器</p>
 </div>
 <div class="flex-none text-center mb-4">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/%E5%BC%95%E5%B0%8
-E%E5%86%A5%E6%83%B3%E8%AA%B2%E7%A8%
-8B.png" class="screenshot-img shadow-xl border
-border-blue-900/40" alt="Screenshot">
-<p class="mt-4 font-semibold text-slate-300
-gallery-label" data-zh="引導冥想課程" data-en="Guided
-Meditation Course">引導冥想課程</p>
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/%E5%BC%95%E5%B0%8E%E5%86%A5%E6%83%B3%E8%AA%B2%E7%A8%8B.png" class="screenshot-img shadow-xl border border-blue-900/40" alt="Screenshot">
+<p class="mt-4 font-semibold text-slate-300 gallery-label" data-zh="引導冥想課程" data-en="Guided Meditation Course">引導冥想課程</p>
 </div>
 <div class="flex-none text-center mb-4">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/ASMR%20%E6%84%9F%
-E5%AE%98%E9%9F%B3%E6%95%88%E6%8E%A7%
-E5%88%B6.png" class="screenshot-img shadow-xl
-border border-blue-900/40" alt="Screenshot">
-<p class="mt-4 font-semibold text-slate-300
-gallery-label" data-zh="ASMR 感官音效控制"
-data-en="ASMR Sensory Sound Control">ASMR 感官音
-效控制</p>
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/ASMR%20%E6%84%9F%E5%AE%98%E9%9F%B3%E6%95%88%E6%8E%A7%E5%88%B6.png" class="screenshot-img shadow-xl border border-blue-900/40" alt="Screenshot">
+<p class="mt-4 font-semibold text-slate-300 gallery-label" data-zh="ASMR 感官音效控制" data-en="ASMR Sensory Sound Control">ASMR 感官音效控制</p>
 </div>
 <div class="flex-none text-center mb-4">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/%E5%81%A5%E8%BA%A
-B%E6%B5%81%E5%80%92%E6%95%B8%E8%A8%8
-8%E6%99%82%E5%99%A8.png"
-class="screenshot-img shadow-xl border
-border-blue-900/40" alt="Screenshot">
-<p class="mt-4 font-semibold text-slate-300
-gallery-label" data-zh="健身流倒數計時器"
-data-en="Fitness Flow Countdown Timer">健身流倒數計
-時器</p>
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/%E5%81%A5%E8%BA%AB%E6%B5%81%E5%80%92%E6%95%B8%E8%A8%88%E6%99%82%E5%99%A8.png" class="screenshot-img shadow-xl border border-blue-900/40" alt="Screenshot">
+<p class="mt-4 font-semibold text-slate-300 gallery-label" data-zh="健身流倒數計時器" data-en="Fitness Flow Countdown Timer">健身流倒數計時器</p>
 </div>
 <div class="flex-none text-center mb-4">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/%E5%8B%95%E6%85%8
-B%E5%91%BC%E5%90%B8%E5%BC%95%E5%B0%
-8E.png" class="screenshot-img shadow-xl border
-border-blue-900/40" alt="Screenshot">
-<p class="mt-4 font-semibold text-slate-300
-gallery-label" data-zh="動態呼吸引導"
-data-en="Dynamic Breathing Guide">動態呼吸引導</p>
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/%E5%8B%95%E6%85%8B%E5%91%BC%E5%90%B8%E5%BC%95%E5%B0%8E.png" class="screenshot-img shadow-xl border border-blue-900/40" alt="Screenshot">
+<p class="mt-4 font-semibold text-slate-300 gallery-label" data-zh="動態呼吸引導" data-en="Dynamic Breathing Guide">動態呼吸引導</p>
 </div>
 <div class="flex-none text-center mb-4">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/%E7%A5%9E%E8%81%9
-6%E7%A5%88%E7%A6%B1%E6%96%87%E9%A1%A
-F%E5%8C%96.png" class="screenshot-img shadow-xl
-border border-blue-900/40" alt="Screenshot">
-<p class="mt-4 font-semibold text-slate-300
-gallery-label" data-zh="神聖祈禱文顯化"
-data-en="Sacred Prayer Manifestation">神聖祈禱文顯化
-</p>
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/%E7%A5%9E%E8%81%96%E7%A5%88%E7%A6%B1%E6%96%87%E9%A1%AF%E5%8C%96.png" class="screenshot-img shadow-xl border border-blue-900/40" alt="Screenshot">
+<p class="mt-4 font-semibold text-slate-300 gallery-label" data-zh="神聖祈禱文顯化" data-en="Sacred Prayer Manifestation">神聖祈禱文顯化</p>
 </div>
 <div class="flex-none text-center mb-4">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/7%E6%AE%B5%E8%87%
-AA%E8%A8%82%E7%AD%89%E5%8C%96%E5%99
-%A8(EQ).png" class="screenshot-img shadow-xl border
-border-blue-900/40" alt="Screenshot">
-<p class="mt-4 font-semibold text-slate-300
-gallery-label" data-zh="7段自訂等化器(EQ)"
-data-en="7-Band Custom Equalizer (EQ)">7段自訂等化
-器(EQ)</p>
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/7%E6%AE%B5%E8%87%AA%E8%A8%82%E7%AD%89%E5%8C%96%E5%99%A8(EQ).png" class="screenshot-img shadow-xl border border-blue-900/40" alt="Screenshot">
+<p class="mt-4 font-semibold text-slate-300 gallery-label" data-zh="7段自訂等化器(EQ)" data-en="7-Band Custom Equalizer (EQ)">7段自訂等化器(EQ)</p>
 </div>
 </div>
 </section>
 <section class="py-16 px-6 max-w-6xl mx-auto">
-<h2 class="text-3xl font-bold text-purple-400 mb-2
-lang-txt" data-zh="核心特色:科技與美學的結晶"
-data-en="Core Features: Crystallization of Tech &
-Aesthetics">核心特色:科技與美學的結晶</h2>
-<div class="w-20 h-1 bg-gradient-to-r from-blue-500
-to-cyan-400 mb-12 rounded-full"></div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12
-items-center mb-20">
+<h2 class="text-3xl font-bold text-purple-400 mb-2 lang-txt" data-zh="核心特色:科技與美學的結晶" data-en="Core Features: Crystallization of Tech & Aesthetics">核心特色:科技與美學的結晶</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 mb-12 rounded-full"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
 <div class="space-y-6">
-<div class="inline-block bg-blue-950 text-blue-300 px-3
-py-1 rounded-full text-sm font-bold lang-txt" data-zh="大
-腦停不下來嗎?" data-en="Racing Non-Stop?">大腦停不
-下來嗎?</div>
-<h3 class="text-2xl font-bold text-blue lang-txt"
-data-zh="把放鬆當成一種可以習得的技能"
-data-en="Treat Relaxation as a Learnable Skill">把放鬆
-當成一種可以習得的技能</h3>
-<p class="text-slate-300 leading-relaxed lang-txt"
-data-zh="每晚躺在床上,閉上眼睛,腦海中卻像放電影一樣
-不停閃現:未完成的工作、今天遇到的麻煩、甚至剛剛滑過
-的短影音片段......
-「Zenith」不只是一個簡單的鬧鐘 or 放鬆
-軟體。我們知道,睡前放鬆,本身就是一種需要被練習的技
-能。Zenith 是一個全方位的、個性化的身心重啟引擎,我們
-將聽覺療癒、呼吸練習、冥想和健身流無縫整合,幫助你重
-新建立與大腦的連結,掌握放鬆的能力,透過呼吸練習讓腦
-袋清空。" data-en="Lying in bed each night, closing your
-eyes, yet your mind replays scenes like a movie:
-unfinished work, troubles from today, even short videos
-you just swiped past... Zenith is not just a simple alarm
-or relaxation app. We know that wind-down relaxation
-itself is a skill that needs practice. Zenith is a
-comprehensive, personalized body-mind reboot engine.
-We seamlessly integrate audio healing, breathing
-practices, meditation, and fitness flows to help you
-reconnect with your brain, master the art of letting go,
-and clear your head through targeted breathwork.">
-每晚躺在床上,閉上眼睛,腦海中卻像放電影一樣不停閃現:
-未完成的工作、今天遇到的麻煩、甚至剛剛滑過的短影音
-片段......
-「Zenith」不只是一個簡單的鬧鐘 or 放鬆軟體。我
-們知道,睡前放鬆,本身就是一種需要被練習的技能。Zenith
-是一個全方位的、個性化的身心重啟引擎,我們將聽覺療
-癒、呼吸練習、冥想和健身流無縫整合,幫助你重新建立與
-大腦的連結,掌握放鬆的能力,透過呼吸練習讓腦袋清空。
+<div class="inline-block bg-blue-950 text-blue-300 px-3 py-1 rounded-full text-sm font-bold lang-txt" data-zh="大腦停不下來嗎?" data-en="Racing Non-Stop?">大腦停不下來嗎?</div>
+<h3 class="text-2xl font-bold text-blue lang-txt" data-zh="把放鬆當成一種可以習得的技能" data-en="Treat Relaxation as a Learnable Skill">把放鬆當成一種可以習得的技能</h3>
+<p class="text-slate-300 leading-relaxed lang-txt" data-zh="每晚躺在床上,閉上眼睛,腦海中卻像放電影一樣不停閃現:未完成的工作、今天遇到的麻煩、甚至剛剛滑過的短影音片段......「Zenith」不只是一個簡單的鬧鐘 or 放鬆軟體。我們知道,睡前放鬆,本身就是一種需要被練習的技能。Zenith 是一個全方位的、個性化的身心重啟引擎,我們將聽覺療癒、呼吸練習、冥想和健身流無縫整合,幫助你重新建立與大腦的連結,掌握放鬆的能力,透過呼吸練習讓腦袋清空。" data-en="Lying in bed each night, closing your eyes, yet your mind replays scenes like a movie: unfinished work, troubles from today, even short videos you just swiped past... Zenith is not just a simple alarm or relaxation app. We know that wind-down relaxation itself is a skill that needs practice. Zenith is a comprehensive, personalized body-mind reboot engine. We seamlessly integrate audio healing, breathing practices, meditation, and fitness flows to help you reconnect with your brain, master the art of letting go, and clear your head through targeted breathwork.">
+每晚躺在床上,閉上眼睛,腦海中卻像放電影一樣不停閃現:未完成的工作、今天遇到的麻煩、甚至剛剛滑過的短影音片段......「Zenith」不只是一個簡單的鬧鐘 or 放鬆軟體。我們知道,睡前放鬆,本身就是一種需要被練習的技能。Zenith 是一個全方位的、個性化的身心重啟引擎,我們將聽覺療癒、呼吸練習、冥想和健身流無縫整合,幫助你重新建立與大腦的連結,掌握放鬆的能力,透過呼吸練習讓腦袋清空。
 </p>
 </div>
 <div class="flex justify-center">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/%E8%B6%95%E6%99%8
-2%E9%96%93.jpg" class="content-img shadow-2xl
-border border-blue-900/40" alt="趕時間">
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/%E8%B6%95%E6%99%82%E9%96%93.jpg" class="content-img shadow-2xl border border-blue-900/40" alt="趕時間">
 </div>
 </div>
-<div class="glass-card rounded-3xl p-8 md:p-12 mb-20
-shadow-xl">
-<h3 class="text-xl md:text-2xl font-bold text-blue mb-4
-lang-txt" data-zh="「碎片時間的心靈聖殿」:通勤與趕時間
-中的靜心" data-en="&quot;Sanctuary for Fragmented
-Time&quot;: Meditating Amidst Commuting and
-Rushing">「碎片時間的心靈聖殿」:通勤與趕時間中的靜心
-</h3>
-<p class="text-slate-300 leading-relaxed max-w-4xl
-lang-txt" data-zh="在捷運的吵雜聲中、在趕路的心跳聲
-中,你依然可以擁有一座專屬的『感官聖殿』。Zenith 讓你的
-手機不再只是訊息的干擾源,而是通往內在平靜的入口。在
-「趕時間」的焦慮中,你能透過呼吸練習強行創造出一個屬
-於自己的「靜止時空」。" data-en="Amidst the roar of the
-subway or the thumping heartbeat of rushing, you can
-still possess an exclusive 'Sensory Sanctuary.' Zenith
-transforms your phone from a source of constant
-disruption into a pure gateway for inner peace. In the
-midst of rushing anxiety, you can use structured
-breathing exercises to forcefully create a 'still dimension'
-of your very own.">
-在捷運的吵雜聲中、在趕路的心跳聲中,你依然可以擁有一
-座專屬的『感官聖殿』。Zenith 讓你的手機不再只是訊息的
-干擾源,而是通往內在平靜的入口。在「趕時間」的焦慮中,
-你能透過呼吸練習強行創造出一個屬於自己的「靜止時
-空」。
+<div class="glass-card rounded-3xl p-8 md:p-12 mb-20 shadow-xl">
+<h3 class="text-xl md:text-2xl font-bold text-blue mb-4 lang-txt" data-zh="「碎片時間的心靈聖殿」:通勤與趕時間中的靜心" data-en="&quot;Sanctuary for Fragmented Time&quot;: Meditating Amidst Commuting and Rushing">「碎片時間的心靈聖殿」:通勤與趕時間中的靜心</h3>
+<p class="text-slate-300 leading-relaxed max-w-4xl lang-txt" data-zh="在捷運的吵雜聲中、在趕路的心跳聲中,你依然可以擁有一座專屬的『感官聖殿』。Zenith 讓你的手機不再只是訊息的干擾源,而是通往內在平靜的入口。在「趕時間」的焦慮中,你能透過呼吸練習強行創造出一個屬於自己的「靜止時空」。" data-en="Amidst the roar of the subway or the thumping heartbeat of rushing, you can still possess an exclusive 'Sensory Sanctuary.' Zenith transforms your phone from a source of constant disruption into a pure gateway for inner peace. In the midst of rushing anxiety, you can use structured breathing exercises to forcefully create a 'still dimension' of your very own.">
+在捷運的吵雜聲中、在趕路的心跳聲中,你依然可以擁有一座專屬的『感官聖殿』。Zenith 讓你的手機不再只是訊息的干擾源,而是通往內在平靜的入口。在「趕時間」的焦慮中,你能透過呼吸練習強行創造出一個屬於自己的「靜止時空」。
 </p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
-gap-6 mb-20">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
 <div class="p-6 glass-card rounded-2xl">
-<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt"
-data-zh="1. 動態呼吸引導引擎" data-en="1. Dynamic
-Breathing Engine">1. 動態呼吸引導引擎</h3>
-<p class="text-sm text-slate-300 leading-relaxed
-lang-txt" data-zh="根據你的狀態 provide 多種呼吸引導,
-動態調整節奏。" data-en="Delivers multiple custom
-breathwork pacing models tailored dynamically to your
-current energetic state.">根據你的狀態 provide 多種呼吸
-引導,動態調整節奏。</p>
+<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt" data-zh="1. 動態呼吸引導引擎" data-en="1. Dynamic Breathing Engine">1. 動態呼吸引導引擎</h3>
+<p class="text-sm text-slate-300 leading-relaxed lang-txt" data-zh="根據你的狀態 provide 多種呼吸引導,動態調整節奏。" data-en="Delivers multiple custom breathwork pacing models tailored dynamically to your current energetic state.">根據你的狀態 provide 多種呼吸引導,動態調整節奏。</p>
 </div>
 <div class="p-6 glass-card rounded-2xl">
-<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt"
-data-zh="2. ASMR 沉浸式播放器" data-en="2.
-Immersive ASMR Player">2. ASMR 沉浸式播放器</h3>
-<p class="text-sm text-slate-300 leading-relaxed
-lang-txt" data-zh="選擇你喜歡的環境聲音(飄雪、風聲、復
-古商店),營造放鬆空間。" data-en="Curate background
-environments (falling snow, mountain winds, vintage
-shops) to isolate your relaxing sanctuary.">選擇你喜歡的
-環境聲音(飄雪、風聲、復古商店),營造放鬆空間。</p>
+<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt" data-zh="2. ASMR 沉浸式播放器" data-en="2. Immersive ASMR Player">2. ASMR 沉浸式播放器</h3>
+<p class="text-sm text-slate-300 leading-relaxed lang-txt" data-zh="選擇你喜歡的環境聲音(飄雪、風聲、復古商店),營造放鬆空間。" data-en="Curate background environments (falling snow, mountain winds, vintage shops) to isolate your relaxing sanctuary.">選擇你喜歡的環境聲音(飄雪、風聲、復古商店),營造放鬆空間。</p>
 </div>
 <div class="p-6 glass-card rounded-2xl">
-<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt"
-data-zh="3. 7段自訂等化器" data-en="3. 7-Band Custom
-EQ">3. 7段自訂等化器</h3>
-<p class="text-sm text-slate-300 leading-relaxed
-lang-txt" data-zh="高精密微調聲音頻率,直到它完美貼合
-你的大腦波動。" data-en="Finely recalibrate audio hertz
-and sound frequencies until they lock perfectly with your
-brainwave patterns.">高精密微調聲音頻率,直到它完美貼
-合你的大腦波動。</p>
+<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt" data-zh="3. 7段自訂等化器" data-en="3. 7-Band Custom EQ">3. 7段自訂等化器</h3>
+<p class="text-sm text-slate-300 leading-relaxed lang-txt" data-zh="高精密微調聲音頻率,直到它完美貼合你的大腦波動。" data-en="Finely recalibrate audio hertz and sound frequencies until they lock perfectly with your brainwave patterns.">高精密微調聲音頻率,直到它完美貼合你的大腦波動。</p>
 </div>
 <div class="p-6 glass-card rounded-2xl">
-<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt"
-data-zh="4. 祈禱文系統" data-en="4. Soul Resonance
-Prayers">4. 祈禱文系統</h3>
-<p class="text-sm text-slate-300 leading-relaxed
-lang-txt" data-zh="帶有「玄學」色彩的心靈共振測試。透過
-20個關於存在、維度與能量的選擇,分析出最適合你當前靈
-魂頻率的「玄學祈禱語」。" data-en="A soulful cosmic
-alignment engine. Through 20 structural inquiries of
-dimensions and energy source, it analyzes your
-frequency to render tailored spiritual resonance
-scripts.">帶有「玄學」色彩的心靈共振測試。透過20個關於
-存在、維度與能量的選擇,分析出最適合你當前靈魂頻率的
-「玄學祈禱語」。</p>
+<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt" data-zh="4. 祈禱文系統" data-en="4. Soul Resonance Prayers">4. 祈禱文系統</h3>
+<p class="text-sm text-slate-300 leading-relaxed lang-txt" data-zh="帶有「玄學」色彩的心靈共振測試。透過20個關於存在、維度與能量的選擇,分析出最適合你當前靈魂頻率的「玄學祈禱語」。" data-en="A soulful cosmic alignment engine. Through 20 structural inquiries of dimensions and energy source, it analyzes your frequency to render tailored spiritual resonance scripts.">帶有「玄學」色彩的心靈共振測試。透過20個關於存在、維度與能量的選擇,分析出最適合你當前靈魂頻率的「玄學祈禱語」。</p>
 </div>
 <div class="p-6 glass-card rounded-2xl">
-<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt"
-data-zh="5. 21天引導式冥想" data-en="5. 21-Day
-Guided Meditation">5. 21天引導式冥想</h3>
-<p class="text-sm text-slate-300 leading-relaxed
-lang-txt" data-zh="由淺入深的漸進式訓練,系統化協助初
-學者穩健紮根冥想習慣。" data-en="A progressive
-multi-stage curriculum built to guide beginners
-step-by-step into structural mindfulness depth.">由淺入
-深的漸進式訓練,系統化協助初學者穩健紮根冥想習慣。
-</p>
+<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt" data-zh="5. 21天引導式冥想" data-en="5. 21-Day Guided Meditation">5. 21天引導式冥想</h3>
+<p class="text-sm text-slate-300 leading-relaxed lang-txt" data-zh="由淺入深的漸進式訓練,系統化協助初學者穩健紮根冥想習慣。" data-en="A progressive multi-stage curriculum built to guide beginners step-by-step into structural mindfulness depth.">由淺入深的漸進式訓練,系統化協助初學者穩健紮根冥想習慣。</p>
 </div>
 <div class="p-6 glass-card rounded-2xl">
-<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt"
-data-zh="6. 健身流倒數計時器" data-en="6. Fitness
-Flow Timer">6. 健身流倒數計時器</h3>
-<p class="text-sm text-slate-300 leading-relaxed
-lang-txt" data-zh="能夠高效運動,同時能精確掌握時間,確
-保身體安全地放鬆。" data-en="Execute efficient dynamic
-movements while strictly mastering temporal rhythms to
-securely unleash somatic relaxation.">能夠高效運動,同
-時能精確掌握時間,確保身體安全地放鬆。</p>
+<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt" data-zh="6. 健身流倒數計時器" data-en="6. Fitness Flow Timer">6. 健身流倒數計時器</h3>
+<p class="text-sm text-slate-300 leading-relaxed lang-txt" data-zh="能夠高效運動,同時能精確掌握時間,確保身體安全地放鬆。" data-en="Execute efficient dynamic movements while strictly mastering temporal rhythms to securely unleash somatic relaxation.">能夠高效運動,同時能精確掌握時間,確保身體安全地放鬆。</p>
 </div>
-<div class="p-6 glass-card rounded-2xl
-border-blue-400/40 shadow-inner">
-<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt"
-data-zh="7.每日正念名言卡片" data-en="7.Daily
-Mindfulness Quote Cards">7.每日正念名言卡片</h3>
-<p class="text-sm text-slate-300 leading-relaxed
-lang-txt" data-zh="每日抽取一張卡片，獲取智慧與安
-慰。" data-en="Draw a card each day to gain wisdom
-and comfort.">每日抽取一張卡片，獲取智慧與安
+<div class="p-6 glass-card rounded-2xl border-blue-400/40 shadow-inner">
+<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt" data-zh="7.每日正念名言卡片" data-en="7.Daily Mindfulness Quote Cards">7.每日正念名言卡片</h3>
+<p class="text-sm text-slate-300 leading-relaxed lang-txt" data-zh="每日抽取一張卡片，獲取智慧與安
+慰。" data-en="Draw a card each day to gain wisdom and comfort.">每日抽取一張卡片，獲取智慧與安
 慰。</p>
 </div>
-<div class="p-6 glass-card rounded-2xl
-border-blue-400/40 shadow-inner">
-<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt"
-data-zh="8. 多重抽卡片系統" data-en="8. Multiple card
-drawing system">8. 多重抽卡片系統</h3>
-<p class="text-sm text-slate-300 leading-relaxed
-lang-txt" data-zh="從不同維度獲取建議，提供個性化的放
-鬆指引。" data-en="We gather advice from different
-perspectives and provide personalized relaxation
-guidance.">從不同維度獲取建議，提供個性化的放
+<div class="p-6 glass-card rounded-2xl border-blue-400/40 shadow-inner">
+<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt" data-zh="8. 多重抽卡片系統" data-en="8. Multiple card drawing system">8. 多重抽卡片系統</h3>
+<p class="text-sm text-slate-300 leading-relaxed lang-txt" data-zh="從不同維度獲取建議，提供個性化的放
+鬆指引。" data-en="We gather advice from different perspectives and provide personalized relaxation guidance.">從不同維度獲取建議，提供個性化的放
 鬆指引。</p>
 </div>
 <div class="p-6 glass-card rounded-2xl">
-<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt"
-data-zh="9. 各國語言翻譯" data-en="9. Seamless
-Multi-Language">9. 各國語言翻譯</h3>
-<p class="text-sm text-slate-300 leading-relaxed
-lang-txt" data-zh="打破語言屏障,內建多國語系本土化,讓
-正念拓展無國界。" data-en="Dissolves borders. Built-in
-global localizations bring mindfulness to a worldwide
-scale without frictions.">打破語言屏障,內建多國語系本土
-化,讓正念拓展無國界。</p>
+<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt" data-zh="9. 各國語言翻譯" data-en="9. Seamless Multi-Language">9. 各國語言翻譯</h3>
+<p class="text-sm text-slate-300 leading-relaxed lang-txt" data-zh="打破語言屏障,內建多國語系本土化,讓正念拓展無國界。" data-en="Dissolves borders. Built-in global localizations bring mindfulness to a worldwide scale without frictions.">打破語言屏障,內建多國語系本土化,讓正念拓展無國界。</p>
 </div>
 <div class="p-6 glass-card rounded-2xl">
-<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt"
-data-zh="10. 察覺系統" data-en="10. Advanced
-Awareness System">10. 察覺系統</h3>
-<p class="text-sm text-slate-300 leading-relaxed
-lang-txt" data-zh="偵測當下疲勞值是否過載,並解碼心情
-狀態(喜、怒、哀、樂、.....)。
-" data-en="Senses if fatigue is
-peaking and decodes instant somatic expressions (joy,
-sorrow, stress, bliss).">偵測當下疲勞值是否過載,並解碼
-心情狀態(喜、怒、哀、樂、.....)。</p>
+<h3 class="font-bold text-blue-300 text-lg mb-2 lang-txt" data-zh="10. 察覺系統" data-en="10. Advanced Awareness System">10. 察覺系統</h3>
+<p class="text-sm text-slate-300 leading-relaxed lang-txt" data-zh="偵測當下疲勞值是否過載,並解碼心情狀態(喜、怒、哀、樂、.....)。" data-en="Senses if fatigue is peaking and decodes instant somatic expressions (joy, sorrow, stress, bliss).">偵測當下疲勞值是否過載,並解碼心情狀態(喜、怒、哀、樂、.....)。</p>
 </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8
-mb-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
 <div class="glass-card rounded-2xl p-6 shadow-sm">
-<h4 class="text-lg font-bold mb-2 text-blue lang-txt"
-data-zh="電影級視覺饗宴" data-en="Cinematic Visual
-Feast">電影級視覺饗宴</h4>
-<p class="text-sm text-slate-300 leading-relaxed
-lang-txt" data-zh="捨棄傳統平面的UI,採用霓虹美學與動
-態深度效果,創造出極具現代感的「數位禪意」。"
-data-en="Moving away from traditional flat UI, we
-embrace neon aesthetics and dynamic depth effects to
-create a highly modern 'Digital Zen'">捨棄傳統平面的UI,
-採用霓虹美學與動態深度效果,創造出極具現代感的「數位
-禪意」。</p>
+<h4 class="text-lg font-bold mb-2 text-blue lang-txt" data-zh="電影級視覺饗宴" data-en="Cinematic Visual Feast">電影級視覺饗宴</h4>
+<p class="text-sm text-slate-300 leading-relaxed lang-txt" data-zh="捨棄傳統平面的UI,採用霓虹美學與動態深度效果,創造出極具現代感的「數位禪意」。" data-en="Moving away from traditional flat UI, we embrace neon aesthetics and dynamic depth effects to create a highly modern 'Digital Zen'">捨棄傳統平面的UI,採用霓虹美學與動態深度效果,創造出極具現代感的「數位禪意」。</p>
 </div>
 <div class="glass-card rounded-2xl p-6 shadow-sm">
-<h4 class="text-lg font-bold mb-2 text-blue lang-txt"
-data-zh="定製貝茲曲線動畫" data-en="Custom Bézier
-Animation">定製貝茲曲線動畫</h4>
-<p class="text-sm text-slate-300 leading-relaxed
-lang-txt" data-zh="視覺動態並非機械運作,而是透過精密
-的數學曲線模擬肺部擴張的流暢美感,讓視覺引導成為一
-種美的享受。" data-en="Visual dynamics are not
-mechanical; they mimic the fluid beauty of lung
-expansion via precise mathematical curves, making
-visual guidance a joyful art.">視覺動態並非機械運作,而
-是透過精密的數學曲線模擬肺部擴張的流暢美感,讓視覺
-引導成為一種美的享受。</p>
+<h4 class="text-lg font-bold mb-2 text-blue lang-txt" data-zh="定製貝茲曲線動畫" data-en="Custom Bézier Animation">定製貝茲曲線動畫</h4>
+<p class="text-sm text-slate-300 leading-relaxed lang-txt" data-zh="視覺動態並非機械運作,而是透過精密的數學曲線模擬肺部擴張的流暢美感,讓視覺引導成為一種美的享受。" data-en="Visual dynamics are not mechanical; they mimic the fluid beauty of lung expansion via precise mathematical curves, making visual guidance a joyful art.">視覺動態並非機械運作,而是透過精密的數學曲線模擬肺部擴張的流暢美感,讓視覺引導成為一種美的享受。</p>
 </div>
 <div class="glass-card rounded-2xl p-6 shadow-sm">
-<h4 class="text-lg font-bold mb-2 text-blue lang-txt"
-data-zh="精確狀態機引擎" data-en="Precise State
-Machine Engine">精確狀態機引擎</h4>
-<p class="text-sm text-slate-300 leading-relaxed
-lang-txt" data-zh="核心計時器精確控制「吸、屏、呼」的每
-一毫秒,提供高強度練習,助您在壓力下保持巔峰專注。"
-data-en="The core timer strictly tracks every millisecond
-of inhaling, holding, and exhaling, delivering precise
-control to help you lock in peak focus.">核心計時器精確
-控制「吸、屏、呼」的每一毫秒,提供高強度練習,助您在壓力
-下保持巔峰專注。</p>
+<h4 class="text-lg font-bold mb-2 text-blue lang-txt" data-zh="精確狀態機引擎" data-en="Precise State Machine Engine">精確狀態機引擎</h4>
+<p class="text-sm text-slate-300 leading-relaxed lang-txt" data-zh="核心計時器精確控制「吸、屏、呼」的每一毫秒,提供高強度練習,助您在壓力下保持巔峰專注。" data-en="The core timer strictly tracks every millisecond of inhaling, holding, and exhaling, delivering precise control to help you lock in peak focus.">核心計時器精確控制「吸、屏、呼」的每一毫秒,提供高強度練習,助您在壓力下保持巔峰專注。</p>
 </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12
-items-center">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 <div class="space-y-6">
-<div class="inline-block bg-indigo-950 text-indigo-300
-px-3 py-1 rounded-full text-sm font-bold lang-txt"
-data-zh="最新功能特色" data-en="Latest Feature
-Spotlight">最新功能特色</div>
-<h3 class="text-2xl font-bold text-blue lang-txt"
-data-zh="星塵漂浮呼吸 (Starry Drift Breathing)"
-data-en="Starry Drift Breathing">星塵漂浮呼吸 (Starry
-Drift Breathing)</h3>
-<p class="text-slate-300 leading-relaxed lang-txt"
-data-zh="這是專為創造「入眠氛圍」設計的最新視覺引導
-功能。透過星塵般的動態視覺與直觀的按鈕回饋,使用者能
-在極致的美感中重拾節奏,快速沉澱大腦干擾,滑入平穩舒
-適的專注或深層睡眠狀態。" data-en="Specially designed
-to curate an exquisite 'atmosphere for sleep.' Through
-stardust-like visual flows and intuitive button feedback,
-users can effortlessly ground their breath rhythm, clear
-noise, and slide smoothly into deep sleep or absolute
-focus.">
-這是專為創造「入眠氛圍」設計的最新視覺引導功能。透過
-星塵般的動態視覺與直觀的按鈕回饋,使用者能在極致的
-美感中重拾節奏,快速沉澱大腦干擾,滑入平穩舒適的專注
-或深層睡眠狀態。
+<div class="inline-block bg-indigo-950 text-indigo-300 px-3 py-1 rounded-full text-sm font-bold lang-txt" data-zh="最新功能特色" data-en="Latest Feature Spotlight">最新功能特色</div>
+<h3 class="text-2xl font-bold text-blue lang-txt" data-zh="星塵漂浮呼吸 (Starry Drift Breathing)" data-en="Starry Drift Breathing">星塵漂浮呼吸 (Starry Drift Breathing)</h3>
+<p class="text-slate-300 leading-relaxed lang-txt" data-zh="這是專為創造「入眠氛圍」設計的最新視覺引導功能。透過星塵般的動態視覺與直觀的按鈕回饋,使用者能在極致的美感中重拾節奏,快速沉澱大腦干擾,滑入平穩舒適的專注或深層睡眠狀態。" data-en="Specially designed to curate an exquisite 'atmosphere for sleep.' Through stardust-like visual flows and intuitive button feedback, users can effortlessly ground their breath rhythm, clear noise, and slide smoothly into deep sleep or absolute focus.">
+這是專為創造「入眠氛圍」設計的最新視覺引導功能。透過星塵般的動態視覺與直觀的按鈕回饋,使用者能在極致的美感中重拾節奏,快速沉澱大腦干擾,滑入平穩舒適的專注或深層睡眠狀態。
 </p>
 </div>
 <div class="flex justify-center">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/%E6%98%9F%E8%BE%B
-0%E6%BC%82%E6%B5%AE%E5%91%BC%E5%90%
-B8%E6%B3%95.jpeg" class="content-img shadow-2xl
-border border-purple-900/40" alt="星塵漂浮呼吸">
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/%E6%98%9F%E8%BE%B0%E6%BC%82%E6%B5%AE%E5%91%BC%E5%90%B8%E6%B3%95.jpeg" class="content-img shadow-2xl border border-purple-900/40" alt="星塵漂浮呼吸">
 </div>
 </div>
 </section>
-<section class="py-16 bg-black/40 backdrop-blur-sm
-border-y border-purple-900/40 px-6">
+<section class="py-16 bg-black/40 backdrop-blur-sm border-y border-purple-900/40 px-6">
 <div class="max-w-6xl mx-auto text-center">
-<h2 class="text-3xl font-bold text-blue-400 mb-2
-lang-txt" id="occasions-title" data-zh="呼吸練習能夠運用
-的時機與各種情緒上" data-en="Applicable Scenarios,
-Emotions & Life Moments">呼吸練習能夠運用的時機與
-各種情緒上</h2>
-<div class="w-24 h-1 bg-gradient-to-r from-blue-500
-to-cyan-400 mx-auto mb-10 rounded-full"></div>
-<div class="flex flex-wrap justify-center gap-3 max-w-5xl
-mx-auto mb-12">
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="大腦重啟"
-data-en="Brain Reboot">大腦重啟</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="會議前"
-data-en="Before Meetings">會議前</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="考試前"
-data-en="Before Exams">考試前</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="情緒失控"
-data-en="Emotional Crisis">情緒失控</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="飲酒後"
-data-en="Post-Drinking">飲酒後</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="健身後"
-data-en="Post-Workout">健身後</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="騎單車後"
-data-en="Post-Cycling">騎單車後</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="慢跑後"
-data-en="Post-Jogging">慢跑後</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="薄荷的感覺"
-data-en="Peppermint Sensation">薄荷的感覺</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="入眠氛圍"
-data-en="Sleep Atmosphere">入眠氛圍</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="伴侶見面時"
-data-en="Meeting Partners">伴侶見面時</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="深層放鬆"
-data-en="Deep Relaxation">深層放鬆</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="風暴後的寧靜"
-data-en="Calm After the Storm">風暴後的寧靜</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="海潮後的節奏"
-data-en="Rhythm After Tides">海潮後的節奏</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="開會前"
-data-en="Pre-Conference">開會前</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="面試前"
-data-en="Before Interviews">面試前</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="休息模式"
-data-en="Rest Mode">休息模式</span>
-<span class="bg-blue-950/60 text-blue-300 px-4 py-2
-rounded-full text-sm font-medium border
-border-blue-500/30 lang-txt" data-zh="高強度腦力工作後
-" data-en="Post-Intense Cognitive Work">高強度腦力工
-作後</span>
+<h2 class="text-3xl font-bold text-blue-400 mb-2 lang-txt" id="occasions-title" data-zh="呼吸練習能夠運用的時機與各種情緒上" data-en="Applicable Scenarios, Emotions & Life Moments">呼吸練習能夠運用的時機與各種情緒上</h2>
+<div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto mb-10 rounded-full"></div>
+<div class="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto mb-12">
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="大腦重啟" data-en="Brain Reboot">大腦重啟</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="會議前" data-en="Before Meetings">會議前</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="考試前" data-en="Before Exams">考試前</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="情緒失控" data-en="Emotional Crisis">情緒失控</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="飲酒後" data-en="Post-Drinking">飲酒後</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="健身後" data-en="Post-Workout">健身後</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="騎單車後" data-en="Post-Cycling">騎單車後</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="慢跑後" data-en="Post-Jogging">慢跑後</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="薄荷的感覺" data-en="Peppermint Sensation">薄荷的感覺</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="入眠氛圍" data-en="Sleep Atmosphere">入眠氛圍</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="伴侶見面時" data-en="Meeting Partners">伴侶見面時</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="深層放鬆" data-en="Deep Relaxation">深層放鬆</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="風暴後的寧靜" data-en="Calm After the Storm">風暴後的寧靜</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="海潮後的節奏" data-en="Rhythm After Tides">海潮後的節奏</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="開會前" data-en="Pre-Conference">開會前</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="面試前" data-en="Before Interviews">面試前</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="休息模式" data-en="Rest Mode">休息模式</span>
+<span class="bg-blue-950/60 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 lang-txt" data-zh="高強度腦力工作後" data-en="Post-Intense Cognitive Work">高強度腦力工作後</span>
 </div>
 <div class="flex justify-center">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/%E5%91%BC%E5%90%B
-8%E6%87%89%E7%94%A8%E6%99%82%E6%A9%9
-F%E8%88%87%E5%A0%B4%E6%99%AF.jpeg" alt="呼
-吸場景應用時機">
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/%E5%91%BC%E5%90%B8%E6%87%89%E7%94%A8%E6%99%82%E6%A9%9F%E8%88%87%E5%A0%B4%E6%99%AF.jpeg" alt="呼吸場景應用時機">
 </div>
 </div>
 </section>
-<section class="py-16 bg-gradient-to-r from-blue-950
-via-slate-900 to-emerald-950/60 border-y
-border-blue-900/30 px-6">
+<section class="py-16 bg-gradient-to-r from-blue-950 via-slate-900 to-emerald-950/60 border-y border-blue-900/30 px-6">
 <div class="max-w-5xl mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12
-items-center">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 <div class="space-y-6">
-<h2 class="text-2xl md:text-3xl font-bold text-blue
-lang-txt" data-zh="【察覺系統:判斷疲勞的程度，捕捉臉部
-瞬間的表情。】" data-en="[Perception system: It judges
-the degree of fatigue and captures fleeting facial
-expressions.]">【察覺系統:判斷疲勞的程度，捕捉臉部瞬
-間的表情。】</h2>
-<p class="text-slate-300 leading-relaxed font-medium
-lang-txt" data-zh="想知道你現在的「疲勞程度」嗎？精神
-狀態如何?透過獨家的 Face掃描感測技術，這不是醫療檢
-測，而是一場與自己的趣味對話：
-" data-en="Want to
-decipher your current 'fatigue level'? Powered by our
-custom bio-sensing concepts (Note: Not for medical
-diagnostics, but an interactive soul dialogue), Zenith
-helps you ground yourself:">
-想知道你現在的「疲勞程度」嗎？精神狀態如何?透過獨家
-的 Face掃描感測技術，這不是醫療檢測，而是一場與自己
-的趣味對話：
+<h2 class="text-2xl md:text-3xl font-bold text-blue lang-txt" data-zh="【察覺系統:判斷疲勞的程度，捕捉臉部瞬間的表情。】" data-en="[Perception system: It judges the degree of fatigue and captures fleeting facial expressions.]">【察覺系統:判斷疲勞的程度，捕捉臉部瞬間的表情。】</h2>
+<p class="text-slate-300 leading-relaxed font-medium lang-txt" data-zh="想知道你現在的「疲勞程度」嗎？精神狀態如何?透過獨家的 Face掃描感測技術，這不是醫療檢測，而是一場與自己的趣味對話：" data-en="Want to decipher your current 'fatigue level'? Powered by our custom bio-sensing concepts (Note: Not for medical diagnostics, but an interactive soul dialogue), Zenith helps you ground yourself:">
+想知道你現在的「疲勞程度」嗎？精神狀態如何?透過獨家的 Face掃描感測技術，這不是醫療檢測，而是一場與自己的趣味對話：
 </p>
 <ul class="space-y-3 text-sm text-slate-300">
 <li class="flex items-start gap-2">
 <span class="text-blue-400 font-bold"></span>
-<p class="leading-relaxed"><strong class="lang-txt"
-data-zh="即時掃描:" data-en="Instant Scan: ">即時掃描:
-</strong><span class="lang-txt" data-zh="透過鏡頭觀察
-面部細微的波長,捕捉你當下的心情氛圍。"
-data-en="Observes subtle facial color modulations via
-lens to extract immediate mood micro-waves.">透過鏡頭
-觀察面部細微的波長,捕捉你當下的心情氛圍。
-</span></p>
+<p class="leading-relaxed"><strong class="lang-txt" data-zh="即時掃描:" data-en="Instant Scan: ">即時掃描:</strong><span class="lang-txt" data-zh="透過鏡頭觀察面部細微的波長,捕捉你當下的心情氛圍。" data-en="Observes subtle facial color modulations via lens to extract immediate mood micro-waves.">透過鏡頭觀察面部細微的波長,捕捉你當下的心情氛圍。</span></p>
 </li>
 <li class="flex items-start gap-2">
 <span class="text-blue-400 font-bold"></span>
-<p class="leading-relaxed"><strong class="lang-txt"
-data-zh="表情判斷:" data-en="Facial expression
-judgment: ">表情判斷:</strong><span class="lang-txt"
-data-zh="怒氣值還是平靜的「雲端波動」、開心值、傷心、
-厭惡、驚訝、恐懼、輕蔑的表情，系統會捕捉你的瞬間表情"
-data-en="Whether your anger level fluctuates calmly
-(like a cloud), or you express happiness, sadness,
-disgust, surprise, fear, or contempt, the system will
-capture your fleeting facial expressions.">怒氣值還是平
-靜的「雲端波動」、開心值、傷心、厭惡、驚訝、恐懼、輕蔑
-的表情，系統會捕捉你的瞬間表情</span></p>
+<p class="leading-relaxed"><strong class="lang-txt" data-zh="表情判斷:" data-en="Facial expression judgment: ">表情判斷:</strong><span class="lang-txt" data-zh="怒氣值還是平靜的「雲端波動」、開心值、傷心、厭惡、驚訝、恐懼、輕蔑的表情，系統會捕捉你的瞬間表情" data-en="Whether your anger level fluctuates calmly (like a cloud), or you express happiness, sadness, disgust, surprise, fear, or contempt, the system will capture your fleeting facial expressions.">怒氣值還是平靜的「雲端波動」、開心值、傷心、厭惡、驚訝、恐懼、輕蔑的表情，系統會捕捉你的瞬間表情</span></p>
 </li>
 <li class="flex items-start gap-2">
 <span class="text-blue-400 font-bold">.</span>
-<p class="leading-relaxed"><strong class="lang-txt"
-data-zh="專屬引導:" data-en="Bespoke Navigation: ">專
-屬引導:</strong><span class="lang-txt" data-zh="根據察
-覺到的狀態,自動解鎖最適合你當下頻率的呼吸法,助你快
-速找回內在平衡。" data-en="Based on detected energy
-signatures, it dynamically unlocks tailored breath
-techniques to recalibrate your core balance.">根據察覺
-到的狀態,自動解鎖最適合你當下頻率的呼吸法,助你快速
-找回內在平衡。</span></p>
+<p class="leading-relaxed"><strong class="lang-txt" data-zh="專屬引導:" data-en="Bespoke Navigation: ">專屬引導:</strong><span class="lang-txt" data-zh="根據察覺到的狀態,自動解鎖最適合你當下頻率的呼吸法,助你快速找回內在平衡。" data-en="Based on detected energy signatures, it dynamically unlocks tailored breath techniques to recalibrate your core balance.">根據察覺到的狀態,自動解鎖最適合你當下頻率的呼吸法,助你快速找回內在平衡。</span></p>
 </li>
 </ul>
 </div>
 <div class="flex justify-center">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/%E5%AF%9F%E8%A6%B
-A%E7%B3%BB%E7%B5%B1.png" class="content-img
-shadow-2xl border border-blue-900/40" alt="察覺系統">
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/%E5%AF%9F%E8%A6%BA%E7%B3%BB%E7%B5%B1.png" class="content-img shadow-2xl border border-blue-900/40" alt="察覺系統">
 </div>
 </div>
 </div>
 </section>
-<section class="py-20 px-6 philosophy-bg border-b
-border-blue-900/40 text-center">
+<section class="py-20 px-6 philosophy-bg border-b border-blue-900/40 text-center">
 <div class="max-w-4xl mx-auto">
-<h2 class="text-2xl md:text-4xl font-extrabold
-text-transparent bg-clip-text bg-gradient-to-r
-from-blue-400 via-fuchsia-300 to-cyan-300 mb-6
-tracking-wide neon-glow lang-txt" data-zh="「真正的強大,
-從掌控呼吸開始」" data-en="&quot;True power begins
-with mastering your breath.&quot;">「真正的強大,從掌控
-呼吸開始」</h2>
-<p class="text-slate-300 text-lg md:text-xl font-medium
-leading-relaxed max-w-4xl mx-auto mb-10 lang-txt"
-data-zh="「變強」不只是體能的堆疊,更是對內在節奏的絕
-對掌控。Zenith 誕生的使命,是將枯燥的呼吸練習轉化為一
-場視覺與聽覺的藝術盛宴。我們認為,當練習變成一種享受
-時,進步將無聲無息地發生。透過如電影般深邃的「彩色鑲
-嵌玻璃」視覺藝術,我們在數位世界中為您築起一座修煉強
-大的聖殿。在這裡,每一次吸氣都是能量的累積,每一次吐
-氣都是對極限的擴張,是一款高品質的舒壓藝術品。"
-data-en="Becoming stronger is not merely stacking
-physical volume, but masterfully owning your internal
-tempo. Zenith's absolute mission is to transmute
-standard breathing exercises into a spectacular visual
-and auditory odyssey. We believe when practice turns
-into pure enjoyment, optimization occurs silently.
-Through deep, church-like 'Stained Glass' cinematic
-visual art, we construct a sanctuary for refining power
-within the digital cosmos. Every inhalation accumulates
-power; every exhalation expands limits. A premium
-stress-relief artwork.">
-「變強」不只是體能的堆疊,更是對內在節奏的絕對掌控。
-Zenith 誕生的使命,是將枯燥的呼吸練習轉化為一場視覺
-與聽覺的藝術盛宴。我們認為,當練習變成一種享受時,進
-步將無聲無息地發生。透過如電影般深邃的「彩色鑲嵌玻
-璃」視覺藝術,我們在數位世界中為您築起一座修煉強大的
-聖殿。在這裡,每一次吸氣都是能量的累積,每一次吐氣都
-是對極限的擴張,是一款高品質的舒壓藝術品。
+<h2 class="text-2xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-fuchsia-300 to-cyan-300 mb-6 tracking-wide neon-glow lang-txt" data-zh="「真正的強大,從掌控呼吸開始」" data-en="&quot;True power begins with mastering your breath.&quot;">「真正的強大,從掌控呼吸開始」</h2>
+<p class="text-slate-300 text-lg md:text-xl font-medium leading-relaxed max-w-4xl mx-auto mb-10 lang-txt" data-zh="「變強」不只是體能的堆疊,更是對內在節奏的絕對掌控。Zenith 誕生的使命,是將枯燥的呼吸練習轉化為一場視覺與聽覺的藝術盛宴。我們認為,當練習變成一種享受時,進步將無聲無息地發生。透過如電影般深邃的「彩色鑲嵌玻璃」視覺藝術,我們在數位世界中為您築起一座修煉強大的聖殿。在這裡,每一次吸氣都是能量的累積,每一次吐氣都是對極限的擴張,是一款高品質的舒壓藝術品。" data-en="Becoming stronger is not merely stacking physical volume, but masterfully owning your internal tempo. Zenith's absolute mission is to transmute standard breathing exercises into a spectacular visual and auditory odyssey. We believe when practice turns into pure enjoyment, optimization occurs silently. Through deep, church-like 'Stained Glass' cinematic visual art, we construct a sanctuary for refining power within the digital cosmos. Every inhalation accumulates power; every exhalation expands limits. A premium stress-relief artwork.">
+「變強」不只是體能的堆疊,更是對內在節奏的絕對掌控。Zenith 誕生的使命,是將枯燥的呼吸練習轉化為一場視覺與聽覺的藝術盛宴。我們認為,當練習變成一種享受時,進步將無聲無息地發生。透過如電影般深邃的「彩色鑲嵌玻璃」視覺藝術,我們在數位世界中為您築起一座修煉強大的聖殿。在這裡,每一次吸氣都是能量的累積,每一次吐氣都是對極限的擴張,是一款高品質的舒壓藝術品。
 </p>
 <div class="flex justify-center mb-6">
-<img
-src="https://raw.githubusercontent.com/Paul-750-k/Web
-site_Picture/refs/heads/main/%E6%9C%80%E5%BC%
-B7%E5%91%BC%E5%90%B8.png" alt="最強呼吸">
+<img src="https://raw.githubusercontent.com/Paul-750-k/Website_Picture/refs/heads/main/%E6%9C%80%E5%BC%B7%E5%91%BC%E5%90%B8.png" alt="最強呼吸">
 </div>
 </div>
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,
-initial-scale=1.0">
-<title>帳號系統與訂閱中心</title>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- FontAwesome 圖示庫 -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesom
-e/6.4.0/css/all.min.css">
-<!-- Supabase JS SDK -->
-<script
-src="https://cdn.jsdelivr.net/npm/@supabase/supabase-j
-s@2"></script>
-<style>
-.btn-gradient-primary {
-background: linear-[#EAB308], #D97706);
-background-image: linear-gradient(to right,
-#EAB308, #D97706);
-}
-.btn-gradient-secondary {
-background-image: linear-gradient(to right,
-#3B82F6, #1D4ED8);
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>帳號系統與訂閱中心</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome 圖示庫 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Supabase JS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    .btn-gradient-primary {
+      background: linear-[#EAB308], #D97706);
+      background-image: linear-gradient(to right, #EAB308, #D97706);
+    }
+    .btn-gradient-secondary {
+      background-image: linear-gradient(to right, #3B82F6, #1D4ED8);
+    }
+  </style>
 </head>
-<body class="bg-gray-950 text-white min-h-screen flex
-items-center justify-center">
-<section id="auth-section" class="py-16 px-6 max-w-6xl
-mx-auto flex flex-col items-center relative w-full">
-<div class="absolute w-[400px] h-[400px]
-bg-amber-500/5 blur-[120px] rounded-full
-pointer-events-none"></div>
-<h2 class="text-3xl font-bold text-center mb-2
-text-[#EAB308] tracking-widest lang-txt" data-zh="任何
-信箱都可註冊" data-en="Registration is possible with
-any email address.">任何信箱都可註冊</h2>
-<div class="w-20 h-1 bg-gradient-to-r from-[#EAB308]
-to-amber-500 mb-12 rounded-full"></div>
-<div id="auth-panel" class="w-full max-w-md
-bg-[#111827]/90 backdrop-blur-2xl rounded-[40px]
-border border-gray-800/60 p-8 relative shadow-2xl
-overflow-hidden min-h-[940px] flex flex-col
-justify-between text-white">
-<!-- 頂部控制欄 -->
-<div class="flex items-center justify-between w-full
-mb-4 relative z-10">
-<button onclick="toggleLang()" id="lang-btn"
-class="text-xs text-gray-400 bg-gray-900/60 px-3 py-1.5
-rounded-full border border-gray-800 hover:bg-gray-700
-transition font-medium cursor-pointer">
-<i class="fa-solid fa-globe mr-1"></i>EN
-</button>
-<div id="top-right-area" class="flex justify-end
-items-center max-w-[180px]">
-<button id="close-btn" onclick="hideAuthPanel()"
-class="text-gray-300 text-xs bg-gray-800/80 px-4 py-1.5
-rounded-full border border-gray-700/50
-hover:bg-gray-700 transition font-medium
-cursor-pointer">關閉</button>
-</div>
-</div>
-<!-- 標題區 -->
-<div class="flex flex-col items-center justify-center
-mb-6">
-<div class="relative text-[#EAB308] text-5xl mb-2
-opacity-90">
-<i class="fa-solid fa-circle-user"></i>
-<div class="absolute bottom-0 left-0 text-lg
-bg-[#111827] rounded-full p-0.5">
-<i class="fa-solid fa-circle-check
-text-[#EAB308]"></i>
-</div>
-</div>
-<p id="sub-title-label" class="text-xs text-gray-400
-tracking-wider font-light">帳號系統登入</p>
-<h1 id="main-title-label" class="text-2xl font-bold
-text-[#EAB308] tracking-widest mt-1">建立新帳號</h1>
-</div>
-<!-- 1. 註冊面板 -->
-<div id="register-panel" class="space-y-4 flex-grow
-flex flex-col justify-start">
-<div class="space-y-3.5">
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex
-items-center pl-4 text-[#EAB308] text-lg"><i
-class="fa-solid fa-user"></i></span>
-<input type="text" id="reg-name" placeholder="姓
-名或暱稱" class="w-full bg-[#F3F4F6] text-gray-900
-pl-12 pr-4 py-3.5 rounded-xl font-medium
-placeholder-gray-400 focus:outline-none focus:ring-2
-focus:ring-blue-500 transition-all">
-</div>
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex
-items-center pl-4 text-[#EAB308] text-lg"><i
-class="fa-solid fa-calendar-days"></i></span>
-<select id="reg-age" class="w-full bg-[#F3F4F6]
-text-gray-900 pl-12 pr-10 py-3.5 rounded-xl font-medium
-focus:outline-none focus:ring-2 focus:ring-blue-500
-appearance-none cursor-pointer">
-<option value="">選擇年齡</option>
-</select>
-<span class="absolute inset-y-0 right-0 flex
-items-center pr-4 text-gray-500 pointer-events-none"><i
-class="fa-solid fa-chevron-down text-sm"></i></span>
-</div>
-<button onclick="handleAppleLogin()" class="w-full
-bg-black hover:bg-gray-900 text-white py-3.5 rounded-xl
-font-semibold flex items-center justify-center gap-2
-border border-gray-800 transition active:scale-[0.99]
-cursor-pointer">
-<i class="fa-brands fa-apple text-xl"></i> <span
-id="text-apple-login">使用 Apple 登入</span>
-</button>
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex
-items-center pl-4 text-[#EAB308] text-lg"><i
-class="fa-solid fa-envelope"></i></span>
-<input type="email" id="reg-email" placeholder="
-電子郵件" class="w-full bg-[#F3F4F6] text-gray-900
-pl-12 pr-4 py-3.5 rounded-xl font-medium
-placeholder-gray-400 focus:outline-none focus:ring-2
-focus:ring-blue-500 transition-all">
-</div>
-<div class="space-y-2.5">
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex
-items-center pl-4 text-[#EAB308] text-lg"><i
-class="fa-solid fa-lock"></i></span>
-<input type="password" id="reg-password"
-placeholder="密碼"
-oninput="validatePasswordLive('reg')" class="w-full
-bg-[#F3F4F6] text-gray-900 pl-12 pr-12 py-3.5
-rounded-xl font-mono focus:outline-none focus:ring-2
-focus:ring-blue-500 transition-all tracking-widest">
-<button
-onclick="togglePasswordVisibility('reg-password')"
-class="absolute inset-y-0 right-0 flex items-center pr-4
-text-gray-400 hover:text-gray-600 transition-colors z-10
-cursor-pointer">
-<i class="fa-solid fa-eye text-lg"
-id="eye-reg-password"></i>
-</button>
-</div>
-<div class="space-y-1.5 pt-1">
-<div class="flex justify-between items-center
-text-xs text-gray-300 px-0.5">
-<span>密碼強度</span>
-<span id="reg-strength-label" class="font-bold
-tracking-wide transition-colors duration-200"></span>
-</div>
-<div class="h-1.5 w-full bg-gray-800 rounded-full
-overflow-hidden">
-<div id="reg-strength-bar" class="h-full w-0
-bg-red-500 transition-all duration-300"></div>
-</div>
-</div>
-<div class="flex flex-col gap-2 text-xs
-text-gray-500 pt-1.5 pl-0.5">
-<div id="reg-req-len" class="flex items-center
-gap-2 transition-colors duration-200"><i
-class="fa-regular fa-circle text-sm"></i><span
-id="lbl-req-len">至少8碼</span></div>
-<div id="reg-req-up" class="flex items-center
-gap-2 transition-colors duration-200"><i
-class="fa-regular fa-circle text-sm"></i><span
-id="lbl-req-up">至少包含一個大寫英文字母
-(A-Z)</span></div>
-<div id="reg-req-low" class="flex items-center
-gap-2 transition-colors duration-200"><i
-class="fa-regular fa-circle text-sm"></i><span
-id="lbl-req-low">至少包含一個小寫英文字母
-(a-z)</span></div>
-<div id="reg-req-num" class="flex items-center
-gap-2 transition-colors duration-200"><i
-class="fa-regular fa-circle text-sm"></i><span
-id="lbl-req-num">至少包含一個數字(0-9)</span></div>
-<div id="reg-req-spec" class="flex items-center
-gap-2 transition-colors duration-200"><i
-class="fa-regular fa-circle text-sm"></i><span
-id="lbl-req-spec">至少包含一個特殊符號(如@、#、$、%、
-^
-、&、*)</span></div>
-</div>
-</div>
-</div>
-<div class="space-y-3 pt-4">
-<button onclick="handleEmailRegister()"
-id="btn-register-now" class="w-full btn-gradient-primary
-hover:opacity-95 text-white font-bold py-4 rounded-xl
-shadow-lg transition active:scale-[0.99] tracking-wide
-cursor-pointer">立即註冊</button>
-<button onclick="switchPanel('login-panel')"
-id="btn-back-to-login" class="w-full
-btn-gradient-secondary hover:opacity-95 text-white py-4
-rounded-xl font-bold transition active:scale-[0.99]
-tracking-wide cursor-pointer">已有帳號?返回登入
-</button>
-</div>
-<div class="flex justify-between items-center pt-4
-mt-auto">
-<span id="footer-or-label" class="text-base
-font-medium text-white tracking-wider">或者</span>
-<button onclick="switchPanel('forgot-panel')"
-id="footer-forgot-btn" class="bg-gray-800/80 border
-border-gray-700/60 text-gray-300 px-5 py-2.5 rounded-xl
-text-sm font-medium hover:text-white hover:bg-gray-700
-transition shadow-sm cursor-pointer">忘記密碼?
-</button>
-</div>
-</div>
-<!-- 2. 登入面板 -->
-<div id="login-panel" class="space-y-5 flex-grow flex
-flex-col justify-start hidden">
-<div class="space-y-4">
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex
-items-center pl-4 text-[#EAB308] text-lg"><i
-class="fa-solid fa-envelope"></i></span>
-<input type="email" id="login-email" placeholder="
-電子郵件" class="w-full bg-[#F3F4F6] text-gray-900
-pl-12 pr-4 py-3.5 rounded-xl font-medium
-focus:outline-none focus:ring-2 focus:ring-blue-500">
-</div>
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex
-items-center pl-4 text-[#EAB308] text-lg"><i
-class="fa-solid fa-lock"></i></span>
-<input type="password" id="login-password"
-placeholder="密碼" class="w-full bg-[#F3F4F6]
-text-gray-900 pl-12 pr-12 py-3.5 rounded-xl font-mono
-focus:outline-none focus:ring-2 focus:ring-blue-500
-tracking-widest">
-<button
-onclick="togglePasswordVisibility('login-password')"
-class="absolute inset-y-0 right-0 flex items-center pr-4
-text-gray-400 hover:text-gray-600 z-10 cursor-pointer">
-<i class="fa-solid fa-eye text-lg"
-id="eye-login-password"></i>
-</button>
-</div>
-</div>
-<button onclick="handleEmailLogin()" id="btn-login"
-class="w-full btn-gradient-primary hover:opacity-95
-text-white font-bold py-4 rounded-xl shadow-lg transition
-tracking-wide mt-2 cursor-pointer">登入</button>
-<button onclick="switchPanel('register-panel')"
-id="btn-goto-register" class="w-full
-btn-gradient-secondary text-white py-4 rounded-xl
-font-bold transition tracking-wide cursor-pointer">沒有帳
-號?前往註冊</button>
-</div>
-<!-- 3. 忘記密碼面板 -->
-<div id="forgot-panel" class="space-y-5 flex-grow flex
-flex-col justify-start hidden">
-<div id="otp-step-1" class="space-y-5">
-<p id="text-otp-step1-hint" class="text-sm
-text-gray-400 text-center leading-relaxed">請輸入您的電
-子郵件,我們將發送驗證重設連結至您的信箱。</p>
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex
-items-center pl-4 text-[#EAB308] text-lg"><i
-class="fa-solid fa-envelope"></i></span>
-<input type="email" id="forgot-email"
-placeholder="電子郵件" class="w-full bg-[#F3F4F6]
-text-gray-900 pl-12 pr-4 py-3.5 rounded-xl font-medium
-focus:outline-none focus:ring-2 focus:ring-blue-500">
-</div>
-<button onclick="sendResetOTP()"
-id="btn-send-otp" class="w-full btn-gradient-primary
-hover:opacity-95 text-white font-bold py-4 rounded-xl
-transition tracking-wide cursor-pointer">發送驗證碼
-</button>
-</div>
-<div id="otp-step-2" class="space-y-4 hidden">
-<p id="text-otp-step2-hint" class="text-sm
-text-gray-400 text-center leading-relaxed">驗證碼已發
-送!請輸入 6~8 位數驗證碼與高強度新密碼。</p>
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex
-items-center pl-4 text-[#EAB308] text-lg"><i
-class="fa-solid fa-key"></i></span>
-<input type="text" id="otp-code" maxlength="8"
-placeholder="6~8 位數驗證碼 (OTP)" class="w-full
-bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl
-tracking-[0.2em] text-center font-bold text-lg
-focus:outline-none focus:ring-2 focus:ring-blue-500">
-</div>
-<div class="space-y-2.5">
-<div class="relative">
-<span class="absolute inset-y-0 left-0 flex
-items-center pl-4 text-[#EAB308] text-lg"><i
-class="fa-solid fa-lock"></i></span>
-<input type="password" id="otp-password"
-placeholder="新密碼"
-oninput="validatePasswordLive('otp')" class="w-full
-bg-[#F3F4F6] text-gray-900 pl-12 pr-12 py-3.5
-rounded-xl font-mono focus:outline-none focus:ring-2
-focus:ring-blue-500 tracking-widest">
-<button
-onclick="togglePasswordVisibility('otp-password')"
-class="absolute inset-y-0 right-0 flex items-center pr-4
-text-gray-400 hover:text-gray-600 z-10 cursor-pointer">
-<i class="fa-solid fa-eye text-lg"
-id="eye-otp-password"></i>
-</button>
-</div>
-<div class="space-y-1.5 pt-1">
-<div class="flex justify-between items-center
-text-xs text-gray-300 px-0.5">
-<span>密碼強度</span>
-<span id="otp-strength-label" class="font-bold
-tracking-wide transition-colors duration-200"></span>
-</div>
-<div class="h-1.5 w-full bg-gray-800 rounded-full
-overflow-hidden">
-<div id="otp-strength-bar" class="h-full w-0
-bg-red-500 transition-all duration-300"></div>
-</div>
-</div>
-</div>
-<button onclick="verifyOTPAndReset()"
-id="btn-confirm-reset" class="w-full btn-gradient-primary
-hover:opacity-95 text-white font-bold py-4 rounded-xl
-transition tracking-wide mt-2 cursor-pointer">確認重設密
-碼</button>
-</div>
-<button onclick="switchPanel('register-panel')"
-id="btn-link-back-login" class="text-gray-400 text-sm
-hover:text-white transition block text-center mt-4
-cursor-pointer"><i class="fa-solid fa-arrow-left
-mr-2"></i>返回註冊面板</button>
-</div>
-<!-- 4. 會員中心與 5 種訂閱方案面板 -->
-<div id="dashboard-panel" class="space-y-5 flex-grow
-flex flex-col justify-start hidden">
-<h1 id="text-member-center" class="text-2xl
-font-bold text-center text-[#EAB308] tracking-wide
-mb-2">會員與訂閱中心</h1>
-<div class="bg-gray-900/80 p-5 rounded-2xl border
-border-gray-800 space-y-2">
-<p id="text-curr-account" class="text-gray-400
-text-sm">目前登入帳號:</p>
-<p id="user-display-email" class="font-mono
-text-blue-400 break-all"></p>
-<p id="text-profile" class="text-gray-400 text-sm
-pt-2">基本資料:</p>
-<p id="user-display-meta" class="text-sm
-text-gray-200"></p>
-</div>
-<!-- Stripe 5 種方案選擇 -->
-<div class="space-y-2 pt-2">
-<p class="text-xs text-gray-400">選擇訂閱方案 (自
-動綁定當前帳號):</p>
-<div class="grid grid-cols-1 gap-2">
-<button onclick="handleSubscribe('plan1')"
-class="w-full bg-amber-500/20 hover:bg-amber-500/30
-border border-amber-500/50 text-amber-300 py-2.5
-rounded-xl text-xs font-bold transition flex
-justify-between px-4 items-center">
-<span>方案 1 (年訂閱)</span><i class="fa-solid
-fa-chevron-right"></i>
-</button>
-<button onclick="handleSubscribe('plan2')"
-class="w-full bg-amber-500/20 hover:bg-amber-500/30
-border border-amber-500/50 text-amber-300 py-2.5
-rounded-xl text-xs font-bold transition flex
-justify-between px-4 items-center">
-<span>方案 2</span><i class="fa-solid
-fa-chevron-right"></i>
-</button>
-<button onclick="handleSubscribe('plan3')"
-class="w-full bg-amber-500/20 hover:bg-amber-500/30
-border border-amber-500/50 text-amber-300 py-2.5
-rounded-xl text-xs font-bold transition flex
-justify-between px-4 items-center">
-<span>方案 3</span><i class="fa-solid
-fa-chevron-right"></i>
-</button>
-<button onclick="handleSubscribe('plan4')"
-class="w-full bg-amber-500/20 hover:bg-amber-500/30
-border border-amber-500/50 text-amber-300 py-2.5
-rounded-xl text-xs font-bold transition flex
-justify-between px-4 items-center">
-<span>方案 4</span><i class="fa-solid
-fa-chevron-right"></i>
-</button>
-<button onclick="handleSubscribe('plan5')"
-class="w-full bg-amber-500/20 hover:bg-amber-500/30
-border border-amber-500/50 text-amber-300 py-2.5
-rounded-xl text-xs font-bold transition flex
-justify-between px-4 items-center">
-<span>方案 5</span><i class="fa-solid
-fa-chevron-right"></i>
-</button>
-</div>
-</div>
-<button onclick="handleLogout()" id="btn-logout"
-class="w-full bg-gray-800 hover:bg-gray-700 text-white
-font-medium py-3.5 rounded-xl transition cursor-pointer
-mt-auto">登出帳號</button>
-</div>
-<!-- 頁尾條款區 -->
-<div class="mt-6 space-y-4 w-full">
-<p id="terms-box" class="text-center text-[11px]
-text-gray-500 leading-relaxed px-4">
-<span id="text-terms-prefix">註冊即代表您同意我
-們的 </span>
-<a
-href="https://paul-750-k.github.io/Account-System-Terms
--of-Service/#zh-tw" target="_blank"
-class="text-[#EAB308] underline hover:text-yellow-500
-font-medium">服務條款</a>
-<span id="text-and">與</span>
-<a
-href="https://paul-750-k.github.io/-Privacy-Policy/#zh-tw"
-target="_blank" class="text-[#EAB308] underline
-hover:text-yellow-500 font-medium">隱私政策</a>
-</p>
-<div id="danger-zone" class="border-t
-border-red-900/30 pt-4 hidden">
-<button onclick="handleDeleteAccount()"
-id="btn-delete-acc" class="w-full text-red-500
-bg-red-950/20 hover:bg-red-950/40 border
-border-red-900/40 py-2.5 rounded-xl text-xs
-font-semibold tracking-wide transition active:scale-[0.99]
-cursor-pointer">
-<i class="fa-solid fa-trash-can mr-1.5"></i> 永久刪
-除帳號(Delete Account)
-</button>
-</div>
-</div>
-</div>
+<body class="bg-gray-950 text-white min-h-screen flex items-center justify-center">
+
+<section id="auth-section" class="py-16 px-6 max-w-6xl mx-auto flex flex-col items-center relative w-full">
+  <div class="absolute w-[400px] h-[400px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+  
+  <h2 class="text-3xl font-bold text-center mb-2 text-[#EAB308] tracking-widest lang-txt" data-zh="任何信箱都可註冊" data-en="Registration is possible with any email address.">任何信箱都可註冊</h2>
+  <div class="w-20 h-1 bg-gradient-to-r from-[#EAB308] to-amber-500 mb-12 rounded-full"></div>
+
+  <div id="auth-panel" class="w-full max-w-md bg-[#111827]/90 backdrop-blur-2xl rounded-[40px] border border-gray-800/60 p-8 relative shadow-2xl overflow-hidden min-h-[940px] flex flex-col justify-between text-white">
+    
+    <!-- 頂部控制欄 -->
+    <div class="flex items-center justify-between w-full mb-4 relative z-10">
+      <button onclick="toggleLang()" id="lang-btn" class="text-xs text-gray-400 bg-gray-900/60 px-3 py-1.5 rounded-full border border-gray-800 hover:bg-gray-700 transition font-medium cursor-pointer">
+        <i class="fa-solid fa-globe mr-1"></i>EN
+      </button>
+      <div id="top-right-area" class="flex justify-end items-center max-w-[180px]">
+        <button id="close-btn" onclick="hideAuthPanel()" class="text-gray-300 text-xs bg-gray-800/80 px-4 py-1.5 rounded-full border border-gray-700/50 hover:bg-gray-700 transition font-medium cursor-pointer">關閉</button>
+      </div>
+    </div>
+
+    <!-- 標題區 -->
+    <div class="flex flex-col items-center justify-center mb-6">
+      <div class="relative text-[#EAB308] text-5xl mb-2 opacity-90">
+        <i class="fa-solid fa-circle-user"></i>
+        <div class="absolute bottom-0 left-0 text-lg bg-[#111827] rounded-full p-0.5">
+          <i class="fa-solid fa-circle-check text-[#EAB308]"></i>
+        </div>
+      </div>
+      <p id="sub-title-label" class="text-xs text-gray-400 tracking-wider font-light">帳號系統登入</p>
+      <h1 id="main-title-label" class="text-2xl font-bold text-[#EAB308] tracking-widest mt-1">建立新帳號</h1>
+    </div>
+
+    <!-- 1. 註冊面板 -->
+    <div id="register-panel" class="space-y-4 flex-grow flex flex-col justify-start">
+      <div class="space-y-3.5">
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-user"></i></span>
+          <input type="text" id="reg-name" placeholder="姓名或暱稱" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+        </div>
+        
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-calendar-days"></i></span>
+          <select id="reg-age" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-10 py-3.5 rounded-xl font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none cursor-pointer">
+            <option value="">選擇年齡</option>
+          </select>
+          <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500 pointer-events-none"><i class="fa-solid fa-chevron-down text-sm"></i></span>
+        </div>
+
+        <button onclick="handleAppleLogin()" class="w-full bg-black hover:bg-gray-900 text-white py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 border border-gray-800 transition active:scale-[0.99] cursor-pointer">
+          <i class="fa-brands fa-apple text-xl"></i> <span id="text-apple-login">使用 Apple 登入</span>
+        </button>
+
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-envelope"></i></span>
+          <input type="email" id="reg-email" placeholder="電子郵件" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+        </div>
+
+        <div class="space-y-2.5">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-lock"></i></span>
+            <input type="password" id="reg-password" placeholder="密碼" oninput="validatePasswordLive('reg')" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-12 py-3.5 rounded-xl font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all tracking-widest">
+            <button onclick="togglePasswordVisibility('reg-password')" class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-gray-600 transition-colors z-10 cursor-pointer">
+              <i class="fa-solid fa-eye text-lg" id="eye-reg-password"></i>
+            </button>
+          </div>
+
+          <div class="space-y-1.5 pt-1">
+            <div class="flex justify-between items-center text-xs text-gray-300 px-0.5">
+              <span>密碼強度</span>
+              <span id="reg-strength-label" class="font-bold tracking-wide transition-colors duration-200"></span>
+            </div>
+            <div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+              <div id="reg-strength-bar" class="h-full w-0 bg-red-500 transition-all duration-300"></div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2 text-xs text-gray-500 pt-1.5 pl-0.5">
+            <div id="reg-req-len" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-len">至少8碼</span></div>
+            <div id="reg-req-up" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-up">至少包含一個大寫英文字母 (A-Z)</span></div>
+            <div id="reg-req-low" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-low">至少包含一個小寫英文字母 (a-z)</span></div>
+            <div id="reg-req-num" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-num">至少包含一個數字(0-9)</span></div>
+            <div id="reg-req-spec" class="flex items-center gap-2 transition-colors duration-200"><i class="fa-regular fa-circle text-sm"></i><span id="lbl-req-spec">至少包含一個特殊符號(如@、#、$、%、^、&、*)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-4">
+        <button onclick="handleEmailRegister()" id="btn-register-now" class="w-full btn-gradient-primary hover:opacity-95 text-white font-bold py-4 rounded-xl shadow-lg transition active:scale-[0.99] tracking-wide cursor-pointer">立即註冊</button>
+        <button onclick="switchPanel('login-panel')" id="btn-back-to-login" class="w-full btn-gradient-secondary hover:opacity-95 text-white py-4 rounded-xl font-bold transition active:scale-[0.99] tracking-wide cursor-pointer">已有帳號?返回登入</button>
+      </div>
+
+      <div class="flex justify-between items-center pt-4 mt-auto">
+        <span id="footer-or-label" class="text-base font-medium text-white tracking-wider">或者</span>
+        <button onclick="switchPanel('forgot-panel')" id="footer-forgot-btn" class="bg-gray-800/80 border border-gray-700/60 text-gray-300 px-5 py-2.5 rounded-xl text-sm font-medium hover:text-white hover:bg-gray-700 transition shadow-sm cursor-pointer">忘記密碼?</button>
+      </div>
+    </div>
+
+    <!-- 2. 登入面板 -->
+    <div id="login-panel" class="space-y-5 flex-grow flex flex-col justify-start hidden">
+      <div class="space-y-4">
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-envelope"></i></span>
+          <input type="email" id="login-email" placeholder="電子郵件" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl font-medium focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" id="login-password" placeholder="密碼" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-12 py-3.5 rounded-xl font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 tracking-widest">
+          <button onclick="togglePasswordVisibility('login-password')" class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-gray-600 z-10 cursor-pointer">
+            <i class="fa-solid fa-eye text-lg" id="eye-login-password"></i>
+          </button>
+        </div>
+      </div>
+      <button onclick="handleEmailLogin()" id="btn-login" class="w-full btn-gradient-primary hover:opacity-95 text-white font-bold py-4 rounded-xl shadow-lg transition tracking-wide mt-2 cursor-pointer">登入</button>
+      <button onclick="switchPanel('register-panel')" id="btn-goto-register" class="w-full btn-gradient-secondary text-white py-4 rounded-xl font-bold transition tracking-wide cursor-pointer">沒有帳號?前往註冊</button>
+    </div>
+
+    <!-- 3. 忘記密碼面板 -->
+    <div id="forgot-panel" class="space-y-5 flex-grow flex flex-col justify-start hidden">
+      <div id="otp-step-1" class="space-y-5">
+        <p id="text-otp-step1-hint" class="text-sm text-gray-400 text-center leading-relaxed">請輸入您的電子郵件,我們將發送驗證重設連結至您的信箱。</p>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-envelope"></i></span>
+          <input type="email" id="forgot-email" placeholder="電子郵件" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl font-medium focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <button onclick="sendResetOTP()" id="btn-send-otp" class="w-full btn-gradient-primary hover:opacity-95 text-white font-bold py-4 rounded-xl transition tracking-wide cursor-pointer">發送驗證碼</button>
+      </div>
+
+      <div id="otp-step-2" class="space-y-4 hidden">
+        <p id="text-otp-step2-hint" class="text-sm text-gray-400 text-center leading-relaxed">驗證碼已發送!請輸入 6~8 位數驗證碼與高強度新密碼。</p>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-key"></i></span>
+          <input type="text" id="otp-code" maxlength="8" placeholder="6~8 位數驗證碼 (OTP)" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-4 py-3.5 rounded-xl tracking-[0.2em] text-center font-bold text-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div class="space-y-2.5">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-lock"></i></span>
+            <input type="password" id="otp-password" placeholder="新密碼" oninput="validatePasswordLive('otp')" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-12 py-3.5 rounded-xl font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 tracking-widest">
+            <button onclick="togglePasswordVisibility('otp-password')" class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-gray-600 z-10 cursor-pointer">
+              <i class="fa-solid fa-eye text-lg" id="eye-otp-password"></i>
+            </button>
+          </div>
+          <div class="space-y-1.5 pt-1">
+            <div class="flex justify-between items-center text-xs text-gray-300 px-0.5">
+              <span>密碼強度</span>
+              <span id="otp-strength-label" class="font-bold tracking-wide transition-colors duration-200"></span>
+            </div>
+            <div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+              <div id="otp-strength-bar" class="h-full w-0 bg-red-500 transition-all duration-300"></div>
+            </div>
+          </div>
+        </div>
+        <button onclick="verifyOTPAndReset()" id="btn-confirm-reset" class="w-full btn-gradient-primary hover:opacity-95 text-white font-bold py-4 rounded-xl transition tracking-wide mt-2 cursor-pointer">確認重設密碼</button>
+      </div>
+      <button onclick="switchPanel('register-panel')" id="btn-link-back-login" class="text-gray-400 text-sm hover:text-white transition block text-center mt-4 cursor-pointer"><i class="fa-solid fa-arrow-left mr-2"></i>返回註冊面板</button>
+    </div>
+
+    <!-- 4. 會員中心與 5 種訂閱方案面板 -->
+    <div id="dashboard-panel" class="space-y-5 flex-grow flex flex-col justify-start hidden">
+      <h1 id="text-member-center" class="text-2xl font-bold text-center text-[#EAB308] tracking-wide mb-2">會員與訂閱中心</h1>
+      <div class="bg-gray-900/80 p-5 rounded-2xl border border-gray-800 space-y-2">
+        <p id="text-curr-account" class="text-gray-400 text-sm">目前登入帳號:</p>
+        <p id="user-display-email" class="font-mono text-blue-400 break-all"></p>
+        <p id="text-profile" class="text-gray-400 text-sm pt-2">基本資料:</p>
+        <p id="user-display-meta" class="text-sm text-gray-200"></p>
+      </div>
+
+      <!-- Stripe 5 種方案選擇 -->
+      <div class="space-y-2 pt-2">
+        <p class="text-xs text-gray-400">選擇訂閱方案 (自動綁定當前帳號):</p>
+        <div class="grid grid-cols-1 gap-2">
+          <button onclick="handleSubscribe('plan1')" class="w-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 text-amber-300 py-2.5 rounded-xl text-xs font-bold transition flex justify-between px-4 items-center">
+            <span>方案 1 (年訂閱)</span><i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button onclick="handleSubscribe('plan2')" class="w-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 text-amber-300 py-2.5 rounded-xl text-xs font-bold transition flex justify-between px-4 items-center">
+            <span>方案 2</span><i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button onclick="handleSubscribe('plan3')" class="w-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 text-amber-300 py-2.5 rounded-xl text-xs font-bold transition flex justify-between px-4 items-center">
+            <span>方案 3</span><i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button onclick="handleSubscribe('plan4')" class="w-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 text-amber-300 py-2.5 rounded-xl text-xs font-bold transition flex justify-between px-4 items-center">
+            <span>方案 4</span><i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button onclick="handleSubscribe('plan5')" class="w-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 text-amber-300 py-2.5 rounded-xl text-xs font-bold transition flex justify-between px-4 items-center">
+            <span>方案 5</span><i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <button onclick="handleLogout()" id="btn-logout" class="w-full bg-gray-800 hover:bg-gray-700 text-white font-medium py-3.5 rounded-xl transition cursor-pointer mt-auto">登出帳號</button>
+    </div>
+
+    <!-- 頁尾條款區 -->
+    <div class="mt-6 space-y-4 w-full">
+      <p id="terms-box" class="text-center text-[11px] text-gray-500 leading-relaxed px-4">
+        <span id="text-terms-prefix">註冊即代表您同意我們的 </span>
+        <a href="https://paul-750-k.github.io/Account-System-Terms-of-Service/#zh-tw" target="_blank" class="text-[#EAB308] underline hover:text-yellow-500 font-medium">服務條款</a>
+        <span id="text-and">與</span>
+        <a href="https://paul-750-k.github.io/-Privacy-Policy/#zh-tw" target="_blank" class="text-[#EAB308] underline hover:text-yellow-500 font-medium">隱私政策</a>
+      </p>
+      <div id="danger-zone" class="border-t border-red-900/30 pt-4 hidden">
+        <button onclick="handleDeleteAccount()" id="btn-delete-acc" class="w-full text-red-500 bg-red-950/20 hover:bg-red-950/40 border border-red-900/40 py-2.5 rounded-xl text-xs font-semibold tracking-wide transition active:scale-[0.99] cursor-pointer">
+          <i class="fa-solid fa-trash-can mr-1.5"></i> 永久刪除帳號(Delete Account)
+        </button>
+      </div>
+    </div>
+
+  </div>
 </section>
+
 <!-- 整合腳本 -->
 <script>
-// 1. 初始化 Supabase (替換為你的 Supabase URL 與
-Anon Key)
-const SUPABASE_URL =
-"https://jyghcpwnrsisdqjoxvfu.supabase.co";
-const SUPABASE_ANON_KEY =
-"YOUR_SUPABASE_ANON_KEY";
-const supabase =
-supabase.createClient(SUPABASE_URL,
-SUPABASE_ANON_KEY);
-// 2. 5 種 Stripe 訂閱方案連結 Mapping
-const STRIPE_PLANS = {
-plan1:
-'https://buy.stripe.com/dRm4gBckj94j5FtgaP7ss00',
-plan2:
-'https://buy.stripe.com/dRm8wRckj5S7fg37Ej7ss01',
-plan3:
-'https://buy.stripe.com/00w9AVacb1BR3xl7Ej7ss02',
-plan4:
-'https://buy.stripe.com/4gMdRb5VVcgvfg32jZ7ss03',
-plan5:
-'https://buy.stripe.com/9B600lacb80f4Bp3o37ss04',
-};
-// 頁面初始化
-document.addEventListener("DOMContentLoaded",
-async () => {
-initAgeDropdown();
-checkUserSession();
-});
-// 動態生成 10 ~ 100 歲選單
-function initAgeDropdown() {
-const ageSelect =
-document.getElementById("reg-age");
-for (let i = 12; i <= 90; i++) {
-const opt = document.createElement("option");
-opt.value = i;
-opt.textContent = `${i} 歲`;
-ageSelect.appendChild(opt);
-}
-}
-// 檢查登入狀態並更新 UI
-async function checkUserSession() {
-const { data: { user } } = await
-supabase.auth.getUser();
-if (user) {
-document.getElementById("user-display-email").textCon
-tent = user.email;
-document.getElementById("user-display-meta").textCont
-ent =
-`暱稱: ${user.user_metadata?.display_name || '未
-設定'} | 年齡: ${user.user_metadata?.age || '未設定'}`;
-switchPanel("dashboard-panel");
-document.getElementById("danger-zone").classList.rem
-ove("hidden");
-} else {
-switchPanel("register-panel");
-document.getElementById("danger-zone").classList.add
-("hidden");
-}
-}
-// 面板切換邏輯
-function switchPanel(panelId) {
-const panels = ["register-panel", "login-panel",
-"forgot-panel", "dashboard-panel"];
-panels.forEach(id => {
-document.getElementById(id).classList.add("hidden");
-});
-document.getElementById(panelId).classList.remove("hi
-dden");
-}
-// 密碼可見性切換
-function togglePasswordVisibility(inputId) {
-const input = document.getElementById(inputId);
-const icon =
-document.getElementById(`eye-${inputId}`);
-if (input.type === "password") {
-input.type = "text";
-icon.classList.replace("fa-eye", "fa-eye-slash");
-} else {
-input.type = "password";
-icon.classList.replace("fa-eye-slash", "fa-eye");
-}
-}
-// 密碼強度與規則驗證
-function validatePasswordLive(prefix) {
-const pwd =
-document.getElementById(`${prefix}-password`).value;
-const reqs = {
-len: pwd.length >= 8,
-up: /[A-Z]/.test(pwd),
-low: /[a-z]/.test(pwd),
-num: /[0-9]/.test(pwd),
-spec: /[@#$%^&*!]/.test(pwd)
-};
-let score = 0;
-Object.keys(reqs).forEach(k => {
-const el =
-document.getElementById(`${prefix}-req-${k}`);
-if (el) {
-if (reqs[k]) {
-el.className = "flex items-center gap-2
-text-green-400 transition-colors duration-200";
-el.querySelector("i").className = "fa-solid
-fa-circle-check text-sm";
-score++;
-} else {
-el.className = "flex items-center gap-2
-text-gray-500 transition-colors duration-200";
-el.querySelector("i").className = "fa-regular
-fa-circle text-sm";
-}
-}
-});
-const bar =
-document.getElementById(`${prefix}-strength-bar`);
-const label =
-document.getElementById(`${prefix}-strength-label`);
-const pct = (score / 5) * 100;
-if (bar) bar.style.width = `${pct}%`;
-if (label) {
-if (score <= 2) { label.textContent = "弱";
-label.className = "font-bold text-red-500"; if(bar)
-bar.className = "h-full bg-red-500 transition-all
-duration-300"; }
-else if (score <= 4) { label.textContent = "中等";
-label.className = "font-bold text-yellow-500"; if(bar)
-bar.className = "h-full bg-yellow-500 transition-all
-duration-300"; }
-else { label.textContent = "高強度"; label.className
-= "font-bold text-green-500"; if(bar) bar.className =
-"h-full bg-green-500 transition-all duration-300"; }
-}
-}
-// Supabase 註冊流程
-async function handleEmailRegister() {
-const email =
-document.getElementById("reg-email").value;
-const password =
-document.getElementById("reg-password").value;
-const name =
-document.getElementById("reg-name").value;
-const age =
-document.getElementById("reg-age").value;
-if (!email || !password) return alert("請填寫 Email 與密
-碼");
-const { data, error } = await supabase.auth.signUp({
-email,
-password,
-});
-options: { data: { display_name: name, age: age } }
-if (error) alert(`註冊失敗: ${error.message}`);
-else {
-alert("註冊成功！請檢查信箱完成驗證或直接登入。");
-checkUserSession();
-}
-}
-// Supabase 登入流程
-async function handleEmailLogin() {
-const email =
-document.getElementById("login-email").value;
-const password =
-document.getElementById("login-password").value;
-const { data, error } = await
-supabase.auth.signInWithPassword({ email, password
-});
-if (error) alert(`登入失敗: ${error.message}`);
-else checkUserSession();
-}
-// Apple 第三方登入
-async function handleAppleLogin() {
-const { error } = await
-supabase.auth.signInWithOAuth({ provider: 'apple' });
-if (error) alert(`Apple 登入失敗: ${error.message}`);
-}
-// 發送忘記密碼驗證
-async function sendResetOTP() {
-const email =
-document.getElementById("forgot-email").value;
-if (!email) return alert("請輸入電子郵件");
-const { error } = await
-supabase.auth.resetPasswordForEmail(email);
-if (error) alert(`發送失敗: ${error.message}`);
-else {
-alert("驗證信已發送，請檢查信箱。");
-document.getElementById("otp-step-1").classList.add("h
-idden");
-document.getElementById("otp-step-2").classList.remov
-e("hidden");
-}
-}
-// 確認 OTP 並重設密碼
-async function verifyOTPAndReset() {
-const token =
-document.getElementById("otp-code").value;
-const email =
-document.getElementById("forgot-email").value;
-const new_password =
-document.getElementById("otp-password").value;
-const { error: verifyErr } = await
-supabase.auth.verifyOtp({ email, token, type: 'recovery'
-});
-if (verifyErr) return alert(`驗證碼錯誤:
-${verifyErr.message}`);
-const { error: updateErr } = await
-supabase.auth.updateUser({ password: new_password
-});
-if (updateErr) alert(`重設密碼失敗:
-${updateErr.message}`);
-else {
-alert("密碼重設成功，請重新登入！");
-switchPanel("login-panel");
-}
-}
-// Stripe 訂閱跳轉（方案 B：帶入 UID 與 Email 參數）
-async function handleSubscribe(planKey) {
-const baseUrl = STRIPE_PLANS[planKey];
-if (!baseUrl) return alert("未知的訂閱方案");
-const { data: { user } } = await
-supabase.auth.getUser();
-if (!user) {
-alert("請先登入帳號再進行訂閱");
-switchPanel("login-panel");
-return;
-}
-// 動態拼接帶入 client_reference_id (Supabase UID)
-與預填 Email
-const checkoutUrl =
-`${baseUrl}?client_reference_id=${user.id}&prefilled_em
-ail=${encodeURIComponent(user.email)}`;
-window.location.href = checkoutUrl;
-}
-// 登出
-async function handleLogout() {
-await supabase.auth.signOut();
-checkUserSession();
-}
-// 刪除帳號 (需要後端 RPC / Edge Function 權限支援)
-async function handleDeleteAccount() {
-if (confirm("確定要永久刪除帳號嗎？此動作無法復
-原！")) {
-alert("請聯絡客服或透過 Supabase Admin API 執行
-帳號刪除。");
-}
-}
-// 語系切換 toggle
-function toggleLang() {
-const btn = document.getElementById("lang-btn");
-btn.innerHTML = btn.innerHTML.includes("EN") ? '<i
-class="fa-solid fa-globe mr-1"></i>中' : '<i class="fa-solid
-fa-globe mr-1"></i>EN';
-}
-function hideAuthPanel() {
-document.getElementById("auth-section").style.display
-= "none";
-}
+  // 1. 初始化 Supabase (替換為你的 Supabase URL 與 Anon Key)
+  const SUPABASE_URL = "https://jyghcpwnrsisdqjoxvfu.supabase.co";
+  const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY"; 
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // 2. 5 種 Stripe 訂閱方案連結 Mapping
+  const STRIPE_PLANS = {
+    plan1: 'https://buy.stripe.com/dRm4gBckj94j5FtgaP7ss00',
+    plan2: 'https://buy.stripe.com/dRm8wRckj5S7fg37Ej7ss01',
+    plan3: 'https://buy.stripe.com/00w9AVacb1BR3xl7Ej7ss02',
+    plan4: 'https://buy.stripe.com/4gMdRb5VVcgvfg32jZ7ss03',
+    plan5: 'https://buy.stripe.com/9B600lacb80f4Bp3o37ss04',
+  };
+
+  // 頁面初始化
+  document.addEventListener("DOMContentLoaded", async () => {
+    initAgeDropdown();
+    checkUserSession();
+  });
+
+  // 動態生成 10 ~ 100 歲選單
+  function initAgeDropdown() {
+    const ageSelect = document.getElementById("reg-age");
+    for (let i = 12; i <= 90; i++) {
+      const opt = document.createElement("option");
+      opt.value = i;
+      opt.textContent = `${i} 歲`;
+      ageSelect.appendChild(opt);
+    }
+  }
+
+  // 檢查登入狀態並更新 UI
+  async function checkUserSession() {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (user) {
+      document.getElementById("user-display-email").textContent = user.email;
+      document.getElementById("user-display-meta").textContent = `暱稱: ${user.user_metadata?.display_name || '未設定'} | 年齡: ${user.user_metadata?.age || '未設定'}`;
+      switchPanel("dashboard-panel");
+      document.getElementById("danger-zone").classList.remove("hidden");
+    } else {
+      switchPanel("register-panel");
+      document.getElementById("danger-zone").classList.add("hidden");
+    }
+  }
+
+  // 面板切換邏輯
+  function switchPanel(panelId) {
+    const panels = ["register-panel", "login-panel", "forgot-panel", "dashboard-panel"];
+    panels.forEach(id => {
+      document.getElementById(id).classList.add("hidden");
+    });
+    document.getElementById(panelId).classList.remove("hidden");
+  }
+
+  // 密碼可見性切換
+  function togglePasswordVisibility(inputId) {
+    const input = document.getElementById(inputId);
+    const icon = document.getElementById(`eye-${inputId}`);
+    if (input.type === "password") {
+      input.type = "text";
+      icon.classList.replace("fa-eye", "fa-eye-slash");
+    } else {
+      input.type = "password";
+      icon.classList.replace("fa-eye-slash", "fa-eye");
+    }
+  }
+
+  // 密碼強度與規則驗證
+  function validatePasswordLive(prefix) {
+    const pwd = document.getElementById(`${prefix}-password`).value;
+    const reqs = {
+      len: pwd.length >= 8,
+      up: /[A-Z]/.test(pwd),
+      low: /[a-z]/.test(pwd),
+      num: /[0-9]/.test(pwd),
+      spec: /[@#$%^&*!]/.test(pwd)
+    };
+
+    let score = 0;
+    Object.keys(reqs).forEach(k => {
+      const el = document.getElementById(`${prefix}-req-${k}`);
+      if (el) {
+        if (reqs[k]) {
+          el.className = "flex items-center gap-2 text-green-400 transition-colors duration-200";
+          el.querySelector("i").className = "fa-solid fa-circle-check text-sm";
+          score++;
+        } else {
+          el.className = "flex items-center gap-2 text-gray-500 transition-colors duration-200";
+          el.querySelector("i").className = "fa-regular fa-circle text-sm";
+        }
+      }
+    });
+
+    const bar = document.getElementById(`${prefix}-strength-bar`);
+    const label = document.getElementById(`${prefix}-strength-label`);
+    const pct = (score / 5) * 100;
+    
+    if (bar) bar.style.width = `${pct}%`;
+    if (label) {
+      if (score <= 2) { label.textContent = "弱"; label.className = "font-bold text-red-500"; if(bar) bar.className = "h-full bg-red-500 transition-all duration-300"; }
+      else if (score <= 4) { label.textContent = "中等"; label.className = "font-bold text-yellow-500"; if(bar) bar.className = "h-full bg-yellow-500 transition-all duration-300"; }
+      else { label.textContent = "高強度"; label.className = "font-bold text-green-500"; if(bar) bar.className = "h-full bg-green-500 transition-all duration-300"; }
+    }
+  }
+
+  // Supabase 註冊流程
+  async function handleEmailRegister() {
+    const email = document.getElementById("reg-email").value;
+    const password = document.getElementById("reg-password").value;
+    const name = document.getElementById("reg-name").value;
+    const age = document.getElementById("reg-age").value;
+
+    if (!email || !password) return alert("請填寫 Email 與密碼");
+
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: { data: { display_name: name, age: age } }
+    });
+
+    if (error) alert(`註冊失敗: ${error.message}`);
+    else {
+      alert("註冊成功！請檢查信箱完成驗證或直接登入。");
+      checkUserSession();
+    }
+  }
+
+  // Supabase 登入流程
+  async function handleEmailLogin() {
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) alert(`登入失敗: ${error.message}`);
+    else checkUserSession();
+  }
+
+  // Apple 第三方登入
+  async function handleAppleLogin() {
+    const { error } = await supabase.auth.signInWithOAuth({ provider: 'apple' });
+    if (error) alert(`Apple 登入失敗: ${error.message}`);
+  }
+
+  // 發送忘記密碼驗證
+  async function sendResetOTP() {
+    const email = document.getElementById("forgot-email").value;
+    if (!email) return alert("請輸入電子郵件");
+
+    const { error } = await supabase.auth.resetPasswordForEmail(email);
+    if (error) alert(`發送失敗: ${error.message}`);
+    else {
+      alert("驗證信已發送，請檢查信箱。");
+      document.getElementById("otp-step-1").classList.add("hidden");
+      document.getElementById("otp-step-2").classList.remove("hidden");
+    }
+  }
+
+  // 確認 OTP 並重設密碼
+  async function verifyOTPAndReset() {
+    const token = document.getElementById("otp-code").value;
+    const email = document.getElementById("forgot-email").value;
+    const new_password = document.getElementById("otp-password").value;
+
+    const { error: verifyErr } = await supabase.auth.verifyOtp({ email, token, type: 'recovery' });
+    if (verifyErr) return alert(`驗證碼錯誤: ${verifyErr.message}`);
+
+    const { error: updateErr } = await supabase.auth.updateUser({ password: new_password });
+    if (updateErr) alert(`重設密碼失敗: ${updateErr.message}`);
+    else {
+      alert("密碼重設成功，請重新登入！");
+      switchPanel("login-panel");
+    }
+  }
+
+  // Stripe 訂閱跳轉（方案 B：帶入 UID 與 Email 參數）
+  async function handleSubscribe(planKey) {
+    const baseUrl = STRIPE_PLANS[planKey];
+    if (!baseUrl) return alert("未知的訂閱方案");
+
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+      alert("請先登入帳號再進行訂閱");
+      switchPanel("login-panel");
+      return;
+    }
+
+    // 動態拼接帶入 client_reference_id (Supabase UID) 與預填 Email
+    const checkoutUrl = `${baseUrl}?client_reference_id=${user.id}&prefilled_email=${encodeURIComponent(user.email)}`;
+    window.location.href = checkoutUrl;
+  }
+
+  // 登出
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    checkUserSession();
+  }
+
+  // 刪除帳號 (需要後端 RPC / Edge Function 權限支援)
+  async function handleDeleteAccount() {
+    if (confirm("確定要永久刪除帳號嗎？此動作無法復原！")) {
+      alert("請聯絡客服或透過 Supabase Admin API 執行帳號刪除。");
+    }
+  }
+
+  // 語系切換 toggle
+  function toggleLang() {
+    const btn = document.getElementById("lang-btn");
+    btn.innerHTML = btn.innerHTML.includes("EN") ? '<i class="fa-solid fa-globe mr-1"></i>中' : '<i class="fa-solid fa-globe mr-1"></i>EN';
+  }
+
+  function hideAuthPanel() {
+    document.getElementById("auth-section").style.display = "none";
+  }
 </script>
+
 </body>
 </html>
-<div class="text-center my-5 border-t border-b
-border-purple-500/10 py-4 bg-purple-950/10
-rounded-lg">
-<p class="font-bold text-base sm:text-xl mb-2
-bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500
-bg-clip-text text-transparent tracking-wide">
-評分及留言，請至App Store 🙏🙏🙏
-</p>
-<p class="text-xs sm:text-base bg-gradient-to-r
-from-cyan-400 via-sky-400 to-blue-500 bg-clip-text
-text-transparent opacity-90 tracking-wide">
-Please rate and leave comments on the App Store
-🙏🙏🙏
-</p>
-</div>
+
+
+<div class="text-center my-5 border-t border-b border-purple-500/10 py-4 bg-purple-950/10 rounded-lg">
+    <p class="font-bold text-base sm:text-xl mb-2 bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent tracking-wide">
+        評分及留言，請至App Store 🙏🙏🙏
+    </p>
+    <p class="text-xs sm:text-base bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent opacity-90 tracking-wide">
+        Please rate and leave comments on the App Store 🙏🙏🙏
+    </p>
+</div>    
 </section>
-<footer class="bg-black/80 text-slate-400 py-12 px-6
-border-t border-purple-950/40">
-<div class="max-w-6xl mx-auto px-6 flex flex-col
-md:flex-row justify-between items-center gap-8
-text-center md:text-left">
+<footer class="bg-black/80 text-slate-400 py-12 px-6 border-t border-purple-950/40">
+<div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
 <div>
-<p id="footer-quote" class="mb-2 text-slate-400 italic">
-「當你讀出 these文字,你便是在重新建構你的現實。」</p>
-<p>&copy; 2026 Zenith Magic. All rights reserved.
-Developers: Hsu, Hao-Lun</p>
-<p class="mt-2 text-xs text-slate-500 lang-txt" data-zh="*
-本技術非醫療診斷,涉及醫療決定請諮詢專業醫師。"
-data-en="* This technology is not for medical diagnosis.
-Consult a physician before making medical decisions.">*
-本技術非醫療診斷,涉及醫療決定請諮詢專業醫師。</p>
+<p id="footer-quote" class="mb-2 text-slate-400 italic">「當你讀出 these文字,你便是在重新建構你的現實。」</p>
+<p>&copy; 2026 Zenith Magic. All rights reserved. Developers: Hsu, Hao-Lun</p>
+<p class="mt-2 text-xs text-slate-500 lang-txt" data-zh="* 本技術非醫療診斷,涉及醫療決定請諮詢專業醫師。" data-en="* This technology is not for medical diagnosis. Consult a physician before making medical decisions.">* 本技術非醫療診斷,涉及醫療決定請諮詢專業醫師。</p>
 </div>
 <div class="text-sm">
-<div><span class="lang-txt" data-zh="聯絡支援:"
-data-en="Contact: ">聯絡支援:</span><a
-href="mailto:xrknight7@yahoo.com"
-class="text-blue-400
-hover:underline">xrknight7@yahoo.com</a></div>
-<div class="mt-2 flex flex-col md:flex-row
-md:space-x-4">
-<a href="https://paul-750-k.github.io/Privacy-Policy-.md/"
-class="text-blue-400 hover:underline lang-txt" data-zh="
-隱私權政策" data-en="Privacy Policy">隱私權政策</a>
-<a
-href="https://paul-750-k.github.io/Facial-Technology-Use
-r-Guide/#en" class="text-blue-400 hover:underline
-lang-txt" data-zh="臉部掃描與生物辨識隱私聲明"
-data-en="Facial Scanning and Biometrics Privacy
-Statement">臉部掃描與生物辨識隱私聲明</a>
+<div><span class="lang-txt" data-zh="聯絡支援:" data-en="Contact: ">聯絡支援:</span><a href="mailto:xrknight7@yahoo.com" class="text-blue-400 hover:underline">xrknight7@yahoo.com</a></div>
+<div class="mt-2 flex flex-col md:flex-row md:space-x-4">
+<a href="https://paul-750-k.github.io/Privacy-Policy-.md/" class="text-blue-400 hover:underline lang-txt" data-zh="隱私權政策" data-en="Privacy Policy">隱私權政策</a>
+<a href="https://paul-750-k.github.io/Facial-Technology-User-Guide/#en" class="text-blue-400 hover:underline lang-txt" data-zh="臉部掃描與生物辨識隱私聲明" data-en="Facial Scanning and Biometrics Privacy Statement">臉部掃描與生物辨識隱私聲明</a>
 </div>
 </div>
 </div>
 </footer>
+
 <script>
 // 全域狀態管理與多國語系核心字典庫
 let currentLang = 'zh';
 let isRegPasswordSecure = false;
 let isOtpPasswordSecure = false;
+
 // 1. 官網部分字典檔
 const trans = {
-zh: {
-title: "強大源於呼吸",
-desc: "結合極致工藝與動態美學,開啟身心強化的「感
-官聖殿」。呼吸練習能在幾秒鐘內「暴力」中斷負面情緒、壓
-力與疲勞的連鎖反應,讓腦袋完全清空。",
-download: "立即下載 iOS 版",
-quote: "「當你讀出 these 文字,你便是在重新建構你
-的現實。」",
-disclaimer: "* 本技術非醫療診斷,涉及醫療決定請諮
-詢專業醫師。",
-contact: "聯絡支援:",
-langBtn: "English"
-},
-en: {
-title: "Power Stems from Breath",
-desc: "Fusing ultimate craftsmanship with dynamic
-aesthetics, unlock your somatic 'Sensory Sanctuary'.
-Breathwork violently disrupts negative loops, stress, and
-fatigue within seconds, absolutely clearing your mind.",
-download: "Download for iOS",
-quote: "\"When you speak these words, you are
-reconstructing your reality.\"",
-disclaimer: "* This technology is not for medical
-diagnosis. Consult a physician before making medical
-decisions.",
-contact: "Support: ",
-langBtn: "繁體中文"
-}
+    zh: {
+        title: "強大源於呼吸",
+        desc: "結合極致工藝與動態美學,開啟身心強化的「感官聖殿」。呼吸練習能在幾秒鐘內「暴力」中斷負面情緒、壓力與疲勞的連鎖反應,讓腦袋完全清空。",
+        download: "立即下載 iOS 版",
+        quote: "「當你讀出 these 文字,你便是在重新建構你的現實。」",
+        disclaimer: "* 本技術非醫療診斷,涉及醫療決定請諮詢專業醫師。",
+        contact: "聯絡支援:",
+        langBtn: "English"
+    },
+    en: {
+        title: "Power Stems from Breath",
+        desc: "Fusing ultimate craftsmanship with dynamic aesthetics, unlock your somatic 'Sensory Sanctuary'. Breathwork violently disrupts negative loops, stress, and fatigue within seconds, absolutely clearing your mind.",
+        download: "Download for iOS",
+        quote: "\"When you speak these words, you are reconstructing your reality.\"",
+        disclaimer: "* This technology is not for medical diagnosis. Consult a physician before making medical decisions.",
+        contact: "Support: ",
+        langBtn: "繁體中文"
+    }
 };
+
 // 2. 帳號系統部分字典檔
 const i18n = {
-zh: {
-langBtn: '<i class="fa-solid fa-globe mr-1"></i>EN',
-closeBtn: "關閉",
-titleRegister: "建立新帳號",
-titleLogin: "帳號系統登入",
-titleReset: "重設密碼",
-appleLogin: "使用 Apple 登入",
-emailPlaceholder: "電子郵件",
-passwordPlaceholder: "密碼",
-namePlaceholder: "姓名或暱稱",
-ageSuffix: "歲",
-registerNow: "立即註冊",
-backToLogin: "已有帳號?返回登入",
-otpStep1Hint: "請輸入您的電子郵件,我們將發送6~8
-位數驗證碼至您的信箱。",
-sendOtp: "發送驗證碼",
-otpStep2Hint: "驗證碼已發送!請輸入6~8位數驗證碼
-與高強度新密碼。",
-otpPlaceholder: "6~8 位數驗證碼 (OTP)",
-confirmReset: "確認重設密碼",
-lblLen: "至少8碼",
-lblUp: "至少包含一個大寫英文字母 (A-Z)",
-lblLow: "至少包含一個小寫英文字母 (a-z)",
-lblNum: "至少包含一個數字(0-9)",
-lblSpec: "至少包含一個特殊符號(如@、#、$、%、
-^
-、
-&、*)"
-},
-en: {
-langBtn: '<i class="fa-solid fa-globe mr-1"></i>繁中
-',
-closeBtn: "Close",
-titleRegister: "Create Account",
-titleLogin: "Account Login",
-titleReset: "Reset Password",
-appleLogin: "Sign in with Apple",
-emailPlaceholder: "Email Address",
-passwordPlaceholder: "Password",
-namePlaceholder: "Name or Nickname",
-ageSuffix: "years old",
-registerNow: "Register Now",
-backToLogin: "Already have an account? Log In",
-otpStep1Hint: "Please enter your email, we will
-send a 6-8 digit verification code.",
-sendOtp: "Send Verification Code",
-otpStep2Hint: "Verification code sent! Please enter
-the code and a strong password.",
-otpPlaceholder: "6-8 Digit Code (OTP)",
-confirmReset: "Confirm Reset Password",
-lblLen: "At least 8 characters",
-lblUp: "At least one uppercase letter (A-Z)",
-lblLow: "At least one lowercase letter (a-z)",
-lblNum: "At least one number (0-9)",
-lblSpec: "At least one special symbol (@, #, $, %,
-etc.)"
-}
+    zh: {
+        langBtn: '<i class="fa-solid fa-globe mr-1"></i>EN',
+        closeBtn: "關閉",
+        titleRegister: "建立新帳號",
+        titleLogin: "帳號系統登入",
+        titleReset: "重設密碼",
+        appleLogin: "使用 Apple 登入",
+        emailPlaceholder: "電子郵件",
+        passwordPlaceholder: "密碼",
+        namePlaceholder: "姓名或暱稱",
+        ageSuffix: "歲",
+        registerNow: "立即註冊",
+        backToLogin: "已有帳號?返回登入",
+        otpStep1Hint: "請輸入您的電子郵件,我們將發送6~8位數驗證碼至您的信箱。",
+        sendOtp: "發送驗證碼",
+        otpStep2Hint: "驗證碼已發送!請輸入6~8位數驗證碼與高強度新密碼。",
+        otpPlaceholder: "6~8 位數驗證碼 (OTP)",
+        confirmReset: "確認重設密碼",
+        lblLen: "至少8碼",
+        lblUp: "至少包含一個大寫英文字母 (A-Z)",
+        lblLow: "至少包含一個小寫英文字母 (a-z)",
+        lblNum: "至少包含一個數字(0-9)",
+        lblSpec: "至少包含一個特殊符號(如@、#、$、%、^、&、*)"
+    },
+    en: {
+        langBtn: '<i class="fa-solid fa-globe mr-1"></i>繁中',
+        closeBtn: "Close",
+        titleRegister: "Create Account",
+        titleLogin: "Account Login",
+        titleReset: "Reset Password",
+        appleLogin: "Sign in with Apple",
+        emailPlaceholder: "Email Address",
+        passwordPlaceholder: "Password",
+        namePlaceholder: "Name or Nickname",
+        ageSuffix: "years old",
+        registerNow: "Register Now",
+        backToLogin: "Already have an account? Log In",
+        otpStep1Hint: "Please enter your email, we will send a 6-8 digit verification code.",
+        sendOtp: "Send Verification Code",
+        otpStep2Hint: "Verification code sent! Please enter the code and a strong password.",
+        otpPlaceholder: "6-8 Digit Code (OTP)",
+        confirmReset: "Confirm Reset Password",
+        lblLen: "At least 8 characters",
+        lblUp: "At least one uppercase letter (A-Z)",
+        lblLow: "At least one lowercase letter (a-z)",
+        lblNum: "At least one number (0-9)",
+        lblSpec: "At least one special symbol (@, #, $, %, etc.)"
+    }
 };
+
 // 3. 定價方案與流程區塊字典檔
 const translations = {
-zh: {
-pricingTitle: '定價方案 | Pricing Plans',
-pricingSubtitle: '多種彈性訂閱',
-pricingFooterNote: '提示:本站金流服務由Stripe金流
-安全架構全面保護。經此處完成付款後,您的永久買斷制大
-禮包或訂閱權益均可於 iPhone 內直接登入帳戶同步解鎖,
-享有首年保固與免費用戶權益保障。',
-tagPopular: '熱門推薦',
-p1_tag: '年度首選', p1_title: '年訂閱', p1_price: 'NT$
-2,061', p1_unit: ' / 年',
-p1_sub: '原價 NT2,290,結帳現折229元,特價只要
-NT2,061!', btn1: '立即訂閱', qr1: '手機掃描立即訂閱',
-p2_tag: '階段進修', p2_title: '半年制訂閱', p2_price:
-'NT$ 1,290', p2_unit: ' / 6個月',
-p2_sub: '原價NT1490現折200元特價只要NT1290元
-', btn2: '立即訂閱', qr2: '手機掃描立即訂閱',
-p3_tag: '至尊終身', p3_title: '
-一次擁有買斷制',
-p3_price: 'NT$ 5,942', p3_unit: ' / 終身永久',
-p3_sub: '官網系統限定福利:原價NT6,990,現在加入
-立享85折特惠價只要NT5,942!直接為您省下 NT$1,048!',
-btn3: '立即購買', qr3: '手機掃描終身解鎖',
-p4_tag: '彈性體驗', p4_title: '月訂閱', p4_price: 'NT$
-390', p4_unit: ' / 月',
-p4_sub: '彈性月度方案', btn4: '立即訂閱', qr4: '手機
-掃描立即訂閱',
-p5_tag: '短期高能', p5_title: '週訂閱', p5_price: 'NT$
-150', p5_unit: ' / 週',
-p5_sub: '高效短期方案', btn5: '立即訂閱', qr5: '手機
-掃描立即訂閱',
-flowTitle: '購買與開通流程 | Activation Guide',
-flowSubtitle: '只需簡單五步驟,跨裝置自動同步',
-flow_t1: '註冊新帳號', flow_desc1: '建議使用 Apple
-ID。點擊「建立新帳號」,建議直接選用綁定手機的 Apple ID
-快速登入,方便後續同步。',
-flow_t2: '選擇方案並付款', flow_desc2: '完成訂閱。
-在頁面上選擇您心儀的訂閱方案,並完成線上付款流程。',
-flow_t3: '下載 App', flow_desc3: '前往 App Store 搜
-尋並下載 Zenith Magic App。',
-flow_t4: '進入設定頁面', flow_desc4: '點選帳號系
-統。打開 App 後,進入「設定」頁面,點選「帳號系統登入」。',
-flow_t5: '登入即刻解鎖', flow_desc5: '務必使用同一
-個帳號。使用與<span class="text-red-500 font-bold
-tracking-wide">註冊購買時的帳號(Email / Apple ID)完全
-一致</span>的帳號登入,系統將會自動辨識訂閱狀態並完
-成解鎖!',
-flowHint: '小提示:請務必確保 App 內登入的帳號,與
-您當初在網頁端<span class="text-red-500 font-bold
-tracking-wide">註冊購買時的帳號(Email / Apple ID)完全
-一致</span>,否則系統會找不到您的訂閱紀錄喔!'
-},
-en: {
-pricingTitle: 'Pricing Plans',
-pricingSubtitle: 'Flexible Options for Everyone',
-pricingFooterNote: 'Note: Secure payment
-processing via Stripe Payments. Upon successful
-subscription or lifetime bundle checkout, your account
-entitlements sync smoothly inside the iPhone app,
-covering 1-year coverage and extra free extended
-updates.',
-tagPopular: 'POPULAR',
-p1_tag: 'BEST VALUE', p1_title: 'Annual Plan',
-p1_price: 'US$ 63.00', p1_unit: ' / year',
-p1_sub: 'Original price US69.99,saveUS6.99 at
-checkout, now only US$63.00!', btn1: 'Subscribe Now',
-qr1: 'Scan QR to Subscribe',
-p2_tag: 'MID-TERM', p2_title: 'Semi-Annual Plan',
-p2_price: 'US$ 39.00', p2_unit: ' / 6 mos',
-p2_sub: 'Original price US45.99,saveUS6.99 at
-checkout, now only US$39.00!', btn2: 'Subscribe Now',
-qr2: 'Scan QR to Subscribe',
-p3_tag: 'LIFETIME', p3_title: 'Lifetime Pass',
-p3_price: 'US$ 186.15', p3_unit: ' / Lifetime',
-p3_sub: 'Official website exclusive offer: Original
-price
-US219.00,joinnowtoenjoya15%discountforonlyUS186.1
-5! Save US$32.85 instantly!', btn3: 'Buy Lifetime', qr3:
-'Scan QR to Unlock',
-p4_tag: 'FLEXIBLE', p4_title: 'Monthly Plan',
-p4_price: 'US$ 12.99', p4_unit: ' / month',
-p4_sub: 'Flexible Monthly Plan', btn4: 'Subscribe
-Now', qr4: 'Scan QR to Subscribe',
-p5_tag: 'SHORT TERM', p5_title: 'Weekly Plan',
-p5_price: 'US$ 5.00', p5_unit: ' / week',
-p5_sub: 'Efficient Short-term Plan', btn5: 'Subscribe
-Now', qr5: 'Scan QR to Subscribe',
-flowTitle: 'Activation Guide',
-flowSubtitle: '5 Simple Steps to Sync Across
-Devices',
-flow_t1: 'Register Account', flow_desc1: 'Apple ID
-is recommended. Click "Create Account" and link with
-your iPhone Apple ID for seamless cross-device
-syncing.',
-flow_t2: 'Choose & Checkout', flow_desc2: 'Select
-your preferred subscription or lifetime plan and complete
-the secure online checkout.',
-flow_t3: 'Download App', flow_desc3: 'Search and
-download Zenith Magic App inside the App Store.',
-flow_t4: 'Open App Settings', flow_desc4: 'Launch
-the App, head over to the "Settings" menu panel, and
-tap "Account Login".',
-flow_t5: 'Login to Unlock', flow_desc5: 'Must use
-the exact same ID. Log in using the <span
-class="text-red-500 font-bold tracking-wide">identical
-account (Email / Apple ID) used during
-checkout</span>, and features will unlock instantly.',
-flowHint: 'Hint: Please ensure your in-app login
-account is <span class="text-red-500 font-bold
-tracking-wide">exactly identical to the registered
-account (Email / Apple ID)</span> used for web
-purchase, otherwise the server won\'t find your records!'
-}
+    zh: {
+        pricingTitle: '定價方案 | Pricing Plans',
+        pricingSubtitle: '多種彈性訂閱',
+        pricingFooterNote: '提示:本站金流服務由Stripe金流安全架構全面保護。經此處完成付款後,您的永久買斷制大禮包或訂閱權益均可於 iPhone 內直接登入帳戶同步解鎖,享有首年保固與免費用戶權益保障。',
+        tagPopular: '熱門推薦',
+        p1_tag: '年度首選', p1_title: '年訂閱', p1_price: 'NT$ 2,061', p1_unit: ' / 年',
+        p1_sub: '原價 NT2,290,結帳現折229元,特價只要NT2,061!', btn1: '立即訂閱', qr1: '手機掃描立即訂閱',
+        p2_tag: '階段進修', p2_title: '半年制訂閱', p2_price: 'NT$ 1,290', p2_unit: ' / 6個月',
+        p2_sub: '原價NT1490現折200元特價只要NT1290元', btn2: '立即訂閱', qr2: '手機掃描立即訂閱',
+        p3_tag: '至尊終身', p3_title: '一次擁有買斷制', p3_price: 'NT$ 5,942', p3_unit: ' / 終身永久',
+        p3_sub: '官網系統限定福利:原價NT6,990,現在加入立享85折特惠價只要NT5,942!直接為您省下 NT$1,048!', btn3: '立即購買', qr3: '手機掃描終身解鎖',
+        p4_tag: '彈性體驗', p4_title: '月訂閱', p4_price: 'NT$ 390', p4_unit: ' / 月',
+        p4_sub: '彈性月度方案', btn4: '立即訂閱', qr4: '手機掃描立即訂閱',
+        p5_tag: '短期高能', p5_title: '週訂閱', p5_price: 'NT$ 150', p5_unit: ' / 週',
+        p5_sub: '高效短期方案', btn5: '立即訂閱', qr5: '手機掃描立即訂閱',
+        flowTitle: '購買與開通流程 | Activation Guide',
+        flowSubtitle: '只需簡單五步驟,跨裝置自動同步',
+        flow_t1: '註冊新帳號', flow_desc1: '建議使用 Apple ID。點擊「建立新帳號」,建議直接選用綁定手機的 Apple ID 快速登入,方便後續同步。',
+        flow_t2: '選擇方案並付款', flow_desc2: '完成訂閱。在頁面上選擇您心儀的訂閱方案,並完成線上付款流程。',
+        flow_t3: '下載 App', flow_desc3: '前往 App Store 搜尋並下載 Zenith Magic App。',
+        flow_t4: '進入設定頁面', flow_desc4: '點選帳號系統。打開 App 後,進入「設定」頁面,點選「帳號系統登入」。',
+        flow_t5: '登入即刻解鎖', flow_desc5: '務必使用同一個帳號。使用與<span class="text-red-500 font-bold tracking-wide">註冊購買時的帳號(Email / Apple ID)完全一致</span>的帳號登入,系統將會自動辨識訂閱狀態並完成解鎖!',
+        flowHint: '小提示:請務必確保 App 內登入的帳號,與您當初在網頁端<span class="text-red-500 font-bold tracking-wide">註冊購買時的帳號(Email / Apple ID)完全一致</span>,否則系統會找不到您的訂閱紀錄喔!'
+    },
+    en: {
+        pricingTitle: 'Pricing Plans',
+        pricingSubtitle: 'Flexible Options for Everyone',
+        pricingFooterNote: 'Note: Secure payment processing via Stripe Payments. Upon successful subscription or lifetime bundle checkout, your account entitlements sync smoothly inside the iPhone app, covering 1-year coverage and extra free extended updates.',
+        tagPopular: 'POPULAR',
+        p1_tag: 'BEST VALUE', p1_title: 'Annual Plan', p1_price: 'US$ 63.00', p1_unit: ' / year',
+        p1_sub: 'Original price US69.99,saveUS6.99 at checkout, now only US$63.00!', btn1: 'Subscribe Now', qr1: 'Scan QR to Subscribe',
+        p2_tag: 'MID-TERM', p2_title: 'Semi-Annual Plan', p2_price: 'US$ 39.00', p2_unit: ' / 6 mos',
+        p2_sub: 'Original price US45.99,saveUS6.99 at checkout, now only US$39.00!', btn2: 'Subscribe Now', qr2: 'Scan QR to Subscribe',
+        p3_tag: 'LIFETIME', p3_title: 'Lifetime Pass', p3_price: 'US$ 186.15', p3_unit: ' / Lifetime',
+        p3_sub: 'Official website exclusive offer: Original price US219.00,joinnowtoenjoya15%discountforonlyUS186.15! Save US$32.85 instantly!', btn3: 'Buy Lifetime', qr3: 'Scan QR to Unlock',
+        p4_tag: 'FLEXIBLE', p4_title: 'Monthly Plan', p4_price: 'US$ 12.99', p4_unit: ' / month',
+        p4_sub: 'Flexible Monthly Plan', btn4: 'Subscribe Now', qr4: 'Scan QR to Subscribe',
+        p5_tag: 'SHORT TERM', p5_title: 'Weekly Plan', p5_price: 'US$ 5.00', p5_unit: ' / week',
+        p5_sub: 'Efficient Short-term Plan', btn5: 'Subscribe Now', qr5: 'Scan QR to Subscribe',
+        flowTitle: 'Activation Guide',
+        flowSubtitle: '5 Simple Steps to Sync Across Devices',
+        flow_t1: 'Register Account', flow_desc1: 'Apple ID is recommended. Click "Create Account" and link with your iPhone Apple ID for seamless cross-device syncing.',
+        flow_t2: 'Choose & Checkout', flow_desc2: 'Select your preferred subscription or lifetime plan and complete the secure online checkout.',
+        flow_t3: 'Download App', flow_desc3: 'Search and download Zenith Magic App inside the App Store.',
+        flow_t4: 'Open App Settings', flow_desc4: 'Launch the App, head over to the "Settings" menu panel, and tap "Account Login".',
+        flow_t5: 'Login to Unlock', flow_desc5: 'Must use the exact same ID. Log in using the <span class="text-red-500 font-bold tracking-wide">identical account (Email / Apple ID) used during checkout</span>, and features will unlock instantly.',
+        flowHint: 'Hint: Please ensure your in-app login account is <span class="text-red-500 font-bold tracking-wide">exactly identical to the registered account (Email / Apple ID)</span> used for web purchase, otherwise the server won\'t find your records!'
+    }
 };
+
 // 串聯一體化雙語切換處理器
 function toggleLang() {
-currentLang = currentLang === 'zh' ? 'en' : 'zh';
-applyAllTranslations();
+    currentLang = currentLang === 'zh' ? 'en' : 'zh';
+    applyAllTranslations();
 }
+
 // 相容帳號模組內建點擊呼叫
 function toggleLanguage() {
-toggleLang();
+    toggleLang();
 }
-// 唯一整合的翻譯核心引擎(包含官網、會員系統、定價方
-案)
+
+// 唯一整合的翻譯核心引擎(包含官網、會員系統、定價方案)
 function applyAllTranslations() {
-const lang = currentLang;
-// 1. 刷新官網及通用區塊文字結構
-const l = trans[lang];
-if (l) {
-if (document.getElementById('hero-title'))
-document.getElementById('hero-title').innerText = l.title;
-if (document.getElementById('hero-desc'))
-document.getElementById('hero-desc').innerText =
-l.desc;
-if (document.getElementById('btn-download'))
-document.getElementById('btn-download').innerText =
-l.download;
-if (document.getElementById('footer-quote'))
-document.getElementById('footer-quote').innerText =
-l.quote;
-if (document.getElementById('langBtn'))
-document.getElementById('langBtn').innerText =
-l.langBtn;
+    const lang = currentLang;
+    
+    // 1. 刷新官網及通用區塊文字結構
+    const l = trans[lang];
+    if (l) {
+        if (document.getElementById('hero-title')) document.getElementById('hero-title').innerText = l.title;
+        if (document.getElementById('hero-desc')) document.getElementById('hero-desc').innerText = l.desc;
+        if (document.getElementById('btn-download')) document.getElementById('btn-download').innerText = l.download;
+        if (document.getElementById('footer-quote')) document.getElementById('footer-quote').innerText = l.quote;
+        if (document.getElementById('langBtn')) document.getElementById('langBtn').innerText = l.langBtn;
+    }
+    
+    // 刷新含有 .lang-txt 屬性的標籤文本
+    document.querySelectorAll('.lang-txt').forEach(el => {
+        const targetText = el.getAttribute(`data-${lang}`);
+        if (targetText) el.innerHTML = targetText;
+    });
+    
+    // 刷新圖片 Gallery 標籤
+    document.querySelectorAll('.gallery-label').forEach(el => {
+        const targetText = el.getAttribute(`data-${lang}`);
+        if (targetText) el.innerText = targetText;
+    });
+
+    // 2. 刷新帳號登入系統介面
+    const i = i18n[lang];
+    if (i) {
+        if (document.getElementById('lang-btn')) document.getElementById('lang-btn').innerHTML = i.langBtn;
+        if (document.getElementById('close-btn')) document.getElementById('close-btn').innerText = i.closeBtn;
+        if (document.getElementById('sub-title-label')) document.getElementById('sub-title-label').innerText = i.titleLogin;
+        if (document.getElementById('text-apple-login')) document.getElementById('text-apple-login').innerText = i.appleLogin;
+        if (document.getElementById('btn-register-now')) document.getElementById('btn-register-now').innerText = i.registerNow;
+        if (document.getElementById('btn-back-to-login')) document.getElementById('btn-back-to-login').innerText = i.backToLogin;
+        if (document.getElementById('text-otp-step1-hint')) document.getElementById('text-otp-step1-hint').innerText = i.otpStep1Hint;
+        if (document.getElementById('btn-send-otp')) document.getElementById('btn-send-otp').innerText = i.sendOtp;
+        if (document.getElementById('text-otp-step2-hint')) document.getElementById('text-otp-step2-hint').innerText = i.otpStep2Hint;
+        if (document.getElementById('btn-confirm-reset')) document.getElementById('btn-confirm-reset').innerText = i.confirmReset;
+        if (document.getElementById('footer-or-label')) document.getElementById('footer-or-label').innerText = lang === 'zh' ? '或者' : 'OR';
+        
+        // 變更欄位 Placeholder
+        if (document.getElementById('reg-name')) document.getElementById('reg-name').placeholder = i.namePlaceholder;
+        if (document.getElementById('reg-email')) document.getElementById('reg-email').placeholder = i.emailPlaceholder;
+        if (document.getElementById('reg-password')) document.getElementById('reg-password').placeholder = i.passwordPlaceholder;
+        if (document.getElementById('login-email')) document.getElementById('login-email').placeholder = i.emailPlaceholder;
+        if (document.getElementById('login-password')) document.getElementById('login-password').placeholder = i.passwordPlaceholder;
+        if (document.getElementById('forgot-email')) document.getElementById('forgot-email').placeholder = i.emailPlaceholder;
+        if (document.getElementById('otp-code')) document.getElementById('otp-code').placeholder = i.otpPlaceholder;
+        if (document.getElementById('otp-password')) document.getElementById('otp-password').placeholder = i.passwordPlaceholder;
+        
+        // 密碼強度規則變更
+        if (document.getElementById('lbl-req-len')) document.getElementById('lbl-req-len').innerText = i.lblLen;
+        if (document.getElementById('lbl-req-up')) document.getElementById('lbl-req-up').innerText = i.lblUp;
+        if (document.getElementById('lbl-req-low')) document.getElementById('lbl-req-low').innerText = i.lblLow;
+        if (document.getElementById('lbl-req-num')) document.getElementById('lbl-req-num').innerText = i.lblNum;
+        if (document.getElementById('lbl-req-spec')) document.getElementById('lbl-req-spec').innerText = i.lblSpec;
+        if (document.getElementById('lbl-otp-len')) document.getElementById('lbl-otp-len').innerText = i.lblLen;
+        if (document.getElementById('lbl-otp-up')) document.getElementById('lbl-otp-up').innerText = i.lblUp;
+        if (document.getElementById('lbl-otp-low')) document.getElementById('lbl-otp-low').innerText = i.lblLow;
+        if (document.getElementById('lbl-otp-num')) document.getElementById('lbl-otp-num').innerText = i.lblNum;
+        if (document.getElementById('lbl-otp-spec')) document.getElementById('lbl-otp-spec').innerText = i.lblSpec;
+    }
+
+    // 3. 刷新定價方案與購買流程文字
+    const t = translations[lang];
+    if (t) {
+        if (document.getElementById('pricingTitle')) document.getElementById('pricingTitle').innerText = t.pricingTitle;
+        if (document.getElementById('pricingSubtitle')) document.getElementById('pricingSubtitle').innerText = t.pricingSubtitle;
+        if (document.getElementById('pricingFooterNote')) document.getElementById('pricingFooterNote').innerText = t.pricingFooterNote;
+        if (document.getElementById('tag_popular')) document.getElementById('tag_popular').innerText = t.tagPopular;
+        
+        // 方案 1
+        if (document.getElementById('plan1_tag')) document.getElementById('plan1_tag').innerText = t.p1_tag;
+        if (document.getElementById('plan1_title')) document.getElementById('plan1_title').innerText = t.p1_title;
+        if (document.getElementById('plan1_price')) document.getElementById('plan1_price').innerText = t.p1_price;
+        if (document.getElementById('plan1_unit')) document.getElementById('plan1_unit').innerText = t.p1_unit;
+        if (document.getElementById('plan1_sub')) document.getElementById('plan1_sub').innerText = t.p1_sub;
+        if (document.getElementById('btn-sub1')) document.getElementById('btn-sub1').innerText = t.btn1;
+        if (document.getElementById('qr_scan1')) document.getElementById('qr_scan1').innerText = t.qr1;
+        
+        // 方案 2
+        if (document.getElementById('plan2_tag')) document.getElementById('plan2_tag').innerText = t.p2_tag;
+        if (document.getElementById('plan2_title')) document.getElementById('plan2_title').innerText = t.p2_title;
+        if (document.getElementById('plan2_price')) document.getElementById('plan2_price').innerText = t.p2_price;
+        if (document.getElementById('plan2_unit')) document.getElementById('plan2_unit').innerText = t.p2_unit;
+        if (document.getElementById('plan2_sub')) document.getElementById('plan2_sub').innerText = t.p2_sub;
+        if (document.getElementById('btn_sub2')) document.getElementById('btn_sub2').innerText = t.btn2;
+        if (document.getElementById('qr_scan2')) document.getElementById('qr_scan2').innerText = t.qr2;
+        
+        // 方案 3
+        if (document.getElementById('plan3_tag')) document.getElementById('plan3_tag').innerText = t.p3_tag;
+        if (document.getElementById('plan3_title')) document.getElementById('plan3_title').innerText = t.p3_title;
+        if (document.getElementById('plan3_price')) document.getElementById('plan3_price').innerText = t.p3_price;
+        if (document.getElementById('plan3_unit')) document.getElementById('plan3_unit').innerText = t.p3_unit;
+        if (document.getElementById('plan3_sub')) document.getElementById('plan3_sub').innerText = t.p3_sub;
+        if (document.getElementById('btn_sub3')) document.getElementById('btn_sub3').innerText = t.btn3;
+        if (document.getElementById('qr_scan3')) document.getElementById('qr_scan3').innerText = t.qr3;
+        
+        // 方案 4
+        if (document.getElementById('plan4_tag')) document.getElementById('plan4_tag').innerText = t.p4_tag;
+        if (document.getElementById('plan4_title')) document.getElementById('plan4_title').innerText = t.p4_title;
+        if (document.getElementById('plan4_price')) document.getElementById('plan4_price').innerText = t.p4_price;
+        if (document.getElementById('plan4_unit')) document.getElementById('plan4_unit').innerText = t.p4_unit;
+        if (document.getElementById('plan4_sub')) document.getElementById('plan4_sub').innerText = t.p4_sub;
+        if (document.getElementById('btn_sub4')) document.getElementById('btn_sub4').innerText = t.btn4;
+        if (document.getElementById('qr_scan4')) document.getElementById('qr_scan4').innerText = t.qr4;
+        
+        // 方案 5
+        if (document.getElementById('plan5_tag')) document.getElementById('plan5_tag').innerText = t.p5_tag;
+        if (document.getElementById('plan5_title')) document.getElementById('plan5_title').innerText = t.p5_title;
+        if (document.getElementById('plan5_price')) document.getElementById('plan5_price').innerText = t.p5_price;
+        if (document.getElementById('plan5_unit')) document.getElementById('plan5_unit').innerText = t.p5_unit;
+        if (document.getElementById('plan5_sub')) document.getElementById('plan5_sub').innerText = t.p5_sub;
+        if (document.getElementById('btn_sub5')) document.getElementById('btn_sub5').innerText = t.btn5;
+        if (document.getElementById('qr_scan5')) document.getElementById('qr_scan5').innerText = t.qr5;
+        
+        // 流程步驟
+        if (document.getElementById('flowTitle')) document.getElementById('flowTitle').innerText = t.flowTitle;
+        if (document.getElementById('flowSubtitle')) document.getElementById('flowSubtitle').innerText = t.flowSubtitle;
+        if (document.getElementById('flow_t1')) document.getElementById('flow_t1').innerText = t.flow_t1;
+        if (document.getElementById('flow_desc1')) document.getElementById('flow_desc1').innerHTML = t.flow_desc1;
+        if (document.getElementById('flow_t2')) document.getElementById('flow_t2').innerText = t.flow_t2;
+        if (document.getElementById('flow_desc2')) document.getElementById('flow_desc2').innerHTML = t.flow_desc2;
+        if (document.getElementById('flow_t3')) document.getElementById('flow_t3').innerText = t.flow_t3;
+        if (document.getElementById('flow_desc3')) document.getElementById('flow_desc3').innerHTML = t.flow_desc3;
+        if (document.getElementById('flow_t4')) document.getElementById('flow_t4').innerText = t.flow_t4;
+        if (document.getElementById('flow_desc4')) document.getElementById('flow_desc4').innerHTML = t.flow_desc4;
+        if (document.getElementById('flow_t5')) document.getElementById('flow_t5').innerText = t.flow_t5;
+        if (document.getElementById('flow_desc5')) document.getElementById('flow_desc5').innerHTML = t.flow_desc5;
+        if (document.getElementById('flowHint')) document.getElementById('flowHint').innerHTML = t.flowHint;
+    }
 }
-// 刷新含有 .lang-txt 屬性的標籤文本
-document.querySelectorAll('.lang-txt').forEach(el => {
-const targetText = el.getAttribute(`data-${lang}`);
-if (targetText) el.innerHTML = targetText;
-});
-=> {
-// 刷新圖片 Gallery 標籤
-document.querySelectorAll('.gallery-label').forEach(el
-const targetText = el.getAttribute(`data-${lang}`);
-if (targetText) el.innerText = targetText;
-});
-// 2. 刷新帳號登入系統介面
-const i = i18n[lang];
-if (i) {
-if (document.getElementById('lang-btn'))
-document.getElementById('lang-btn').innerHTML =
-i.langBtn;
-if (document.getElementById('close-btn'))
-document.getElementById('close-btn').innerText =
-i.closeBtn;
-if (document.getElementById('sub-title-label'))
-document.getElementById('sub-title-label').innerText =
-i.titleLogin;
-if (document.getElementById('text-apple-login'))
-document.getElementById('text-apple-login').innerText =
-i.appleLogin;
-if (document.getElementById('btn-register-now'))
-document.getElementById('btn-register-now').innerText
-= i.registerNow;
-if (document.getElementById('btn-back-to-login'))
-document.getElementById('btn-back-to-login').innerText
-= i.backToLogin;
-if (document.getElementById('text-otp-step1-hint'))
-document.getElementById('text-otp-step1-hint').innerTex
-t = i.otpStep1Hint;
-if (document.getElementById('btn-send-otp'))
-document.getElementById('btn-send-otp').innerText =
-i.sendOtp;
-if (document.getElementById('text-otp-step2-hint'))
-document.getElementById('text-otp-step2-hint').innerTex
-t = i.otpStep2Hint;
-if (document.getElementById('btn-confirm-reset'))
-document.getElementById('btn-confirm-reset').innerText
-= i.confirmReset;
-if (document.getElementById('footer-or-label'))
-document.getElementById('footer-or-label').innerText =
-lang === 'zh' ? '或者' : 'OR';
-// 變更欄位 Placeholder
-if (document.getElementById('reg-name'))
-document.getElementById('reg-name').placeholder =
-i.namePlaceholder;
-if (document.getElementById('reg-email'))
-document.getElementById('reg-email').placeholder =
-i.emailPlaceholder;
-if (document.getElementById('reg-password'))
-document.getElementById('reg-password').placeholder
-= i.passwordPlaceholder;
-if (document.getElementById('login-email'))
-document.getElementById('login-email').placeholder =
-i.emailPlaceholder;
-if (document.getElementById('login-password'))
-document.getElementById('login-password').placeholder
-= i.passwordPlaceholder;
-if (document.getElementById('forgot-email'))
-document.getElementById('forgot-email').placeholder =
-i.emailPlaceholder;
-if (document.getElementById('otp-code'))
-document.getElementById('otp-code').placeholder =
-i.otpPlaceholder;
-if (document.getElementById('otp-password'))
-document.getElementById('otp-password').placeholder
-= i.passwordPlaceholder;
-// 密碼強度規則變更
-if (document.getElementById('lbl-req-len'))
-document.getElementById('lbl-req-len').innerText =
-i.lblLen;
-if (document.getElementById('lbl-req-up'))
-document.getElementById('lbl-req-up').innerText =
-i.lblUp;
-if (document.getElementById('lbl-req-low'))
-document.getElementById('lbl-req-low').innerText =
-i.lblLow;
-if (document.getElementById('lbl-req-num'))
-document.getElementById('lbl-req-num').innerText =
-i.lblNum;
-if (document.getElementById('lbl-req-spec'))
-document.getElementById('lbl-req-spec').innerText =
-i.lblSpec;
-if (document.getElementById('lbl-otp-len'))
-document.getElementById('lbl-otp-len').innerText =
-i.lblLen;
-if (document.getElementById('lbl-otp-up'))
-document.getElementById('lbl-otp-up').innerText =
-i.lblUp;
-if (document.getElementById('lbl-otp-low'))
-document.getElementById('lbl-otp-low').innerText =
-i.lblLow;
-if (document.getElementById('lbl-otp-num'))
-document.getElementById('lbl-otp-num').innerText =
-i.lblNum;
-if (document.getElementById('lbl-otp-spec'))
-document.getElementById('lbl-otp-spec').innerText =
-i.lblSpec;
-}
-// 3. 刷新定價方案與購買流程文字
-const t = translations[lang];
-if (t) {
-if (document.getElementById('pricingTitle'))
-document.getElementById('pricingTitle').innerText =
-t.pricingTitle;
-if (document.getElementById('pricingSubtitle'))
-document.getElementById('pricingSubtitle').innerText =
-t.pricingSubtitle;
-if (document.getElementById('pricingFooterNote'))
-document.getElementById('pricingFooterNote').innerText
-= t.pricingFooterNote;
-if (document.getElementById('tag_popular'))
-document.getElementById('tag_popular').innerText =
-t.tagPopular;
-// 方案 1
-if (document.getElementById('plan1_tag'))
-document.getElementById('plan1_tag').innerText =
-t.p1_tag;
-if (document.getElementById('plan1_title'))
-document.getElementById('plan1_title').innerText =
-t.p1_title;
-if (document.getElementById('plan1_price'))
-document.getElementById('plan1_price').innerText =
-t.p1_price;
-if (document.getElementById('plan1_unit'))
-document.getElementById('plan1_unit').innerText =
-t.p1_unit;
-if (document.getElementById('plan1_sub'))
-document.getElementById('plan1_sub').innerText =
-t.p1_sub;
-if (document.getElementById('btn-sub1'))
-document.getElementById('btn-sub1').innerText = t.btn1;
-if (document.getElementById('qr_scan1'))
-document.getElementById('qr_scan1').innerText = t.qr1;
-// 方案 2
-if (document.getElementById('plan2_tag'))
-document.getElementById('plan2_tag').innerText =
-t.p2_tag;
-if (document.getElementById('plan2_title'))
-document.getElementById('plan2_title').innerText =
-t.p2_title;
-if (document.getElementById('plan2_price'))
-document.getElementById('plan2_price').innerText =
-t.p2_price;
-if (document.getElementById('plan2_unit'))
-document.getElementById('plan2_unit').innerText =
-t.p2_unit;
-if (document.getElementById('plan2_sub'))
-document.getElementById('plan2_sub').innerText =
-t.p2_sub;
-if (document.getElementById('btn_sub2'))
-document.getElementById('btn_sub2').innerText =
-t.btn2;
-if (document.getElementById('qr_scan2'))
-document.getElementById('qr_scan2').innerText = t.qr2;
-// 方案 3
-if (document.getElementById('plan3_tag'))
-document.getElementById('plan3_tag').innerText =
-t.p3_tag;
-if (document.getElementById('plan3_title'))
-document.getElementById('plan3_title').innerText =
-t.p3_title;
-if (document.getElementById('plan3_price'))
-document.getElementById('plan3_price').innerText =
-t.p3_price;
-if (document.getElementById('plan3_unit'))
-document.getElementById('plan3_unit').innerText =
-t.p3_unit;
-if (document.getElementById('plan3_sub'))
-document.getElementById('plan3_sub').innerText =
-t.p3_sub;
-if (document.getElementById('btn_sub3'))
-document.getElementById('btn_sub3').innerText =
-t.btn3;
-if (document.getElementById('qr_scan3'))
-document.getElementById('qr_scan3').innerText = t.qr3;
-// 方案 4
-if (document.getElementById('plan4_tag'))
-document.getElementById('plan4_tag').innerText =
-t.p4_tag;
-if (document.getElementById('plan4_title'))
-document.getElementById('plan4_title').innerText =
-t.p4_title;
-if (document.getElementById('plan4_price'))
-document.getElementById('plan4_price').innerText =
-t.p4_price;
-if (document.getElementById('plan4_unit'))
-document.getElementById('plan4_unit').innerText =
-t.p4_unit;
-if (document.getElementById('plan4_sub'))
-document.getElementById('plan4_sub').innerText =
-t.p4_sub;
-if (document.getElementById('btn_sub4'))
-document.getElementById('btn_sub4').innerText =
-t.btn4;
-if (document.getElementById('qr_scan4'))
-document.getElementById('qr_scan4').innerText = t.qr4;
-// 方案 5
-if (document.getElementById('plan5_tag'))
-document.getElementById('plan5_tag').innerText =
-t.p5_tag;
-if (document.getElementById('plan5_title'))
-document.getElementById('plan5_title').innerText =
-t.p5_title;
-if (document.getElementById('plan5_price'))
-document.getElementById('plan5_price').innerText =
-t.p5_price;
-if (document.getElementById('plan5_unit'))
-document.getElementById('plan5_unit').innerText =
-t.p5_unit;
-if (document.getElementById('plan5_sub'))
-document.getElementById('plan5_sub').innerText =
-t.p5_sub;
-if (document.getElementById('btn_sub5'))
-document.getElementById('btn_sub5').innerText =
-t.btn5;
-if (document.getElementById('qr_scan5'))
-document.getElementById('qr_scan5').innerText = t.qr5;
-// 流程步驟
-if (document.getElementById('flowTitle'))
-document.getElementById('flowTitle').innerText =
-t.flowTitle;
-if (document.getElementById('flowSubtitle'))
-document.getElementById('flowSubtitle').innerText =
-t.flowSubtitle;
-if (document.getElementById('flow_t1'))
-document.getElementById('flow_t1').innerText =
-t.flow_t1;
-if (document.getElementById('flow_desc1'))
-document.getElementById('flow_desc1').innerHTML =
-t.flow_desc1;
-if (document.getElementById('flow_t2'))
-document.getElementById('flow_t2').innerText =
-t.flow_t2;
-if (document.getElementById('flow_desc2'))
-document.getElementById('flow_desc2').innerHTML =
-t.flow_desc2;
-if (document.getElementById('flow_t3'))
-document.getElementById('flow_t3').innerText =
-t.flow_t3;
-if (document.getElementById('flow_desc3'))
-document.getElementById('flow_desc3').innerHTML =
-t.flow_desc3;
-if (document.getElementById('flow_t4'))
-document.getElementById('flow_t4').innerText =
-t.flow_t4;
-if (document.getElementById('flow_desc4'))
-document.getElementById('flow_desc4').innerHTML =
-t.flow_desc4;
-if (document.getElementById('flow_t5'))
-document.getElementById('flow_t5').innerText =
-t.flow_t5;
-if (document.getElementById('flow_desc5'))
-document.getElementById('flow_desc5').innerHTML =
-t.flow_desc5;
-if (document.getElementById('flowHint'))
-document.getElementById('flowHint').innerHTML =
-t.flowHint;
-}
-}
+
 // 切換帳號系統面板顯示元件
 function switchPanel(panelId) {
-const panels = ['register-panel', 'login-panel',
-'forgot-panel', 'dashboard-panel'];
-panels.forEach(id => {
-const el = document.getElementById(id);
-if (el) {
-if (id === panelId) el.classList.remove('hidden');
-else el.classList.add('hidden');
+    const panels = ['register-panel', 'login-panel', 'forgot-panel', 'dashboard-panel'];
+    panels.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            if (id === panelId) el.classList.remove('hidden');
+            else el.classList.add('hidden');
+        }
+    });
+    
+    // 同步動態更新標題標籤
+    const mainTitle = document.getElementById('main-title-label');
+    const lang = currentLang;
+    if (mainTitle && i18n[lang]) {
+        if (panelId === 'register-panel') mainTitle.innerText = i18n[lang].titleRegister;
+        if (panelId === 'login-panel') mainTitle.innerText = i18n[lang].titleLogin;
+        if (panelId === 'forgot-panel') mainTitle.innerText = i18n[lang].titleReset;
+    }
 }
-});
-// 同步動態更新標題標籤
-const mainTitle =
-document.getElementById('main-title-label');
-const lang = currentLang;
-if (mainTitle && i18n[lang]) {
-if (panelId === 'register-panel') mainTitle.innerText
-= i18n[lang].titleRegister;
-if (panelId === 'login-panel') mainTitle.innerText =
-i18n[lang].titleLogin;
-if (panelId === 'forgot-panel') mainTitle.innerText =
-i18n[lang].titleReset;
-}
-}
+
 // 密碼即時強度校驗機制
 function validatePasswordLive(type) {
-const passwordInput =
-document.getElementById(`${type}-password`);
-const strengthBar =
-document.getElementById(`${type}-strength-bar`);
-const strengthLabel =
-document.getElementById(`${type}-strength-label`);
-if (!passwordInput) return;
-const val = passwordInput.value;
-let score = 0;
-const reqs = {
-len: val.length >= 8,
-up: /[A-Z]/.test(val),
-low: /[a-z]/.test(val),
-num: /[0-9]/.test(val),
-spec: /[^A-Za-z0-9]/.test(val)
-};
-// 更新各規約 UI 的狀態圖示
-for (const key in reqs) {
-const reqEl =
-document.getElementById(`type-req-{key}`);
-if (reqEl) {
-if (reqs[key]) {
-reqEl.className = "flex items-center gap-2
-text-emerald-400 font-medium";
-reqEl.querySelector('i').className = "fa-solid
-fa-circle-check text-sm";
-score++;
-} else {
-reqEl.className = "flex items-center gap-2
-text-gray-500";
-reqEl.querySelector('i').className =
-"fa-regular fa-circle text-sm";
+    const passwordInput = document.getElementById(`${type}-password`);
+    const strengthBar = document.getElementById(`${type}-strength-bar`);
+    const strengthLabel = document.getElementById(`${type}-strength-label`);
+    if (!passwordInput) return;
+
+    const val = passwordInput.value;
+    let score = 0;
+    
+    const reqs = {
+        len: val.length >= 8,
+        up: /[A-Z]/.test(val),
+        low: /[a-z]/.test(val),
+        num: /[0-9]/.test(val),
+        spec: /[^A-Za-z0-9]/.test(val)
+    };
+
+    // 更新各規約 UI 的狀態圖示
+    for (const key in reqs) {
+        const reqEl = document.getElementById(`type-req-{key}`);
+        if (reqEl) {
+            if (reqs[key]) {
+                reqEl.className = "flex items-center gap-2 text-emerald-400 font-medium";
+                reqEl.querySelector('i').className = "fa-solid fa-circle-check text-sm";
+                score++;
+            } else {
+                reqEl.className = "flex items-center gap-2 text-gray-500";
+                reqEl.querySelector('i').className = "fa-regular fa-circle text-sm";
+            }
+        }
+    }
+
+    // 計算強度數值長度條與文字呈現
+    if (val.length === 0) {
+        strengthBar.className = "h-full w-0 bg-red-500";
+        if (strengthLabel) strengthLabel.innerText = "";
+        if (type === 'reg') isRegPasswordSecure = false;
+        if (type === 'otp') isOtpPasswordSecure = false;
+    } else {
+        const percent = (score / 5) * 100;
+        strengthBar.style.width = `${percent}%`;
+        
+        if (score <= 2) {
+            strengthBar.className = "h-full bg-red-500 transition-all duration-300";
+            if (strengthLabel) { strengthLabel.innerText = currentLang === 'zh' ? '低強度' : 'Weak'; strengthLabel.className = "text-red-500 font-bold tracking-wide"; }
+            if (type === 'reg') isRegPasswordSecure = false;
+            if (type === 'otp') isOtpPasswordSecure = false;
+        } else if (score <= 4) {
+            strengthBar.className = "h-full bg-amber-500 transition-all duration-300";
+            if (strengthLabel) { strengthLabel.innerText = currentLang === 'zh' ? '中強度' : 'Medium'; strengthLabel.className = "text-amber-500 font-bold tracking-wide"; }
+            if (type === 'reg') isRegPasswordSecure = false;
+            if (type === 'otp') isOtpPasswordSecure = false;
+        } else {
+            strengthBar.className = "h-full bg-emerald-500 transition-all duration-300";
+            if (strengthLabel) { strengthLabel.innerText = currentLang === 'zh' ? '極高強度' : 'Strong'; strengthLabel.className = "text-emerald-400 font-bold tracking-wide"; }
+            if (type === 'reg') isRegPasswordSecure = true;
+            if (type === 'otp') isOtpPasswordSecure = true;
+        }
+    }
 }
-}
-}
-// 計算強度數值長度條與文字呈現
-if (val.length === 0) {
-strengthBar.className = "h-full w-0 bg-red-500";
-if (strengthLabel) strengthLabel.innerText = "";
-if (type === 'reg') isRegPasswordSecure = false;
-if (type === 'otp') isOtpPasswordSecure = false;
-} else {
-const percent = (score / 5) * 100;
-strengthBar.style.width = `${percent}%`;
-if (score <= 2) {
-strengthBar.className = "h-full bg-red-500
-transition-all duration-300";
-if (strengthLabel) { strengthLabel.innerText =
-currentLang === 'zh' ? '低強度' : 'Weak';
-strengthLabel.className = "text-red-500 font-bold
-tracking-wide"; }
-if (type === 'reg') isRegPasswordSecure = false;
-if (type === 'otp') isOtpPasswordSecure = false;
-} else if (score <= 4) {
-strengthBar.className = "h-full bg-amber-500
-transition-all duration-300";
-if (strengthLabel) { strengthLabel.innerText =
-currentLang === 'zh' ? '中強度' : 'Medium';
-strengthLabel.className = "text-amber-500 font-bold
-tracking-wide"; }
-if (type === 'reg') isRegPasswordSecure = false;
-if (type === 'otp') isOtpPasswordSecure = false;
-} else {
-strengthBar.className = "h-full bg-emerald-500
-transition-all duration-300";
-if (strengthLabel) { strengthLabel.innerText =
-currentLang === 'zh' ? '極高強度' : 'Strong';
-strengthLabel.className = "text-emerald-400 font-bold
-tracking-wide"; }
-if (type === 'reg') isRegPasswordSecure = true;
-if (type === 'otp') isOtpPasswordSecure = true;
-}
-}
-}
+
 // 控制密碼欄位明文/密文切換
 function togglePasswordVisibility(inputId) {
-const input = document.getElementById(inputId);
-const eyeIcon =
-document.getElementById(`eye-${inputId}`);
-if (input && eyeIcon) {
-if (input.type === 'password') {
-input.type = 'text';
-eyeIcon.className = 'fa-solid fa-eye-slash
-text-lg';
-} else {
-input.type = 'password';
-eyeIcon.className = 'fa-solid fa-eye text-lg';
+    const input = document.getElementById(inputId);
+    const eyeIcon = document.getElementById(`eye-${inputId}`);
+    if (input && eyeIcon) {
+        if (input.type === 'password') {
+            input.type = 'text';
+            eyeIcon.className = 'fa-solid fa-eye-slash text-lg';
+        } else {
+            input.type = 'password';
+            eyeIcon.className = 'fa-solid fa-eye text-lg';
+        }
+    }
 }
-}
-}
+
 // 隱藏/關閉帳號面板
 function hideAuthPanel() {
-const authSection =
-document.getElementById('auth-section');
-if (authSection) {
-authSection.classList.add('hidden');
+    const authSection = document.getElementById('auth-section');
+    if (authSection) {
+        authSection.classList.add('hidden');
+    }
 }
-}
-// 彈出提示視窗與其餘核心邏輯按鈕 Stub 函數區塊保持
-不變
-function handleDownload(isWatch) { alert(currentLang
-=== 'zh' ? '前往App Store搜尋Zenith Magic並下載' : 'Go
-to the App Store, search for Zenith Magic, and download
-it.'); }
-function handleAppleLogin() { alert('Apple Login
-Clicked'); }
-function handleEmailRegister() { alert('Register clicked');
-}
-function handleEmailLogin() {
-switchPanel('dashboard-panel');
-document.getElementById('user-display-email').innerTex
-t = document.getElementById('login-email').value ||
-"user@example.com"; }
+
+// 彈出提示視窗與其餘核心邏輯按鈕 Stub 函數區塊保持不變
+function handleDownload(isWatch) { alert(currentLang === 'zh' ? '前往App Store搜尋Zenith Magic並下載' : 'Go to the App Store, search for Zenith Magic, and download it.'); }
+function handleAppleLogin() { alert('Apple Login Clicked'); }
+function handleEmailRegister() { alert('Register clicked'); }
+function handleEmailLogin() { switchPanel('dashboard-panel'); document.getElementById('user-display-email').innerText = document.getElementById('login-email').value || "user@example.com"; }
 function handleLogout() { switchPanel('register-panel'); }
-function sendResetOTP() {
-document.getElementById('otp-step-2').classList.remove
-('hidden'); }
-function verifyOTPAndReset() { alert('Password Reset
-Successfully'); switchPanel('login-panel'); }
-function handleDeleteAccount() { confirm('確定永久刪除
-帳號？'); }
+function sendResetOTP() { document.getElementById('otp-step-2').classList.remove('hidden'); }
+function verifyOTPAndReset() { alert('Password Reset Successfully'); switchPanel('login-panel'); }
+function handleDeleteAccount() { confirm('確定永久刪除帳號？'); }
+
 // 初始化加載
 window.onload = function() {
-// 動態建構年齡選單區塊
-const ageSelect =
-document.getElementById('reg-age');
-if (ageSelect) {
-for (let idx = 18; idx <= 100; idx++) {
-const opt = document.createElement('option');
-opt.value = idx;
-opt.innerText = `${idx} 歲 / years old`;
-ageSelect.appendChild(opt);
-}
-}
-// 套用預設語系
-applyAllTranslations();
+    // 動態建構年齡選單區塊
+    const ageSelect = document.getElementById('reg-age');
+    if (ageSelect) {
+        for (let idx = 18; idx <= 100; idx++) {
+            const opt = document.createElement('option');
+            opt.value = idx;
+            opt.innerText = `${idx} 歲 / years old`;
+            ageSelect.appendChild(opt);
+        }
+    }
+    // 套用預設語系
+    applyAllTranslations();
 };
 </script>
 </body>
