@@ -906,6 +906,7 @@ const i18n = {
         ageSuffix: "歲",
         registerNow: "立即註冊",
         backToLogin: "已有帳號?返回登入",
+        forgotBtn: "忘記密碼?", 
         otpStep1Hint: "請輸入您的電子郵件,我們將發送6~8位數驗證碼至您的信箱。",
         sendOtp: "發送驗證碼",
         otpStep2Hint: "驗證碼已發送!請輸入6~8位數驗證碼與高強度新密碼。",
@@ -930,6 +931,7 @@ const i18n = {
         ageSuffix: "years old",
         registerNow: "Register Now",
         backToLogin: "Already have an account? Log In",
+        forgotBtn: "Forgot Password?",
         otpStep1Hint: "Please enter your email, we will send a 6-8 digit verification code.",
         sendOtp: "Send Verification Code",
         otpStep2Hint: "Verification code sent! Please enter the code and a strong password.",
@@ -1037,6 +1039,8 @@ function applyAllTranslations() {
     if (i) {
         if (document.getElementById('lang-btn')) document.getElementById('lang-btn').innerHTML = i.langBtn;
         if (document.getElementById('close-btn')) document.getElementById('close-btn').innerText = i.closeBtn;
+//                                                                                       if (document.getElementById('footer-forgot-btn')) {document.getElementById('footer-forgot-btn').innerText = i.forgotBtn;
+} 
         if (document.getElementById('sub-title-label')) document.getElementById('sub-title-label').innerText = i.titleLogin;
         if (document.getElementById('text-apple-login')) document.getElementById('text-apple-login').innerText = i.appleLogin;
         if (document.getElementById('btn-register-now')) document.getElementById('btn-register-now').innerText = i.registerNow;
