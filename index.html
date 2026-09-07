@@ -686,7 +686,7 @@ alt="Smartwatch Integration Features">
         <div class="relative">
           <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-calendar-days"></i></span>
           <select id="reg-age" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-10 py-3.5 rounded-xl font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none cursor-pointer">
-            <option value="" disabled selected data-i18n="selectAge">選擇年齡</option>
+            <option value="" disabled selected class="lang-txt" data-zh="選擇年齡" data-en="Select Age">選擇年齡</option>
           </select>
           <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500 pointer-events-none"><i class="fa-solid fa-chevron-down text-sm"></i></span>
         </div>
@@ -1281,23 +1281,40 @@ function applyAllTranslations() {
         if (document.getElementById('langBtn')) document.getElementById('langBtn').innerText = l.langBtn;
     }
     
-    // 刷新含有 .lang-txt 屬性的標籤文本
-document.querySelectorAll('.lang-txt').forEach(el => {
-    const targetText = el.getAttribute(`data-${lang}`);
-    if (targetText) el.innerHTML = targetText;
-});
+   function changeLanguage(lang) {
+    // 1. 刷新含有 .lang-txt 的標籤（包含 span, p, h2, button, option 等文字）
+    document.querySelectorAll('.lang-txt').forEach(el => {
+        const targetText = el.getAttribute(`data-${lang}`);
+        if (targetText) el.innerHTML = targetText;
+    });
 
-// 刷新圖片 Gallery 標籤
-document.querySelectorAll('.gallery-label').forEach(el => {
-    const targetText = el.getAttribute(`data-${lang}`);
-    if (targetText) el.innerText = targetText;
-});
+    // 2. 刷新圖片 Gallery 標籤文字
+    document.querySelectorAll('.gallery-label').forEach(el => {
+        const targetText = el.getAttribute(`data-${lang}`);
+        if (targetText) el.innerText = targetText;
+    });
 
-// 刷新多國語言圖片 (新增這段)
-document.querySelectorAll('.lang-img').forEach(img => {
-    const targetSrc = img.getAttribute(`data-${lang}`);
-    if (targetSrc) img.src = targetSrc;
-});
+    // 3. 刷新多國語言圖片 (切換 src)
+    document.querySelectorAll('.lang-img').forEach(img => {
+        const targetSrc = img.getAttribute(`data-${lang}`);
+        if (targetSrc) img.src = targetSrc;
+    });
+
+    // 4. 刷新輸入框的提示文字 (Placeholder)
+    document.querySelectorAll('input[data-zh-ph], textarea[data-zh-ph]').forEach(input => {
+        const targetPlaceholder = input.getAttribute(`data-${lang}-ph`);
+        if (targetPlaceholder) input.placeholder = targetPlaceholder;
+    });
+
+    // 5. 如果有使用字典檔 i18n 物件，同步刷新帶有 data-i18n 的標籤
+    if (typeof i18n !== 'undefined' && i18n[lang]) {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (i18n[lang][key]) el.innerHTML = i18n[lang][key];
+        });
+    }
+}
+
 
     // 2. 刷新帳號登入系統介面
     const i = i18n[lang];
