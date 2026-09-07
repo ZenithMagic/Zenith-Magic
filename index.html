@@ -686,7 +686,7 @@ alt="Smartwatch Integration Features">
         <div class="relative">
           <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-[#EAB308] text-lg"><i class="fa-solid fa-calendar-days"></i></span>
           <select id="reg-age" class="w-full bg-[#F3F4F6] text-gray-900 pl-12 pr-10 py-3.5 rounded-xl font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none cursor-pointer">
-            <option value="">選擇年齡</option>
+            <option value="" disabled selected data-i18n="selectAge">選擇年齡</option>
           </select>
           <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-500 pointer-events-none"><i class="fa-solid fa-chevron-down text-sm"></i></span>
         </div>
@@ -1140,6 +1140,10 @@ const i18n = {
         emailPlaceholder: "電子郵件",
         passwordPlaceholder: "密碼",
         namePlaceholder: "姓名或暱稱",
+        selectAge: "選擇年齡", // 新增
+        pwdStrength: "密碼強度", // 新增
+        forgotPwd: "忘記密碼？", // 新增
+        termsNotice: '註冊即代表您同意我們的 <a href="#" class="underline">服務條款</a> 與 <a href="#" class="underline">隱私政策</a>', // 新增
         ageSuffix: "歲",
         registerNow: "立即註冊",
         backToLogin: "已有帳號?返回登入",
@@ -1164,6 +1168,10 @@ const i18n = {
         emailPlaceholder: "Email Address",
         passwordPlaceholder: "Password",
         namePlaceholder: "Name or Nickname",
+        selectAge: "Select Age", // 新增
+        pwdStrength: "Password Strength", // 新增
+        forgotPwd: "Forgot Password?", // 新增
+        termsNotice: 'By registering, you agree to our <a href="#" class="underline">Terms of Service</a> & <a href="#" class="underline">Privacy Policy</a>', // 新增
         ageSuffix: "years old",
         registerNow: "Register Now",
         backToLogin: "Already have an account? Log In",
@@ -1179,6 +1187,7 @@ const i18n = {
         lblSpec: "At least one special symbol (@, #, $, %, etc.)"
     }
 };
+
 
 // 3. 定價方案與流程區塊字典檔
 const translations = {
