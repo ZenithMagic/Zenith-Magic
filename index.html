@@ -835,14 +835,27 @@ alt="Smartwatch Integration Features">
       <button onclick="handleLogout()" id="btn-logout" class="w-full bg-gray-800 hover:bg-gray-700 text-white font-medium py-3.5 rounded-xl transition cursor-pointer mt-auto">登出帳號</button>
     </div>
 
-    <!-- 頁尾條款區 -->
-    <div class="mt-6 space-y-4 w-full">
-      <p id="terms-box" class="text-center text-[11px] text-gray-500 leading-relaxed px-4">
-        <span id="text-terms-prefix">註冊即代表您同意我們的 </span>
-        <a href="https://paul-750-k.github.io/Account-System-Terms-of-Service/#zh-tw" target="_blank" class="text-[#EAB308] underline hover:text-yellow-500 font-medium">服務條款</a>
-        <span id="text-and">與</span>
-        <a href="https://paul-750-k.github.io/-Privacy-Policy/#zh-tw" target="_blank" class="text-[#EAB308] underline hover:text-yellow-500 font-medium">隱私政策</a>
-      </p>
+   <!-- 頁尾條款區 -->
+<div class="mt-6 space-y-4 w-full">
+  <p id="terms-box" class="text-center text-[11px] text-gray-500 leading-relaxed px-4">
+    <span id="text-terms-prefix" class="lang-txt" data-zh="註冊即代表您同意我們的 " data-en="By registering, you agree to our ">註冊即代表您同意我們的 </span>
+    
+    <a href="https://paul-750-k.github.io/Account-System-Terms-of-Service/#zh-tw" 
+       target="_blank" 
+       class="lang-txt text-[#EAB308] underline hover:text-yellow-500 font-medium" 
+       data-zh="服務條款" 
+       data-en="Terms of Service">服務條款</a>
+    
+    <span id="text-and" class="lang-txt" data-zh="與" data-en=" and ">與</span>
+    
+    <a href="https://paul-750-k.github.io/-Privacy-Policy/#zh-tw" 
+       target="_blank" 
+       class="lang-txt text-[#EAB308] underline hover:text-yellow-500 font-medium" 
+       data-zh="隱私政策" 
+       data-en="Privacy Policy">隱私政策</a>
+  </p>
+</div>
+
       <div id="danger-zone" class="border-t border-red-900/30 pt-4 hidden">
         <button onclick="handleDeleteAccount()" id="btn-delete-acc" class="w-full text-red-500 bg-red-950/20 hover:bg-red-950/40 border border-red-900/40 py-2.5 rounded-xl text-xs font-semibold tracking-wide transition active:scale-[0.99] cursor-pointer">
           <i class="fa-solid fa-trash-can mr-1.5"></i> 永久刪除帳號(Delete Account)
