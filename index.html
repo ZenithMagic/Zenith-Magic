@@ -952,7 +952,7 @@ alt="Smartwatch Integration Features">
 
     let score = 0;
     Object.keys(reqs).forEach(k => {
-      const el = document.getElementById(`${prefix}-req-${k}`);
+      const el = document.getElementById(`prefix-req-{k}`);
       if (el) {
         if (reqs[k]) {
           el.className = "flex items-center gap-2 text-green-400 transition-colors duration-200";
@@ -1059,7 +1059,7 @@ alt="Smartwatch Integration Features">
     }
 
     // 動態拼接帶入 client_reference_id (Supabase UID) 與預填 Email
-    const checkoutUrl = `${baseUrl}?client_reference_id=${user.id}&prefilled_email=${encodeURIComponent(user.email)}`;
+    const checkoutUrl = `baseUrl?clientreferenceid={user.id}&prefilled_email=${encodeURIComponent(user.email)}`;
     window.location.href = checkoutUrl;
   }
 
@@ -1089,7 +1089,7 @@ alt="Smartwatch Integration Features">
 
 <!-- Zenith Magic IG 連結區塊（放大版） -->
 <div class="text-center my-6">
-  <a href="https://www.instagram.com/zenithmagicflow/" 
+  <a href="https://www.instagram.com/zenith_magicx/" 
      target="_blank" 
      rel="noopener noreferrer" 
      class="inline-flex items-center gap-3 text-xl sm:text-3xl font-bold text-pink-400 hover:text-pink-300 transition-colors transform hover:scale-105">
